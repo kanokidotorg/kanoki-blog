@@ -2,7 +2,7 @@
 name: 'kanoki'
 description: 'Transforming World with Data'
 favicon: 'images/author/favicon.jpg'
-baseurl: 'kanoki-blog/'
+baseurl: ''
 disqus: 'demowebsite'
 email: 'wowthemesnet@gmail.com'
 banner_image : 'images/kanoki.jpg'
