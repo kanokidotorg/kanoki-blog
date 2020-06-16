@@ -1,6 +1,8 @@
 ---
 title: "Parallelize pandas apply using dask and swifter"
 date: "2020-02-24"
+categories: [ Pandas, Python ]
+tags: [ Pandas, Python ]
 ---
 
 Using Pandas apply function to run a method along all the rows of a dataframe is slow and if you have a huge data to apply thru a CPU intensive function then it may take several seconds also.

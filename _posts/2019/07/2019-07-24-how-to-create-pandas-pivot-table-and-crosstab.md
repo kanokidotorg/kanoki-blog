@@ -1,6 +1,8 @@
 ---
 title: "How to create Pandas Pivot Table and Crosstab"
 date: "2019-07-24"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 Pivot table lets you calculate, summarize and aggregate your data. MS Excel has this feature built-in and provides an elegant way to create the pivot table from data. its a powerful tool that allows you to aggregate the data with calculations such as Sum, Count, Average, Max, and Min. and also configure the rows and columns for the pivot table and apply any filters and sort orders to the data once pivot table has been created.Coming to Python, Pandas has a feature to build Pivot table and Crosstab using the Dataframe or list of Data. In this article we will see how to use these two features and what are the various options available to build a meaningful pivot and summarize your data using pandas.

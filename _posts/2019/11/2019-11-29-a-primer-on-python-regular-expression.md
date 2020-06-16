@@ -1,6 +1,8 @@
 ---
 title: "A primer on Python Regular Expression"
 date: "2019-11-29"
+categories: [ Python ]
+tags: [ Python, Regex ]
 ---
 
 Regex is a group of characters which helps to find pattern within a string. Regex is used in lot of applications including the search engines, search and for find and replace in text documents
@@ -434,7 +436,7 @@ itrobj
 Now lets iterate through this object and get all the characters of the string
 
 ```
- [item.group() for item in itrobj] 
+ [item.group() for item in itrobj]
 ```
 
 **Output:** \['5', 'A', '1', '2', '3', 'B', '4', '5', '6', 'C', '7'\]
@@ -546,10 +548,10 @@ re.compile('stre',re.DEBUG)
 
 **Output:**
 
-LITERAL 115  
-LITERAL 116  
-LITERAL 114  
-LITERAL 101  
+LITERAL 115
+LITERAL 116
+LITERAL 114
+LITERAL 101
 LITERAL 101
 
 ```

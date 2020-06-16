@@ -1,6 +1,8 @@
 ---
 title: "How to Remove Outliers in Python"
 date: "2020-04-23"
+categories: [ Python, Scipy ]
+tags: [ Python, Scipy, featured ]
 ---
 
 ## **Introduction**

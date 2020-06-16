@@ -1,6 +1,8 @@
 ---
 title: "Sort Pandas Dataframe and Series"
 date: "2020-01-28"
+categories: [ Pandas, Python ]
+tags: [ Pandas, Python ]
 ---
 
 Sorting a dataframe by row and column values or by index is easy a task if you know how to do it using the pandas and numpy built-in functions
@@ -9,11 +11,11 @@ However sometimes you may find it confusing on how to sort values by two columns
 
 In this post we will learn sorting a dataframe and Series using the following functions
 
-> **a) sort\_values  
-> b) sort\_index  
-> c) Categorical Series  
-> d) numpy sort and argsort  
-> e) Reindex  
+> **a) sort\_values
+> b) sort\_index
+> c) Categorical Series
+> d) numpy sort and argsort
+> e) Reindex
 > f) And Sorted() function**
 
 Let's create a dataframe of 11 counties with their CO2 emission and population and a column for the continent they belong to
@@ -1398,7 +1400,7 @@ or
 Alternatively, if you want to reverse the order then
 
 ```
-df[['x', 'y', 'z']] = np.sort(df)[:, ::-1] 
+df[['x', 'y', 'z']] = np.sort(df)[:, ::-1]
 ```
 
 **Sort row values using reindex**

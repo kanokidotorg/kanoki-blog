@@ -1,6 +1,8 @@
 ---
 title: "Learn SQL for Data Science"
 date: "2019-02-02"
+categories: [ Data Science ]
+tags: [ DataScience, SQL ]
 ---
 
 SQL is important as it is generally one of the first step needed to get your data from a database or data warehouse. SQL is how you query data from databases, which is where companies store data. It is the language for data querying. You might do some manipulation or more complicated work in a language like Pig or Hive, but you will always use SQL in some capacity.If the data resides on RDBMS in an organisation, then I guess there is no debate that SQL skills are the most important ones. However, even in the world beyond RDBMS (and yes this is where a lot of BIG Data happening in this space) people have not been able to write off the use of SQL. The simplicity of SQL combined by the fact that this is a fourth generation language makes it easier to use and understand (and any background that you have with RDBMS makes the transition easier).
@@ -17,8 +19,8 @@ So working with SQL is real fun and there are lot which you can achieve for data
 
 \[table id=2 /\]
 
-  
-  
+
+
 
 **Regular Expression**
 
@@ -32,8 +34,8 @@ In the above Customer table I want to find all the Address in Address\_Line1 col
 
 \[table id=1 /\]
 
-  
-  
+
+
 
 **Substring\_Index**
 
@@ -47,22 +49,22 @@ The first row in Address\_line2 column has a string walmart right of '% ' which 
 
 \[table id=3 /\]
 
-  
-  
+
+
 
 **COALESCE**
 
 it's an excellent command when you want to handle the null values in your data. So basically it returns the first non null value in a list. In this select command I want to replace Address\_line2 values with Address\_line1 wherever Address\_Line2 is null
 
-> SELECT ADDRESS\_LINE 1, ADDRESS\_LINE 2,coalesce(ADDRESS\_LINE2,  
+> SELECT ADDRESS\_LINE 1, ADDRESS\_LINE 2,coalesce(ADDRESS\_LINE2,
 > ADDRESS\_LINE 1) FROM CUSTOMER
 
 Row No. 2 & 5 has a null value for Address\_Line2 and it got replaced with equivalent row value in Address\_line1
 
 \[table id=4 /\]
 
-  
-  
+
+
 
 **CAST & CONVERT**
 
@@ -76,8 +78,8 @@ Here I am converting the Address\_Line1 value to an unsigned 64 bit integer whic
 
 \[table id=5 /\]
 
-  
-  
+
+
 
 **LOCATE**
 
@@ -89,8 +91,8 @@ Extracts the left part of the string "Hello\_How\_Are\_You" before the last unde
 
 **Hello\_How\_Are**
 
-  
-  
+
+
 
 **Group\_Concat**
 
@@ -108,8 +110,8 @@ In the first column the id's for both the walmart rows (i.e. row no. 1 & 3) and 
 
 \[table id=7 /\]
 
-  
-  
+
+
 
 **Replace**
 
@@ -119,32 +121,32 @@ it is used to replace any character or substring from a string. This is quite he
 
 **2143 Pink Street Bldg 6**
 
-  
-  
+
+
 
 **Load Data in File**
 
 This is one of the most useful function you are ever going to use. It is more faster than any other methods out there to upload a csv to a Table, a way faster than the UI tool for csv upload. You should know how your data is contained in the file whether it is comma separated, values are enclosed in quotes and every row is a new line in the document or not.
 
 > LOAD DATA INFILE 'c:/customer.csv' INTO TABLE customer
-> 
+>
 > FIELDS TERMINATED BY ','
-> 
+>
 > ENCLOSED BY '"'
-> 
+>
 > LINES TERMINATED BY '\\n'
-> 
+>
 > IGNORE 1
-> 
+>
 > ROWS(Name, Address\_Line1, Address\_line2, City)
 
-  
-  
+
+
 
 **REGEX\_REPLACE**
 
-This is a new command which is supported in MYSQL 8 and is very handy for replacing a pattern match in a string. it takes three optional arguments: **position**: The position in expression from where to start,  
-**occurence** : which occurence of match to replace. By default replaces all occurence ,  
+This is a new command which is supported in MYSQL 8 and is very handy for replacing a pattern match in a string. it takes three optional arguments: **position**: The position in expression from where to start,
+**occurence** : which occurence of match to replace. By default replaces all occurence ,
 **match\_type**: it tells how to perform matching such as case sensitive, case insensitive, multiple line mode etc.
 
 > SELECT REGEXP\_REPLACE('HELLO WORLD', 'World', 'JOHN');

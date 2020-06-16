@@ -1,6 +1,8 @@
 ---
 title: "Pandas Groupby Tutorial"
 date: "2019-09-04"
+categories: [ Data Science, Pandas, Python, Python, Data Science, Tutorial ]
+tags: [ DataScience, Pandas, Pandas Groupby – Tutorial, Python ]
 ---
 
 Hope if you are reading this post then you know what is groupby in SQL and how it is being used to aggregate the data of the rows with the same value in one or more column. I was recently working on the Pandas Groupby and found there are lot of useful features which can be used to explore the data and this triggered me to write this post so that anyone with a SQL groupby knowledge can learn the Pandas group by within no time. In this blog I am going to take a dataset and show how we can perform groupby on this data and explore the data further.

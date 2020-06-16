@@ -1,6 +1,8 @@
 ---
 title: "Resample and Interpolate time series data"
 date: "2020-04-14"
+categories: [ Data Science, Pandas, Python, Time Series Analysis ]
+tags: [ Pandas, Python, Time Series ]
 ---
 
 Resampling is a method of frequency conversion of time series data. You can use resample function to convert your data into the desired frequency.

@@ -1,6 +1,8 @@
 ---
 title: "Dataframe Visualization with Pandas Plot"
 date: "2019-09-16"
+categories: [ Data Science, Python, Data Science, Tutorial, Visualization ]
+tags: [ Data Visualization, DataScience, Matplotlib, Pandas, Pandas Plot, Python ]
 ---
 
 Visualization has always been challenging task but with the advent of dataframe plot() function it is quite easy to create decent looking plots with your dataframe, The `**plot**` method on Series and DataFrame is just a simple wrapper around Matplotlib **`plt.plot()`** and you really don't have to write those long matplotlib codes for plotting.

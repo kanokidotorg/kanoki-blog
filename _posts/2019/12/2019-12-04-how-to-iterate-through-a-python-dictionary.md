@@ -1,6 +1,8 @@
 ---
 title: "How to iterate through a python dictionary"
 date: "2019-12-04"
+categories: [ Python ]
+tags: [ Dictionary, Python ]
 ---
 
 A python Dictionary is one of the important data structure which is extensively used in data science and elsewhere when you want to store the data as a key-value pair. In this post we will take a deep dive into dictionaries and ways to iterate over dictionary and find out how to sort a dictionary values and other operations using dictionary data structure
@@ -13,11 +15,11 @@ We can create a Dictionary using key:value pairs separated by commas or using th
 
 ### **Using comma separated key value pair**
 
-d = {  
-"name": "Charlie",  
-"age": 42,  
-"city": "NYC",  
-"state": "NY",  
+d = {
+"name": "Charlie",
+"age": 42,
+"city": "NYC",
+"state": "NY",
 "rank": 1.0 }
 
 ### **Using dict constructor**
@@ -92,10 +94,10 @@ for keys in d:
 
 **Output:**
 
-name : charlie  
-age : 42  
-city : NYC  
-state : NY  
+name : charlie
+age : 42
+city : NYC
+state : NY
 rank : 1.0
 
 ## **Dictionary view objects**
@@ -119,7 +121,7 @@ len(d)
 the keys() function returns dict\_keys() which is wrapped with the list to get a list object.
 
 ```
- list(d.keys()) 
+ list(d.keys())
 ```
 
 **Output:**
@@ -149,10 +151,10 @@ for value in d.values():
 
 **Output:**
 
-Charlie  
-42  
-NYC  
-NY  
+Charlie
+42
+NYC
+NY
 1.0
 
 ### **Iterate thru dict keys**
@@ -161,15 +163,15 @@ The dict\_keys is an iterable so you can directly iterate through the keys of di
 
 ```
 for key in d.keys():
-     print(key) 
+     print(key)
 ```
 
 **Output:**
 
-name  
-age  
-city  
-state  
+name
+age
+city
+state
 rank
 
 ### **Iterate key, value pair using dict.items**
@@ -183,10 +185,10 @@ for key,value in d.items():
 
 **Output:**
 
-name : Charlie  
-age : 42  
-city : NYC  
-state : NY  
+name : Charlie
+age : 42
+city : NYC
+state : NY
 rank : 1.0
 
 ## **Dictionary Comprehension**
@@ -215,11 +217,11 @@ Let's understand this with a small example
 
 Here is a dictionary of city and respective states:
 
-> city\_state\_dict = {  
-> "NYC": "New York",  
-> "Boston": "Massachussets",  
-> "Charlotte": "North Carolina",  
-> "Los Angeles": "California",  
+> city\_state\_dict = {
+> "NYC": "New York",
+> "Boston": "Massachussets",
+> "Charlotte": "North Carolina",
+> "Los Angeles": "California",
 > "Minnetonka": "Minnesota" }
 
 We have to output the state name when user enters a city

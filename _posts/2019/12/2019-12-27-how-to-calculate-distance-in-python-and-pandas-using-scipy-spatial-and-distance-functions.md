@@ -1,6 +1,8 @@
 ---
 title: "How to calculate Distance in Python and Pandas using Scipy spatial and distance functions"
 date: "2019-12-27"
+categories: [ Data Science, Pandas, Python, Python, Data Science, Scipy ]
+tags: [ DataScience, haversine, numpy, Pandas, Python, Scipy, vectorization ]
 ---
 
 Working with Geo data is really fun and exciting especially when you clean up all the data and loaded it to a dataframe or to an array. The real works starts when you have to find distances between two coordinates or cities and generate a distance matrix to find out distance of each city from other.

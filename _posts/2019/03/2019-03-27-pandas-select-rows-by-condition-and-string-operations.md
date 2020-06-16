@@ -1,6 +1,8 @@
 ---
 title: "Pandas Select rows by condition and String Operations"
 date: "2019-03-27"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 There are instances where we have to select the rows from a Pandas dataframe by multiple conditions. Especially, when we are dealing with the text data then we may have requirements to select the rows matching a substring in all columns or select the rows based on the condition derived by concatenating two column values and many other scenarios where you have to slice,split,search substring with the text data in a Pandas Dataframe. Here we are going to discuss following unique scenarios for dealing with the text data:

@@ -1,6 +1,8 @@
 ---
 title: "How to create bins in pandas using cut and qcut"
 date: "2020-04-20"
+categories: [ Pandas, Python ]
+tags: [ Pandas, Python ]
 ---
 
 ## **Data Binning**

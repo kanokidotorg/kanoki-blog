@@ -1,6 +1,8 @@
 ---
 title: "Find K smallest and largest values and its indices in a numpy array"
 date: "2020-01-14"
+categories: [ numpy, Python ]
+tags: [ numpy, Python ]
 ---
 
 To find the maximum and minimum value in an array you can use numpy argmax and argmin function

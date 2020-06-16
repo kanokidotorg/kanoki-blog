@@ -9,7 +9,7 @@
                 </h6>
                 <span class="d-block text-muted">
                     In <span class="catlist">
-                    {% for category in post.tag %}
+                    {% for category in post.tags %}
                     <a class="text-capitalize text-muted smoothscroll" href="{{site.baseurl}}/tag/{{ category | slugify }}">{{ category }}</a><span class="sep">, </span>
                     {% endfor %}
                     </span>

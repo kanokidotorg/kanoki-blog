@@ -1,6 +1,8 @@
 ---
 title: "How to use Regex in Pandas"
 date: "2019-11-12"
+categories: [ Data Science, Python, Python, Data Science, Tutorial ]
+tags: [ DataScience, Pandas, Python, Tutorial ]
 ---
 
 There are several pandas methods which accept the regex in pandas to find the pattern in a String within a Series or Dataframe object. These methods works on the same line as Pythons re module. Its really helpful if you want to find the names starting with a particular character or search for a pattern within a dataframe column or extract the dates from the text.

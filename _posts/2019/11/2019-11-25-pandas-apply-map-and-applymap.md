@@ -1,6 +1,8 @@
 ---
 title: "Pandas apply, map and applymap"
 date: "2019-11-25"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 In this post we will see how to apply a function along the axis of a dataframe using apply and applymap and how to map the values of a Series from one domain to another using map

@@ -1,6 +1,8 @@
 ---
 title: "How to shift a column in Pandas"
 date: "2019-09-09"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 If you want to shift your columns without re-writing the whole dataframe or you want to subtract the column value with the previous row value or if you want to find the cumulative sum without using **`cumsum()`** function or you want to shift the time index of your dataframe by Hour, Day, Week, Month or Year then to achieve all these tasks you can use pandas dataframe shift function. Here are the parameters that needs to be used with the shift function:

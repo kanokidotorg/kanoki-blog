@@ -1,6 +1,8 @@
 ---
 title: "How to use Pandas Count and Value_Counts"
 date: "2020-03-09"
+categories: [ Pandas, Python ]
+tags: [ Pandas, Python ]
 ---
 
 Counting number of Values in a Row or Columns is important to know the Frequency or Occurrence of your data.

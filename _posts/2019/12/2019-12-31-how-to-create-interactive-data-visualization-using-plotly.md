@@ -1,6 +1,8 @@
 ---
 title: "How to create interactive data visualization using plotly"
 date: "2019-12-31"
+categories: [ Data Science, Python, Python, Data Science, Tutorial ]
+tags: [ Data Visualization, DataScience, Plotly, Python ]
 ---
 
 Visualization is the graphical representation of your data and it let you paint your data into a canvas in a way you want to see it. There are lot of amazing libraries and tools available in the market to plot your data without much of effort

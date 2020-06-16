@@ -1,6 +1,8 @@
 ---
 title: "Python Itertools: For a faster and memory efficient code"
 date: "2019-02-08"
+categories: [ Data Science ]
+tags: [ Python ]
 ---
 
 The reason python stands out from many other languages is because of it's simplicity and easy to work with, and the data science community has put the work in to create the plumbing it needs to solve complex computational problems and emphasizes productivity and readability. However many complains that it's slow and doesn't perform very well on a large set of data. There are lot of effective and memory efficient python modules which are not well known among the community and especially beginners doesn't learn those things in MOOC's. Since MOOC's is a way to introduce you with the python ecosystem but it doesn't tells you how you can write concise, fast and performance oriented codes. Even many of the experienced dev doesn't use the power of these awesome python tools,functions etc. Most of them try to achieve the things in the same old memory inefficient way.

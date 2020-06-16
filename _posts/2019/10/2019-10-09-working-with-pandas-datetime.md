@@ -1,6 +1,8 @@
 ---
 title: "Working with Pandas datetime"
 date: "2019-10-09"
+categories: [ Data Science, Pandas, Python, Python, Data Science, Tutorial ]
+tags: [ DataScience, Pandas, Python, Tutorial ]
 ---
 
 In this post we will explore the Pandas datetime methods which can be used instantaneously to work with datetime in Pandas.

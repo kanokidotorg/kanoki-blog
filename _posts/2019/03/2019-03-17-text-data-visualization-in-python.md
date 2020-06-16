@@ -1,6 +1,8 @@
 ---
 title: "Text Data Visualization in Python"
 date: "2019-03-17"
+categories: [ Data Science, Python ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 The best way to understand any data is by visualizing it. if I give you a table load of data and Charts then the latter is more easier way to get insight from the data. Visualization is a critical part of any data analysis project and makes it easy to understand the _significance of data_ in a visual way by looking at  visuals and quickly helps to identify the areas which needs attention and helps to build a strategy for further Data Science activity.

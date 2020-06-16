@@ -1,6 +1,8 @@
 ---
 title: "Building a Web app using Python and Mongodb"
 date: "2019-09-25"
+categories: [ Data Science, Flask, Mongodb, Python, Python, Data Science, Tutorial ]
+tags: [ Flask, leafletjs, Mongodb, Python, Tutorial ]
 ---
 
 ## **Introduction**

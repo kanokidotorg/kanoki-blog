@@ -1,6 +1,8 @@
 ---
 title: "Compare two excel files for difference using Python"
 date: "2019-02-26"
+categories: [ Excel, Pandas, Python ]
+tags: [ Excel, Python ]
 ---
 
 Comparing two excel spreadsheets and writing difference to a new excel was always a tedious task and Long Ago, I was doing the same thing and the objective there was to compare the row,column values for both the excel and write the comparison to a new excel files. In those days I have used xlrd module to read and write the comparison result of both the files in an excel file. I can still recall that we have written long lines of code to achieve that.

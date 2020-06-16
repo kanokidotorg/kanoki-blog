@@ -1,6 +1,8 @@
 ---
 title: "Reshaping numpy arrays in python"
 date: "2020-01-06"
+categories: [ Data Science, numpy, Python, Python, Data Science ]
+tags: [ DataScience, numpy, Python ]
 ---
 
 Reshape is an important feature which lets you to change the shape of your array without changing its data

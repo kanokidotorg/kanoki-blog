@@ -1,6 +1,8 @@
 ---
 title: "How to work with JSON in Pandas"
 date: "2019-12-12"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ DataScience, JSON, Pandas, Python ]
 ---
 
 JSON is widely used format for storing the data and exchanging. Many of the API's response are JSON and being light weight it's used almost everywhere

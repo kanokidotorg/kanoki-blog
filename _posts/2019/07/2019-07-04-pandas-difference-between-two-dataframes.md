@@ -1,6 +1,8 @@
 ---
 title: "Pandas Difference Between two Dataframes"
 date: "2019-07-04"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ Pandas, Python ]
 ---
 
 There are often cases where we need to find out the common rows between the two dataframes or find the rows which are in one dataframe and missing from second dataframe. In this post we will see how using pandas we can achieve this.

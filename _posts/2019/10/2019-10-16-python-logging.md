@@ -1,6 +1,8 @@
 ---
 title: "Python Logging"
 date: "2019-10-16"
+categories: [ Python ]
+tags: [ logging, Python ]
 ---
 
 Log is an important tool for any developer. it helps in debugging and log important information or exceptions that emits while the code executes

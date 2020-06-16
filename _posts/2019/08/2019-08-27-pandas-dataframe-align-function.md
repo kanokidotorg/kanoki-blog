@@ -1,6 +1,8 @@
 ---
 title: "Pandas Dataframe Align function"
 date: "2019-08-27"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 Pandas Align basically helps to align the two dataframes have the same row and/or column configuration and as per their documentation it Align two objects on their axes with the specified join method for each axis Index. We use align when we would like to synchronize a dataframe with another dataframe or a dataframe with a Series or in other words we want to map one dataframe into another dataframe or series using different join methods like outer, inner, left and right.

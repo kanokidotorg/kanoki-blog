@@ -1,11 +1,13 @@
 ---
 title: "How to work with numpy.where()"
 date: "2020-01-03"
+categories: [ Data Science, numpy, Python, Python, Data Science ]
+tags: [ DataScience, numpy, Python ]
 ---
 
 ## **What is numpy.where()**
 
-> **numpy.where(condition\[, x, y\])**  
+> **numpy.where(condition\[, x, y\])**
 > Return elements chosen from x or y depending on condition
 
 if condition is true then x else y
@@ -114,7 +116,7 @@ x[np.where(ix)]
 
 **Output**
 
- array(\[3., 4., 7.\]) 
+ array(\[3., 4., 7.\])
 
 Output is the list of elements in original array matching the items in value list
 

@@ -1,6 +1,8 @@
 ---
 title: "Pandas Coalesce - How to Replace NaN values in a dataframe"
 date: "2019-08-17"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 In this post we will discuss on how to use fillna function and how to use SQL coalesce function with Pandas, For those who doesn't know about coalesce function, it is used to replace the null values in a column with other column values. Also in some cases you want to create a new column with values filled-in from another column and if any of the values are null in that column then it should be replaced by the next column value. I think after going through the below examples it will be more clear on how and when to use the Coalesce Function.

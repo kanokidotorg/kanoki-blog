@@ -1,6 +1,8 @@
 ---
 title: "Pandas Rename and Reorder Columns"
 date: "2019-03-23"
+categories: [ Data Science, Pandas, Python ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 Pandas has two ways to rename their Dataframe columns, first using the df.rename() function and second by using df.columns, which is the list representation of all the columns in dataframe. Let's Start with a simple example of renaming the columns and then we will check the re-ordering and other actions we can perform using these functions

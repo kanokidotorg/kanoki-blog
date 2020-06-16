@@ -1,6 +1,8 @@
 ---
 title: "Pandas Map Dictionary values with Dataframe Columns"
 date: "2019-04-06"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 Pandas has a cool feature called Map which let you create a new column by mapping the dataframe column values with the Dictionary Key. Let's understand this by an example:

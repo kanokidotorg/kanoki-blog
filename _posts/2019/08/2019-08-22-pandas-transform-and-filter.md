@@ -1,6 +1,8 @@
 ---
 title: "Pandas Transform and Filter"
 date: "2019-08-22"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 In this blog we will see how to use Transform and filter on a groupby object. We all know about aggregate and apply and their usage in pandas dataframe but here we are trying to do a Split - Apply - Combine. We want to split our data into groups based on some criteria, then we apply our logic to each group and finally we combine the data back together into a single data frame. What does it mean?

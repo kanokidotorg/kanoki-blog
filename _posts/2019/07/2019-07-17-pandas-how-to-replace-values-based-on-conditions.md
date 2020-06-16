@@ -1,6 +1,8 @@
----
+ ---
 title: "Pandas How to replace values based on Conditions"
 date: "2019-07-17"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 Using these methods either you can replace a single cell or all the values of a row and column in a dataframe based on conditions .

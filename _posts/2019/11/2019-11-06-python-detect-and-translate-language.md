@@ -1,6 +1,8 @@
 ---
 title: "Python Detect and Translate language"
 date: "2019-11-06"
+categories: [ Data Science, Python, Python, Data Science ]
+tags: [ DataScience, Python, Translation ]
 ---
 
 The internet is flooded with articles and posts for translating the language using Machine Learning or Deep Learning LSTM models and building a deep neural network for developing your own Translation model. However, if you are not interested in coding then we have google as one of the prominent leader in providing the translation service from any known language in world to another. But yes that comes with a cost if you are using it for commercial purpose or huge data to translate
@@ -144,6 +146,6 @@ for translation in translations:
 
 **Output:**
 
-what is your Name -> तुम्हारा नाम क्या हे  
-how old are you -> आपकी उम्र क्या है  
+what is your Name -> तुम्हारा नाम क्या हे
+how old are you -> आपकी उम्र क्या है
 Boston weather is good -> बोस्टन मौसम अच्छा है

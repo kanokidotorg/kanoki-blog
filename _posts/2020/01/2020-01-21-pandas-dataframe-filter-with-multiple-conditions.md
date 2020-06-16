@@ -1,6 +1,8 @@
 ---
 title: "Pandas dataframe filter with Multiple conditions"
 date: "2020-01-21"
+categories: [ Pandas, Python ]
+tags: [ Pandas, Python ]
 ---
 
 Selecting or filtering rows from a dataframe can be sometime tedious if you don't know the exact methods and how to filter rows with multiple conditions

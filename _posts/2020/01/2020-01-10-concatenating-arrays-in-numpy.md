@@ -1,6 +1,8 @@
 ---
 title: "Concatenating arrays in Numpy"
 date: "2020-01-10"
+categories: [ numpy, Python ]
+tags: [ numpy, Python ]
 ---
 
 We will be discussing about merging numpy arrays and different functions that are available in the toolbox to perform this job

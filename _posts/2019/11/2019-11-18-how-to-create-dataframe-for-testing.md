@@ -1,6 +1,8 @@
 ---
 title: "How to create dataframe for testing?"
 date: "2019-11-18"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 Did you ever wanted to create dataframes for testing and find it hard to fill the dataframe with dummy values then DO NOT Worry there are functions that are not mentioned in the official document but available in pandas util modules which can be used to create the dataframes and we will explore those methods in this post.

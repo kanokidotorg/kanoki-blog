@@ -1,6 +1,8 @@
 ---
 title: "How to find distance between two Points based on Latitude and Longitude using Python and SQL"
 date: "2019-02-14"
+categories: [ Data Science, Python ]
+tags: [ Python, SQL ]
 ---
 
 if you are working with GIS or POI data then you must be dealing with lat/long values and there would be use cases to calculate the distance between two points or places by evaluating the distance between their lat/long. There are so many apps out there which uses this information to show what are the restaurants, Medical Center, Shopping Malls within a specified radius from a particular location or what's the distance between two places or What is the nearest walmart from the Wendy's at Main Street. So there are hell lot of examples in our day to day life where we have to calculate the distance between two points and if you are working with any of the POI datasets as a Data Scientist then you might encounter such uses cases frequently.

@@ -1,6 +1,8 @@
 ---
 title: "Add new rows and columns to Pandas dataframe"
 date: "2019-08-03"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 We often get into a situation where we want to add a new row or column to a dataframe after creating it. A quick and dirty solution which all of us have tried atleast once while working with pandas is re-creating the entire dataframe once again by adding that new row or column in the source i.e. csv, txt, DB etc. Pandas is a feature rich Data Analytics library and gives lot of features to achieve these simple tasks of add, delete and update. In this post we will see what are the different ways a Pandas user can add a new row or column to a dataframe.

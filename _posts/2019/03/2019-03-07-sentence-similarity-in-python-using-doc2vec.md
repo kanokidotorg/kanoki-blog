@@ -1,6 +1,8 @@
 ---
 title: "Sentence Similarity in Python using Doc2Vec"
 date: "2019-03-07"
+categories: [ Data Science, Python ]
+tags: [ Data Visualization, DataScience, Python ]
 ---
 
 **Introduction**

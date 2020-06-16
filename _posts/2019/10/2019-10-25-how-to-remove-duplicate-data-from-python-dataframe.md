@@ -1,6 +1,8 @@
 ---
 title: "How to remove duplicate data from python dataframe"
 date: "2019-10-25"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 Not all data are perfect and we really need to get duplicate data removed from our dataset most of the time. it looks easy to clean up the duplicate data but in reality it isn't. Sometimes you want to just remove the duplicates from one or more columns and the other time you want to delete duplicates based on some random condition. So we will see in this post how to easily and efficiently you can remove the duplicate data using drop\_duplicates() function in pandas

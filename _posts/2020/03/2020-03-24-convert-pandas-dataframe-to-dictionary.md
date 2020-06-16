@@ -1,6 +1,8 @@
 ---
 title: "Convert Pandas dataframe to dictionary"
 date: "2020-03-24"
+categories: [ Pandas, Python ]
+tags: [ Pandas, Python, to_dict() ]
 ---
 
 In my this blog we will discover what are the different ways to convert a Dataframe into a Python Dictionary or Key/Value Pair
@@ -113,7 +115,7 @@ Let's change the orient to records and check the result
 df.to_dict('records')
 ```
 
- \[{'Name': 'John', 'Age': 38, 'City': 'Boston'},  {'Name': 'Sara', 'Age': 47, 'City': 'Charlotte'},  {'Name': 'Peter', 'Age': 63, 'City': 'London'},  {'Name': 'Cecilia', 'Age': 28, 'City': 'Memphis'}\] 
+ \[{'Name': 'John', 'Age': 38, 'City': 'Boston'},  {'Name': 'Sara', 'Age': 47, 'City': 'Charlotte'},  {'Name': 'Peter', 'Age': 63, 'City': 'London'},  {'Name': 'Cecilia', 'Age': 28, 'City': 'Memphis'}\]
 
 it returns the list of dictionary and each dictionary contains the individual rows
 
@@ -138,8 +140,8 @@ Let's see how to\_dict function works with timestamp data
 
 Let's create a simple dataframe with date and time values in it
 
-tsmp = Timestamp("20200101")  
-data = DataFrame({"A": \[tsmp, tsmp\], "B": \[tsmp, tsmp\]})  
+tsmp = Timestamp("20200101")
+data = DataFrame({"A": \[tsmp, tsmp\], "B": \[tsmp, tsmp\]})
 data
 
 **A**

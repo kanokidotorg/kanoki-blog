@@ -1,6 +1,8 @@
 ---
 title: "Pandas how to get a cell value and update it"
 date: "2019-04-12"
+categories: [ Data Science, Pandas, Python, Python, Data Science ]
+tags: [ DataScience, Pandas, Python ]
 ---
 
 Accessing a single value or setting up the value of single row is sometime required when we doesn't want to create a new Dataframe for just updating that single cell value. There are indexing and slicing methods available but to access a single cell values there are Pandas in-built functions at and iat.

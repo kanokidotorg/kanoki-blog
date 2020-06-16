@@ -1,6 +1,8 @@
 ---
 title: "Named Entity Recognition: How to Automate Customer Support"
 date: "2019-02-21"
+categories: [ Data Science, Pandas, Python ]
+tags: [ DataScience, Machine Learning, Python ]
 ---
 
 Customer support is one of the complex and most important part of any business. This area of business stands to benefit from the machine learning as it is helping to automate and improve the entire customer service process and reduce the overall turn around time to resolve a ticket and eventually ensures a quicker response time. In this article I am going to give a real time Customer Service issue in a Company and how they have leveraged a Machine Learning approach to expedite the customer service resolution
