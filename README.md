@@ -1,2 +1,2 @@
 # kanoki-blog
-Kanoki blog
+Kanoki blog [Demo](kanokidotorg.github.io)
