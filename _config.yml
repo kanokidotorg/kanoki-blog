@@ -11,6 +11,7 @@ include: ["_pages"]
 permalink: /:year/:month/:day/:title/
 search: false # true or false for serach
 google_analytics: "UA-XXXXXXXX-X"
+#google_ad_client : ""
 
 # Plugins
 plugins:
@@ -24,9 +25,6 @@ authors:
     name:           Vinay
     site:           https://kanoki.org/
     avatar:         images/author/favicon.jpg
-    bio:            "Hi, I am Sal, the author of Mundana, the theme you're currently previewing. I hope you like it!"
-    email:          wowthemesnet@gmail.com
-    twitter:        https://twitter.com/kanokidotorg
 
 # Defaults
 defaults:
