@@ -20,11 +20,6 @@ plugins:
   - jekyll-paginate
   - jekyll-seo-tag
 
-authors:
-  vinay:
-    name:           Vinay
-    site:           https://kanoki.org/
-    avatar:         images/author/favicon.jpg
 
 # Defaults
 defaults:
@@ -34,8 +29,6 @@ defaults:
       path: "_posts"
     values:
       layout: post
-      author: vinay
-      avatar: images/author/avatar1.jpg
 
   # all pages
   - scope:
