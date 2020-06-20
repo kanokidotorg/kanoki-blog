@@ -20,8 +20,6 @@ Let's have a Cell with drop-down values for Years i.e. 2015 & 2016.
 
 Select Cell A6 and Go to Data > Data Validation and Under field "Criteria" select the range of Year column where data is pasted above, i.e. A2:A3![Screen Shot 2017-07-01 at 17.01.32](https://techpickup.files.wordpress.com/2017/07/screen-shot-2017-07-01-at-17-01-32.png)
 
- 
-
 Will need to pull the corresponding values for all the expenses from the above two rows as per the year selected in Cell A6.
 
 Read [this](https://techpickup.wordpress.com/2017/07/01/index-match-formula-in-excel/) post for Index & Match function before you go further

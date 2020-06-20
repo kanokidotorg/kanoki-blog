@@ -9,7 +9,7 @@ Selecting or filtering rows from a dataframe can be sometime tedious if you don'
 
 In this post we are going to see the different ways to select rows from a dataframe using multiple conditions
 
-Let's create a dataframe with 5 rows and 4 columns i.e. Name, Age, Salary\_in\_1000 and FT\_Team(Football Team)
+Let's create a dataframe with 5 rows and 4 columns i.e. Name, Age, Salary_in_1000 and FT_Team(Football Team)
 
 ```
 import pandas as pd
@@ -22,73 +22,17 @@ df
 
 **Output**:
 
-**Name**
+{:.table}
+{:.table-striped}
+|-|Name|Age|Salary_in_1000|FT_Team|
+| --- |--- |--- |--- |--- |--- |
+|0|JOHN|35|100|STEELERS|
+|1|ALLEN|42|93|SEAHAWKS|
+|2|BOB|63|78|FALCONS|
+|3|NIKI|29|120|FALCONS|
+|4|CHARLIE|47|64|PATRIOTS|
+|5|CHANG|51|115|STEELERS|
 
-Age
-
-Salary\_in\_1000
-
-FT\_Team
-
-0
-
-JOHN
-
-35
-
-100
-
-STEELERS
-
-1
-
-ALLEN
-
-42
-
-93
-
-SEAHAWKS
-
-2
-
-BOB
-
-63
-
-78
-
-FALCONS
-
-3
-
-NIKI
-
-29
-
-120
-
-FALCONS
-
-4
-
-CHARLIE
-
-47
-
-64
-
-PATRIOTS
-
-5
-
-CHANG
-
-51
-
-115
-
-STEELERS
 
 ## **Selecting Dataframe rows on multiple conditions using these 5 functions**
 
@@ -118,21 +62,13 @@ df.loc[(df['Salary_in_1000']>=100) & (df['Age']< 60) & (df['FT_Team'].str.starts
 
 **Output:**
 
-**Name**
+{:.table}
+{:.table-striped}
+||Name|FT_Team|
+|--- |--- |--- |
+|0|JOHN|STEELERS|
+|5|CHANG|STEELERS|
 
-FT\_Team
-
-0
-
-JOHN
-
-STEELERS
-
-5
-
-CHANG
-
-STEELERS
 
 ## **Using np.where with multiple conditions**
 
@@ -146,8 +82,9 @@ idx = np.where((df['Salary_in_1000']>=100) & (df['Age']< 60) & (df['FT_Team'].st
 ```
 
 **Output:**
-
-(array(\[0, 5\], dtype=int64),)
+```
+(array([0, 5], dtype=int64),)
+```
 
 The output from the np.where, which is a list of row index matching the multiple conditions is fed to dataframe loc function
 
@@ -157,33 +94,13 @@ df.loc[idx]
 
 **Output:**
 
-**Name**
 
-Age
-
-Salary\_in\_1000
-
-FT\_Team
-
-0
-
-JOHN
-
-35
-
-100
-
-STEELERS
-
-5
-
-CHANG
-
-51
-
-115
-
-STEELERS
+{:.table}
+{:.table-striped}
+||Name|Age|Salary_in_1000|FT_Team|
+|--- |--- |--- |--- |--- |
+|0|JOHN|35|100|STEELERS|
+|5|CHANG|51|115|STEELERS|
 
 ## **Using Query with multiple Conditions**
 
@@ -195,33 +112,13 @@ df.query('Salary_in_1000 >= 100 & Age < 60 & FT_Team.str.startswith("S").values'
 
 **Output:**
 
-**Name**
+{:.table}
+{:.table-striped}
+||Name|Age|Salary_in_1000|
+|--- |--- |--- |--- |
+|0|JOHN|35|100|
+|5|CHANG|51|115|
 
-Age
-
-Salary\_in\_1000
-
-FT\_Team
-
-0
-
-JOHN
-
-35
-
-100
-
-STEELERS
-
-5
-
-CHANG
-
-51
-
-115
-
-STEELERS
 
 ## **pandas boolean indexing multiple conditions**
 
@@ -235,27 +132,12 @@ df[(df['Salary_in_1000']>=100) & (df['Age']<60) & df['FT_Team'].str.startswith('
 
 **Output:**
 
-**Name**
-
-Age
-
-Salary\_in\_1000
-
-0
-
-JOHN
-
-35
-
-100
-
-5
-
-CHANG
-
-51
-
-115
+{:.table}
+{:.table-striped}
+||Name|Age|Salary_in_1000|
+|--- |--- |--- |--- |
+|0|JOHN|35|100|
+|5|CHANG|51|115|
 
 ## **Pandas Eval multiple conditions**
 
@@ -267,27 +149,12 @@ df[df.eval("Salary_in_1000>=100 & (Age <60) & FT_Team.str.startswith('S').values
 
 **Output:**
 
-**Name**
-
-Age
-
-Salary\_in\_1000
-
-0
-
-JOHN
-
-35
-
-100
-
-5
-
-CHANG
-
-51
-
-115
+{:.table}
+{:.table-striped}
+||Name|Age|Salary_in_1000|
+|--- |--- |--- |--- |
+|0|JOHN|35|100|
+|5|CHANG|51|115|
 
 ## **Conclusion:**
 

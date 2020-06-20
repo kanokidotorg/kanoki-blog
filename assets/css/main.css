@@ -190,7 +190,9 @@ svg {
   vertical-align: middle; }
 
 table {
-  border-collapse: collapse; }
+  border-collapse: collapse;
+  border: 1px solid black;
+  background-color: white;}
 
 caption {
   padding-top: 0.75rem;
@@ -201,6 +203,66 @@ caption {
 
 th {
   text-align: inherit; }
+
+table col[class*="col-"] {
+	position: static;
+	display: table-column;
+	float: none;
+}
+
+table td[class*="col-"],
+table th[class*="col-"] {
+	position: static;
+	display: table-cell;
+	float: none;
+}
+
+caption {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	color: grey;
+	text-align: left;
+}
+
+th {
+	text-align: left;
+}
+
+table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 15px;
+}
+
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+	padding: 8px;
+	line-height: 1.5;
+	vertical-align: top;
+	border-top: 1px solid black;
+}
+
+table > thead > tr > th {
+	vertical-align: bottom;
+	border-bottom: 2px solid black;
+}
+
+table > caption + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > th,
+table > thead:first-child > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > td {
+	border-top: 0;
+}
+
+table > tbody + tbody {
+	border-top: 2px solid black;
+}
 
 label {
   display: inline-block;
@@ -427,7 +489,7 @@ mark,
 
 code {
   font-size: 87.5%;
-  color: #ff0266;
+  color: #0e0e0e;
   word-break: break-word; }
   a > code {
     color: inherit; }
@@ -443,7 +505,7 @@ kbd {
     font-size: 100%;
     font-weight: 700; }
 
-pre {    
+pre {
     background: #eee;
     padding: 5px;
     font-size:14px;
@@ -3762,7 +3824,7 @@ input[type="button"].btn-block {
   display: flex;
   padding-left: 0;
   list-style: none;
-  border-radius: 0.25rem; 
+  border-radius: 0.25rem;
   font-size: 14px;
   font-weight: 600;
 }
@@ -4722,7 +4784,7 @@ button.close {
   .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before {
     bottom: 0;
     border-top-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-top .arrow::after,
   .bs-popover-auto[x-placement^="top"] .arrow::after {
     bottom: 1px;
@@ -4742,7 +4804,7 @@ button.close {
   .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^="right"] .arrow::before {
     left: 0;
     border-right-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-right .arrow::after,
   .bs-popover-auto[x-placement^="right"] .arrow::after {
     left: 1px;
@@ -4759,7 +4821,7 @@ button.close {
   .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before {
     top: 0;
     border-bottom-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-bottom .arrow::after,
   .bs-popover-auto[x-placement^="bottom"] .arrow::after {
     top: 1px;
@@ -4788,7 +4850,7 @@ button.close {
   .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^="left"] .arrow::before {
     right: 0;
     border-left-color: rgba(0, 0, 0, 0.25); }
-  
+
   .bs-popover-left .arrow::after,
   .bs-popover-auto[x-placement^="left"] .arrow::after {
     right: 1px;
@@ -8460,3 +8522,18 @@ html {
     align-self: baseline !important; }
   .align-self-xl-stretch {
     align-self: stretch !important; } }
+
+
+@media screen and (max-width: 768px) {
+	table {
+		width: 100%;
+		margin-bottom: 15px;
+		overflow-y: hidden;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+		border: 1px solid black;
+	}
+
+	table {
+		margin-bottom: 0;
+	}
+}

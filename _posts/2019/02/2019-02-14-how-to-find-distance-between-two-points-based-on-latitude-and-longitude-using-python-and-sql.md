@@ -33,14 +33,14 @@ Haversine computes the great circle distance on a sphere while Vincenty computes
 
 Let's talk about the tool or methods used to calculate these distances. I am going to first show how to use MYSQL geospatial query libraries to calculate this distance and then we will see how to write code in Python for Haversine and Vincenty Formula to calculate the distance between two lat/longs using Geopy module.
 
-**Using MYSQL - st\_distance\_sphere**
+**Using MYSQL - st_distance_sphere**
 
 This returns the minimum spherical distance between two points or multipoints arguments on a sphere in metres. The points has to be entered within the following range:
 
-latitude: \[−90, 90\]
-longitude: \[−180, 180\]
+latitude: [−90, 90]
+longitude: [−180, 180]
 
-if you want the geodesic distance on the ellipsoid then you can use **[st\_distance](https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-object-shapes.html#function_st-distance)()**
+if you want the geodesic distance on the ellipsoid then you can use **[st_distance](https://dev.mysql.com/doc/refman/8.0/en/spatial-relation-functions-object-shapes.html#function_st-distance)()**
 
 **Spherical distance between Oklahoma City and Norman in Oklahoma**
 
@@ -57,13 +57,13 @@ SELECT st_distance_sphere(@g1,@g2)/1000
 
 ![](/images/2019/02/image-11.png)
 
-The Spherical distance between OKC and Norman is 28 Kms calculated using MYSQL st\_distance\_sphere formula. The st\_distance\_sphere gives the distance in metres and that's the reason I have divided it by 1000 in the Select Query to get the result in KM.
+The Spherical distance between OKC and Norman is 28 Kms calculated using MYSQL st_distance_sphere formula. The st_distance_sphere gives the distance in metres and that's the reason I have divided it by 1000 in the Select Query to get the result in KM.
 
 Let's see how Google Calculates the distance between these two cities:
 
 ![](/images/2019/02/image-12.png)
 
-Google also calculates the same distance 28.15 Km as calculated by the MYSQL st\_distance\_sphere formula.
+Google also calculates the same distance 28.15 Km as calculated by the MYSQL st_distance_sphere formula.
 
 **Using Pythagoras Theorem**
 
@@ -75,7 +75,7 @@ SELECT sqrt(power(35.465438-35.221090,2)+power(-97.441113-(-97.520280),2))*108 a
 
 ![](/images/2019/02/image-15.png)
 
-This method also calculates approximately the same distance as Spherical distance calculated using MYSQL and Google Maps. The calculated value is in Degress and to convert that to KM I have multiplied the result by 108 (i.e. radius of earth 6371\*pi/180).
+This method also calculates approximately the same distance as Spherical distance calculated using MYSQL and Google Maps. The calculated value is in Degress and to convert that to KM I have multiplied the result by 108 (i.e. radius of earth 6371*pi/180).
 
 **Using Python**
 
@@ -135,4 +135,4 @@ Now I want to find out all the Walmarts which is in a Radius of 50Km from the **
 
 **Conclusion:**
 
-We have seen how to calculate the distance between two points or Geo-Coordinates using MYSQL and Python. There are three different abstractions which are used for calculating these distance, Pythagoras theorem works fine for the smaller distance between two points and for more accurate solution geodesic distance is used using python's geopy module and haversine formula or MYSQL st\_distance\_sphere is used for a spherical distance where we consider the earths plane as a sphere .
+We have seen how to calculate the distance between two points or Geo-Coordinates using MYSQL and Python. There are three different abstractions which are used for calculating these distance, Pythagoras theorem works fine for the smaller distance between two points and for more accurate solution geodesic distance is used using python's geopy module and haversine formula or MYSQL st_distance_sphere is used for a spherical distance where we consider the earths plane as a sphere .

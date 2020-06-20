@@ -5,16 +5,17 @@ categories: [ Data Science, numpy, Python, Python, Data Science ]
 tags: [ DataScience, numpy, Python ]
 ---
 
-## **What is numpy.where()**
+## What is numpy.where()
 
-> **numpy.where(condition\[, x, y\])**
-> Return elements chosen from x or y depending on condition
+**numpy.where(condition[, x, y])**
+
+Return elements chosen from x or y depending on condition
 
 if condition is true then x else y
 
 ### **parameters**
 
-**x, y : array\_like**
+**x, y : array_like**
 
 ### **Output**
 
@@ -32,8 +33,9 @@ x = np.arange(9)
 
 **Output**
 
-array(\[ 0,  1,  4,  9, 16, 25,  6,  7,  8\])
-
+```
+array([ 0,  1,  4,  9, 16, 25,  6,  7,  8])
+```
 Now we will Square all the elements in array which is greater than 5 ( x>5 )
 
 ```
@@ -41,9 +43,9 @@ np.where(x>5, x**2, x)
 ```
 
 **Output**
-
-array(\[ 0,  1,  2,  3,  4,  5, 36, 49, 64\])
-
+```
+array([ 0,  1,  2,  3,  4,  5, 36, 49, 64])
+```
 The output is a ndarray where all the elements >5 are squared and elements <5 remains same
 
 ## **numpy.where() with 2D array**
@@ -57,9 +59,11 @@ x = np.arange(9.).reshape(3, 3)
 
 **Output**
 
-array(\[\[0., 1., 2.\],
-       \[3., 4., 5.\],
-       \[6., 7., 8.\]\])
+```
+array([[0., 1., 2.],
+       [3., 4., 5.],
+       [6., 7., 8.]])
+```
 
 Now Find all the elements in this matrix which is greater than 5
 
@@ -71,7 +75,9 @@ Note: we are not giving any value for x and y here, just passing the condition i
 
 **Output**
 
-(array(\[2, 2, 2\], dtype=int64), array(\[0, 1, 2\], dtype=int64))
+```
+(array([2, 2, 2], dtype=int64), array([0, 1, 2], dtype=int64))
+```
 
 The output is 2 1D arrays containing index of matching rows and columns
 
@@ -86,15 +92,15 @@ x[np.where( x > 5 )]
 ```
 
 **Output**
-
-array(\[6., 7., 8.\])
-
+```
+array([6., 7., 8.])
+```
 ## **numpy.where() with boolean array as condition**
 
 Create list of some values
-
-values = \[3, 4, 7\]
-
+```
+values = [3, 4, 7]
+```
 Get boolean array where original array contains the elements in values list above
 
 ```
@@ -103,11 +109,11 @@ ix
 ```
 
 **Output:**
-
-array(\[\[False, False, False\],
-       \[ True,  True, False\],
-       \[False,  True, False\]\])
-
+```
+array([[False, False, False],
+       [ True,  True, False],
+       [False,  True, False]])
+```
 Now we will feed this output to numpy.where to get all the values in original array matching the elements in value list
 
 ```
@@ -115,9 +121,9 @@ x[np.where(ix)]
 ```
 
 **Output**
-
- array(\[3., 4., 7.\])
-
+```
+ array([3., 4., 7.])
+```
 Output is the list of elements in original array matching the items in value list
 
 ## **Conclusion**

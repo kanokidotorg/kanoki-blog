@@ -11,15 +11,20 @@ A Data Scientist understand the importance of Feature Engineering and how a pre-
 
 There are functions available in Pandas to get that insight like describe,info etc. but those are pretty basics and with the help of Data Visualization tools like matplotlib, seaborne and plotly we can plot the visualization as well.
 
-But coming up with an EDA report has always been a tedious process and we all at one point of time have thought if we can automate this process and pandas\_profiling exactly does the same thing. It generates the profile report for the dataframe.
+But coming up with an EDA report has always been a tedious process and we all at one point of time have thought if we can automate this process and pandas_profiling exactly does the same thing. It generates the profile report for the dataframe.
 
 As per their Documentation Following Statistics is generated for each of the column:
 
 **Essentials**: type, unique values, missing values
+
 **Quantile statistics** like minimum value, Q1, median, Q3, maximum, range, interquartile range
+
 **Descriptive statistics** like mean, mode, standard deviation, sum, median absolute deviation, coefficient of variation, kurtosis, skewness
+
 **Most frequent values**
+
 **Histogram**
+
 **Correlations** highlighting of highly correlated variables, Spearman and Pearson matrixes
 
 **Read Data in Pandas Dataframe:**

@@ -58,24 +58,25 @@ def add_squares(df):
     return df.x**2+df.y**2
 ```
 
-## **timeit the add\_squares function on dataframe**
+## **timeit the ```add_squares``` function on dataframe**
 
-We will apply the add\_squares functions on the dataframe and timeit the execution to see how long it takes to calculate the sum of square of columns for each row
+We will apply the ```add_squares``` functions on the dataframe and timeit the execution to see how long it takes to calculate the sum of square of columns for each row
 
+```
 %%timeit
-df\['add\_squares'\]=df.apply(add\_squares,axis=1)
-
+df['add_squares']=df.apply(add_squares,axis=1)
+```
 > 7.18 s ± 699 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 
-It took average around 7.18 secs per loop to apply add\_squares method on this dataframe of 100K rows and 2 columns
+It took average around 7.18 secs per loop to apply ```add_squares``` method on this dataframe of 100K rows and 2 columns
 
 Let's see if we can speed it up using the Dask
 
-## **Parallelize using Dask Map\_Partition**
+## **Parallelize using Dask Map_Partition**
 
-In this section we are going to see how to make partitions of this big dataframe and parallelize the add\_squares method
+In this section we are going to see how to make partitions of this big dataframe and parallelize the ```add_squares``` method
 
-We will construct a dask dataframe from pandas dataframe using from\_pandas function and specify the number of partitions(nparitions) to break this dataframe into
+We will construct a dask dataframe from pandas dataframe using ```from_pandas``` function and specify the number of partitions(nparitions) to break this dataframe into
 
 We will break into 4 parition since my windows laptop is configured with a 4 core and 16GB memory/
 
@@ -84,20 +85,20 @@ import dask.dataframe as dd
 ddf = dd.from_pandas(df, npartitions=4)
 ```
 
-Next we will apply add\_squares method on each of these partitions
-
+Next we will apply ```add_squares``` method on each of these partitions
+```
 %%timeit
-ddf \['z'\] = ddf.map\_partitions(add\_squares,meta=(None, 'int64')).compute()
-
+ddf ['z'] = ddf.map_partitions(add_squares,meta=(None, 'int64')).compute()
+```
 > 24.3 ms ± 6.91 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 
-We will use timeit to capture the time it takes to apply the add\_sqaure method on each parition
+We will use timeit to capture the time it takes to apply the ```add_sqaure``` method on each parition
 
 compute() at the end will load the data into memory
 
-## **How fast is dask map\_partition?**
+## **How fast is dask map_partition?**
 
-So we have seen dask map\_paritions apply the add\_squares method on this big dataframe in 24.3ms which is like **300X faster than the pandas apply** function
+So we have seen dask ```map_paritions``` apply the ```add_squares``` method on this big dataframe in 24.3ms which is like **300X faster than the pandas apply** function
 
 ## **Swifter**
 
@@ -112,29 +113,34 @@ def add_squares(a,b):
     return a**2+b**2
 ```
 
-We have added a new add\_squares function which takes two arguments and returns their sum of squares
+We have added a new ```add_squares``` function which takes two arguments and returns their sum of squares
 
+```
 %%timeit
-df \['add\_sq'\]=df.swifter.apply(lambda row:add\_squares(row.X,row.Y),axis=1)
+df ['add_sq']=df.swifter.apply(lambda row:add_squares(row.X,row.Y),axis=1)
+```
 
 23.4 ms ± 3.71 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 
 ## **Vectorization**
 
-As far as possible you should try to vectorize the function and other options like iterrows and looping should be the last resort. Here we will see how can you vectorize the add\_squares method
-
+As far as possible you should try to vectorize the function and other options like iterrows and looping should be the last resort. Here we will see how can you vectorize the add_squares method
+```
 %%timeit
-df \['add\_squares'\]=add\_squares(df\['X'\],df\['Y'\])
-
+df ['add_squares']=add_squares(df['X'],df['Y'])
+```
 5.56 ms ± 980 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 
 ## **Compare the speed of all methods**
 
-We have used four different ways to apply the add\_squares method to our 100K dataframe rows
+We have used four different ways to apply the add_squares method to our 100K dataframe rows
 
 a) Pandas apply
-b) Dask map\_partition
+
+b) Dask ```map_partition```
+
 c) Swifter
+
 d) Vectorization
 
 We will plot all the four timings in a bar graph
@@ -143,11 +149,11 @@ We will plot all the four timings in a bar graph
 
 ## **Conclusion**
 
-It is evident from the above result that Vectorization is a clear winner here which takes the minimum time to apply the add\_squares method along the rows of the dataframe.
+It is evident from the above result that Vectorization is a clear winner here which takes the minimum time to apply the add_squares method along the rows of the dataframe.
 
-Dask Map\_Partition and Swifter almost takes the same time to apply this method and compute the result for all the rows
+Dask Map_Partition and Swifter almost takes the same time to apply this method and compute the result for all the rows
 
-So our first choice should be Vectorization and Just in case you are not able to Vectorize your function then you can use Dask map\_parition and Swifter by paritioning te dataframe into multiple paritions and then running the function parallely on all these paritions
+So our first choice should be Vectorization and Just in case you are not able to Vectorize your function then you can use Dask map_parition and Swifter by paritioning te dataframe into multiple paritions and then running the function parallely on all these paritions
 
 If you know any other methods or library which can parallelize the computation or run it parallely in Pandas then share it in the comments section below
 

@@ -20,8 +20,9 @@ pip install pandas
 I have two csv files which I wanted to merge.These files contains Red and White Wines details of different brands and their respective acidity,sugar,chlorides,pH,alcohol content value
 
 
-a) Red\_Wine.csv : Total Rows: 1599
-b) White\_Wine.csv : Total Rows: 4898
+a) Red_Wine.csv : Total Rows: 1599
+
+b) White_Wine.csv : Total Rows: 4898
 
 Note both the files have same no. of columns and headers which is as follows:
 
@@ -33,21 +34,23 @@ fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar','chlorides',
 import pandas
 ```
 
-**Import csv files into Pandas Dataframe**
+## Import csv files into Pandas Dataframe
 
-**Import first csv into a Dataframe:**
+### Import first csv into a Dataframe:
 
-We are using these two arguments of Pandas read\_csv function, First argument is the path of the file where first csv is located and second argument is for the value separators in the file. In my case it is a semi-colon ";" but for most of the csv files it is comma ',' which is a default value of this argument.
+We are using these two arguments of Pandas read_csv function, First argument is the path of the file where first csv is located and second argument is for the value separators in the file. In my case it is a semi-colon ";" but for most of the csv files it is comma ',' which is a default value of this argument.
 
-df=pd.read\_csv("C:/user/vbabu/wine\_csv/winequality-red.csv",sep=';')
+```
+df=pd.read_csv("C:/user/vbabu/wine_csv/winequality-red.csv",sep=';')
+```
 
-**Import second csv into another Dataframe**
+### Import second csv into another Dataframe
 
 ```
 df1=pd.read_csv("C:/user/vbabu/wine_csv/winequality-white.csv",sep=';')
 ```
 
-**Merge Dataframes:**
+## Merge Dataframes:
 
 So we have imported the csv files into two dataframes and now it's time to merge these two files. We will use Pandas concat function to merge these two files together
 
@@ -76,18 +79,20 @@ engine = create_engine("mysql+mysqldb://your_mysql_username:"+'your_mysql_passwo
  engine = create_engine('postgresql+psycopg2://your_mysql_username:your_mysql_password@Mysql_server_hostname:your_port/Mysql_databasename')
 ```
 
-**Pandas to\_sql function**
+**Pandas to_sql function**
 
-we will use Pandas to\_sql function which will insert these rows of merged dataframe into the MYSQL Table.
+we will use Pandas to_sql function which will insert these rows of merged dataframe into the MYSQL Table.
 
 ```
 df.to_sql(name=Your_table_name_in_single_quotes, con=engine, if_exists='append',index=False)
 ```
 
-Look at the if\_exists argument which is important here, there are 3 values for these arguments and if the table already exists::
+Look at the if_exists argument which is important here, there are 3 values for these arguments and if the table already exists::
 
 **fail**: it's a default value. Raise a ValueError.
+
 **replace**: Drop the table before inserting new values.
+
 **append**: Insert new values to the existing table.
 
 I have chosen append since I want to insert new and fresh values to an empty Table

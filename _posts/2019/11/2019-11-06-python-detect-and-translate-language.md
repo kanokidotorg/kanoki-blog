@@ -7,7 +7,7 @@ tags: [ DataScience, Python, Translation ]
 
 The internet is flooded with articles and posts for translating the language using Machine Learning or Deep Learning LSTM models and building a deep neural network for developing your own Translation model. However, if you are not interested in coding then we have google as one of the prominent leader in providing the translation service from any known language in world to another. But yes that comes with a cost if you are using it for commercial purpose or huge data to translate
 
-In this post we are going to see how `[Textblob](https://textblob.readthedocs.io/en/dev/#)` \- A python library for text processing and mainly used for natural language processing tasks such as part-of-speech tagging, noun phrase extraction, sentiment analysis, classification, translation, and more that can be used to detect and translate a language. Later on, We will also explore the python `google translate` package for translating the text
+In this post we are going to see how `[Textblob](https://textblob.readthedocs.io/en/dev/#)` - A python library for text processing and mainly used for natural language processing tasks such as part-of-speech tagging, noun phrase extraction, sentiment analysis, classification, translation, and more that can be used to detect and translate a language. Later on, We will also explore the python `google translate` package for translating the text
 
 ## **Install Textblob**
 
@@ -102,7 +102,7 @@ translator = Translator()
 print(translator.translate(u'तुम्हारा नाम क्या है'))
 ```
 
-**Output:** Translated(src=hi, dest=en, text=what is your name, pronunciation=None, extra\_data="{'translat...")
+**Output:** Translated(src=hi, dest=en, text=what is your name, pronunciation=None, extra_data="{'translat...")
 
 ### **Translate Arabic to English**
 
@@ -112,7 +112,7 @@ The `dest` parameter is used to specify the language to translate, which is Engl
 print(translator.translate(u'التعلم الآلي هو موضوع مثير للاهتمام للتعلم', dest='en'))
 ```
 
-**Output:** Translated(src=ar, dest=en, text=Automated learning is interesting to learn the subject, pronunciation=None, extra\_data="{'translat...")
+**Output:** Translated(src=ar, dest=en, text=Automated learning is interesting to learn the subject, pronunciation=None, extra_data="{'translat...")
 
 Even you can just specify the `src` parameter - Text language and it will translate that to English by default
 
@@ -120,7 +120,7 @@ Even you can just specify the `src` parameter - Text language and it will transl
 print(translator.translate(u'التعلم الآلي هو موضوع مثير للاهتمام للتعلم', src='ar'))
 ```
 
-**Output:** Translated(src=ar, dest=en, text=Automated learning is interesting to learn the subject, pronunciation=None, extra\_data="{'translat...")
+**Output:** Translated(src=ar, dest=en, text=Automated learning is interesting to learn the subject, pronunciation=None, extra_data="{'translat...")
 
 ## **Detect Language**
 

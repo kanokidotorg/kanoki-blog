@@ -13,29 +13,13 @@ Excel has been a great tool in analyzing the data, Presenting it in form of Gra
 
 **Data to plot the Bar chart:**
 
-Fruits
-
-No. of Consumers
-
-Orange
-
-29
-
-Apple
-
-19
-
-Mix Fruit
-
-41
-
-Litchi
-
-23
-
-Pineapple
-
-14
+|Fruits|No. of Consumers|
+|--- |--- |
+|Orange|29|
+|Apple|19|
+|Mix Fruit|41|
+|Litchi|23|
+|Pineapple|14|
 
 **Go to Charts and select Column Charts** ![Screen Shot 2017-05-15 at 20.37.43](https://techpickup.files.wordpress.com/2017/05/screen-shot-2017-05-15-at-20-37-43.png)
 
@@ -49,55 +33,15 @@ Pineapple
 
 ## Multiple Bar Charts
 
-Juice
 
-No. of Consumers
-
-A
-
-B
-
-C
-
-Orange
-
-25
-
-17
-
-28
-
-Apple
-
-15
-
-13
-
-8
-
-Mix Fruit
-
-33
-
-23
-
-14
-
-Litchi
-
-18
-
-22
-
-14
-
-Pineapple
-
-9
-
-5
-
-6
+|Juice|No. of Consumers|  |  |
+|--- |--- |--- |--- |
+|A|B|C| |
+|Orange|25|17|28|
+|Apple|15|13|8|
+|Mix Fruit|33|23|14|
+|Litchi|18|22|14|
+|Pineapple|9|5|6|
 
 **Repeat the above same steps to create Multiple column bar chart:**
 
@@ -128,7 +72,5 @@ Histogram is used to represent continuous frequency Distribution. There is no ga
 **Select Column chart and Format Data Series to select Gap width as 0%**
 
 ![Screen Shot 2017-05-15 at 21.07.43](https://techpickup.files.wordpress.com/2017/05/screen-shot-2017-05-15-at-21-07-43.png)
-
- 
 
 In Part 2(coming soon), We will learn how to plot the Histogram using Excel [Data Analysis ToolPak](https://support.office.com/en-us/article/Load-the-Analysis-ToolPak-6a63e598-cd6d-42e3-9317-6b40ba1a66b4) and Polygons, Curves, Line Diagrams and also Series Data.

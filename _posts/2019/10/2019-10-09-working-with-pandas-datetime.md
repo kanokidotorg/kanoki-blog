@@ -13,7 +13,7 @@ I am sharing the table of content in case you are just interested to see a speci
 
 This is the monthly electrical consumption data in csv which we will import in a dataframe for this tutorial and this data can be downloaded using this [link](https://www.kaggle.com/shenba/time-series-datasets/download)
 
-### **parse\_dates attributes in read\_csv() function**
+### **parse_dates attributes in read_csv() function**
 
 We are using `**parse_date**` attribute to parse and convert the date columns in the csv files to numpy datetime64 type
 
@@ -27,9 +27,9 @@ df.info()
 
 ![Pandas Datetime Index](/images/2019/10/image.png)
 
-### **Pandas to\_datetime**
+### **Pandas to_datetime**
 
-Alternatively, you can use to\_datetime to convert any column to datetime
+Alternatively, you can use to_datetime to convert any column to datetime
 
 ```
 df['DATE']=pd.to_datetime(df['DATE'])
@@ -83,7 +83,7 @@ df.set_index('DATE').resample('1Y').mean().head()
 
 ## **Datetime index and slice**
 
-Just ensure that the datetime column is set as index for the dataframe. I am using set\_index() function to set that before index and slice
+Just ensure that the datetime column is set as index for the dataframe. I am using set_index() function to set that before index and slice
 
 ### **Filter using the date**
 
@@ -121,7 +121,7 @@ For example, Bday(2) can be added to a date to move it two business days forward
 
 ### **Add a day to DATE Column**
 
-Here we are adding a day(timedelta of 1 day) to the Date column in dataframe and creating a new column called as next\_day
+Here we are adding a day(timedelta of 1 day) to the Date column in dataframe and creating a new column called as next_day
 
 ```
 df['next_day']=df['DATE']+pd.Timedelta('1 day')
@@ -145,7 +145,7 @@ df.head()
 
 ### **Add 2 business days** to DATE Column
 
-Adding two days to the current DATE column using **`days`** parameter and create a new column day\_after
+Adding two days to the current DATE column using **`days`** parameter and create a new column day_after
 
 ```
 df['day_after']=df['DATE'].apply(lambda x: x+pd.DateOffset(days=2))
@@ -167,7 +167,7 @@ df.head()
 
 For the complete list of parameters check this [link](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.tseries.offsets.DateOffset.html)
 
-## **Using date\_range to create datetime index**
+## **Using date_range to create datetime index**
 
 it is Immutable numpy ndarray of datetime64 data.
 
@@ -183,7 +183,7 @@ dti = pd.date_range('2018-01-01', periods=3, freq='H')
 dti
 ```
 
-> _DatetimeIndex(\['2018-01-01 00:00:00', '2018-01-01 01:00:00', '2018-01-01 02:00:00'\], dtype='datetime64\[ns\]', freq='H')_
+> _DatetimeIndex(['2018-01-01 00:00:00', '2018-01-01 01:00:00', '2018-01-01 02:00:00'], dtype='datetime64[ns]', freq='H')_
 
 ### **Monthly Frequency**
 
@@ -193,9 +193,9 @@ Now change the frequency to Monthly and create array of total 10 dates
 index = pd.date_range('2018-01-01',periods=10, freq='M')
 index
 ```
-
-> _DatetimeIndex(\['2018-01-31', '2018-02-28', '2018-03-31', '2018-04-30', '2018-05-31', '2018-06-30', '2018-07-31', '2018-08-31', '2018-09-30', '2018-10-31'\],dtype='datetime64\[ns\]', freq='M')_
-
+```
+> _DatetimeIndex(['2018-01-31', '2018-02-28', '2018-03-31', '2018-04-30', '2018-05-31', '2018-06-30', '2018-07-31', '2018-08-31', '2018-09-30', '2018-10-31'],dtype='datetime64[ns]', freq='M')_
+```
 ### **Weekly Frequency with start and end**
 
 Change the frequency to Weekly and create dates between two dates using start and end dates
@@ -203,9 +203,9 @@ Change the frequency to Weekly and create dates between two dates using start an
 ```
 pd.date_range(start='2019-01-01', end='2019-04-30', freq='W')
 ```
-
-> _DatetimeIndex(\['2019-01-06', '2019-01-13', '2019-01-20', '2019-01-27', '2019-02-03', '2019-02-10', '2019-02-17', '2019-02-24', '2019-03-03', '2019-03-10', '2019-03-17', '2019-03-24', '2019-03-31', '2019-04-07', '2019-04-14', '2019-04-21', '2019-04-28'\], dtype='datetime64\[ns\]', freq='W-SUN')_
-
+```
+> _DatetimeIndex(['2019-01-06', '2019-01-13', '2019-01-20', '2019-01-27', '2019-02-03', '2019-02-10', '2019-02-17', '2019-02-24', '2019-03-03', '2019-03-10', '2019-03-17', '2019-03-24', '2019-03-31', '2019-04-07', '2019-04-14', '2019-04-21', '2019-04-28'], dtype='datetime64[ns]', freq='W-SUN')_
+```
 ### **Datetime index with start and end**
 
 ```
@@ -217,14 +217,14 @@ end = datetime.datetime(2011, 2, 1)
 index = pd.date_range(start, end)
 index
 ```
-
-> _DatetimeIndex(\['2011-01-01', '2011-01-02', '2011-01-03', '2011-01-04', '2011-01-05', '2011-01-06', '2011-01-07', '2011-01-08','2011-01-09', '2011-01-10', '2011-01-11', '2011-01-12','2011-01-13', '2011-01-14', '2011-01-15', '2011-01-16','2011-01-17', '2011-01-18', '2011-01-19', '2011-01-20','2011-01-21', '2011-01-22', '2011-01-23', '2011-01-24', '2011-01-25', '2011-01-26', '2011-01-27', '2011-01-28', '2011-01-29', '2011-01-30', '2011-01-31', '2011-02-01'\], dtype='datetime64\[ns\]', freq='D')_
-
+```
+> _DatetimeIndex(['2011-01-01', '2011-01-02', '2011-01-03', '2011-01-04', '2011-01-05', '2011-01-06', '2011-01-07', '2011-01-08','2011-01-09', '2011-01-10', '2011-01-11', '2011-01-12','2011-01-13', '2011-01-14', '2011-01-15', '2011-01-16','2011-01-17', '2011-01-18', '2011-01-19', '2011-01-20','2011-01-21', '2011-01-22', '2011-01-23', '2011-01-24', '2011-01-25', '2011-01-26', '2011-01-27', '2011-01-28', '2011-01-29', '2011-01-30', '2011-01-31', '2011-02-01'], dtype='datetime64[ns]', freq='D')_
+```
 ### **Create dataframe using date time index**
 
 #### **Create dataframe with datetime as index**
 
-Here index: dti is the date\_range created above with hourly frequency
+Here index: dti is the date_range created above with hourly frequency
 
 ```
 import numpy as np
@@ -258,8 +258,9 @@ us_bd = CustomBusinessDay(calendar=USFederalHolidayCalendar())
 print (pd.date_range(start='2019-12-24',end='2019-12-31', freq=us_bd))
 ```
 
-> _DatetimeIndex(\['2019-12-24', '2019-12-26', '2019-12-27', '2019-12-30', '2019-12-31'\], dtype='datetime64\[ns\]', freq='C')_
-
+```
+> _DatetimeIndex(['2019-12-24', '2019-12-26', '2019-12-27', '2019-12-30', '2019-12-31'], dtype='datetime64[ns]', freq='C')_
+```
 ### **Datetime Index using Origin Parameter**
 
 You can set the origin date and a list of days as a parameter and add that to origin date.
@@ -269,8 +270,9 @@ Here the origin is 2019-10-25 and adding 1 day to it gives 2019-10-26 and simila
 ```
 pd.to_datetime([1, 2, 3], unit='D', origin=pd.Timestamp('2019-10-25'))
 ```
-
-> _DatetimeIndex(\['2019-10-26', '2019-10-27', '2019-10-28'\], dtype='datetime64\[ns\]', freq=None)_
+```
+> _DatetimeIndex(['2019-10-26', '2019-10-27', '2019-10-28'], dtype='datetime64[ns]', freq=None)_
+```
 
 ### **Week masking and Holidays**
 
@@ -285,8 +287,9 @@ holidays = [datetime.datetime(2011, 1, 5), datetime.datetime(2011, 3, 14)]
 
 pd.bdate_range(start, end, freq='C', weekmask=weekmask, holidays=holidays)
 ```
-
-> _DatetimeIndex(\['2011-01-02', '2011-01-03', '2011-01-04', '2011-01-06', '2011-01-09', '2011-01-10', '2011-01-11', '2011-01-12','2011-01-13', '2011-01-16', '2011-01-17', '2011-01-18','2011-01-19', '2011-01-20', '2011-01-23', '2011-01-24','2011-01-25', '2011-01-26', '2011-01-27', '2011-01-30','2011-01-31', '2011-02-01'\], dtype='datetime64\[ns\]', freq='C')_
+```
+> _DatetimeIndex(['2011-01-02', '2011-01-03', '2011-01-04', '2011-01-06', '2011-01-09', '2011-01-10', '2011-01-11', '2011-01-12','2011-01-13', '2011-01-16', '2011-01-17', '2011-01-18','2011-01-19', '2011-01-20', '2011-01-23', '2011-01-24','2011-01-25', '2011-01-26', '2011-01-27', '2011-01-30','2011-01-31', '2011-02-01'], dtype='datetime64[ns]', freq='C')_
+```
 
 ### **Understand Custom Business days**
 
@@ -337,7 +340,7 @@ ts
 
 ### **convert the timezone of a timestamp**
 
-Convert the timestamp to another timezone using tz\_convert
+Convert the timestamp to another timezone using tz_convert
 
 ```
 pd.Timestamp('2016-10-30 00:00:00', tz='Asia/Kolkata').tz_convert('Europe/Amsterdam')
@@ -397,19 +400,19 @@ df['Last_Day']=pd.to_datetime(df['Last_Day'])
 df
 ```
 
-This is a dataframe with two datetime column i.e. First\_Day and Last\_Day
+This is a dataframe with two datetime column i.e. First_Day and Last_Day
 
 ![](/images/2019/10/image-14.png)
 
 ### **Difference between two dates in days and hours**
 
-diff column is created by subtracting the last\_day and First\_day which returns the difference in days
+diff column is created by subtracting the last_day and First_day which returns the difference in days
 
-Similarly, diff\_time\_delta column returns the time-delta value
+Similarly, diff_time_delta column returns the time-delta value
 
-And finally the diff-simple\_subtract column is difference in hours.
+And finally the diff-simple_subtract column is difference in hours.
 
-So for first row if you calculate the time-delta hours then it is 2 days and 2 hours which is equivalent to 50hrs which is the value in diff-simple\_subtract
+So for first row if you calculate the time-delta hours then it is 2 days and 2 hours which is equivalent to 50hrs which is the value in diff-simple_subtract
 
 ```
 df['diff']=(pd.to_datetime(df['First_Day']) - pd.to_datetime(df['Last_Day'])).dt.days

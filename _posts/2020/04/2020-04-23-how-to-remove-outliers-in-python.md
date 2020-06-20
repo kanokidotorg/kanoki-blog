@@ -58,10 +58,11 @@ We will remove the last item in this dataset i.e. 1456 which is greater than 86.
 
 ### **Finding IQR using Scipy**
 
+```
 from scipy.stats import iqr
-data = \[-2,8,13,19,34,49,50,53,59,64,87,89,1456\]
+data = [-2,8,13,19,34,49,50,53,59,64,87,89,1456]
 iqr(data, axis=0)
-
+```
 IQR = 45, which is same as above calculated manually
 
 You can also use numpy to calculate the First and 3rd Quantile and then do Q3-Q1 to find IQR
@@ -93,10 +94,12 @@ Let's calculate the Z score of all the values in the dataset which is used above
 
 ### **Finding Z-score using Scipy**
 
+```
 import pandas as pd
 from scipy import stats
-df=pd.DataFrame({'data':\[-2,8,13,19,34,49,50,53,59,64,87,89,1456\]})
-df\['z\_score'\]=stats.zscore(df\['data'\])
+df=pd.DataFrame({'data':[-2,8,13,19,34,49,50,53,59,64,87,89,1456]})
+df['z_score']=stats.zscore(df['data'])
+```
 
 ![Outlier Removal in Python Pandas](/images/2020/04/image-28.png)
 
@@ -104,8 +107,9 @@ These are the respective z-score for each of these values. You can see almost al
 
 Now as per the empirical rule any absolute value of z-score above 3 is considered as an Outlier. This is quite debatable and may not hold true for every dataset in this world.
 
-df.loc\[df\['z\_score'\].abs()<=3\]
-
+```
+df.loc[df['z_score'].abs()<=3]
+```
 ![Outlier Removal in Python Pandas](/images/2020/04/image-30.png)
 
 But that's in-line with the six sigma and statistical process control limits as well. So we have discarded any values which is above 3 values of Standard deviation to remove outliers
@@ -137,11 +141,12 @@ For example: if your current value if 12 and previous value is 8 and smoothing l
 ### **Finding Exponential Smoothing values using Pandas**
 
 Pandas has a EWM function which you can use to calculate the smoothed value with different level of Alpha
-
-df\['ewm\_alpha\_1'\]=df\['data'\].ewm(alpha=0.1).mean()
-df\['ewm\_alpha\_3'\]=df\['data'\].ewm(alpha=0.3).mean()
-df\['ewm\_alpha\_6'\]=df\['data'\].ewm(alpha=0.6).mean()
+```
+df['ewm_alpha_1']=df['data'].ewm(alpha=0.1).mean()
+df['ewm_alpha_3']=df['data'].ewm(alpha=0.3).mean()
+df['ewm_alpha_6']=df['data'].ewm(alpha=0.6).mean()
 df
+```
 
 ![Outlier Removal in Python Pandas](/images/2020/04/image-29.png)
 

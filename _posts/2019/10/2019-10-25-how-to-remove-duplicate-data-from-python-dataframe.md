@@ -5,7 +5,7 @@ categories: [ Data Science, Pandas, Python, Python, Data Science ]
 tags: [ DataScience, Pandas, Python ]
 ---
 
-Not all data are perfect and we really need to get duplicate data removed from our dataset most of the time. it looks easy to clean up the duplicate data but in reality it isn't. Sometimes you want to just remove the duplicates from one or more columns and the other time you want to delete duplicates based on some random condition. So we will see in this post how to easily and efficiently you can remove the duplicate data using drop\_duplicates() function in pandas
+Not all data are perfect and we really need to get duplicate data removed from our dataset most of the time. it looks easy to clean up the duplicate data but in reality it isn't. Sometimes you want to just remove the duplicates from one or more columns and the other time you want to delete duplicates based on some random condition. So we will see in this post how to easily and efficiently you can remove the duplicate data using drop_duplicates() function in pandas
 
 ## **Create Dataframe with Duplicate data**
 
@@ -18,7 +18,7 @@ df = pd.DataFrame({'Name' : ['John','Harry','Gary','Richard','Anna','Richard','G
 
 ## **Drop the Duplicate rows**
 
-The row at index 2 and 6 in above dataframe are duplicates and all the three columns Name, Age and Zone matches for these two rows. Now we will remove all the duplicate rows from the dataframe using drop\_duplicates() function
+The row at index 2 and 6 in above dataframe are duplicates and all the three columns Name, Age and Zone matches for these two rows. Now we will remove all the duplicate rows from the dataframe using drop_duplicates() function
 
 ```
 df.drop_duplicates()
@@ -120,7 +120,7 @@ a
 
 ## **Drop Duplicates and reset Index**
 
-We will remove the duplicates from series index and reset the index using reset\_index() function else it will have the original index from the Series after dropping the Duplicates
+We will remove the duplicates from series index and reset the index using reset_index() function else it will have the original index from the Series after dropping the Duplicates
 
 ```
 a.drop_duplicates().reset_index(drop=True)

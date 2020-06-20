@@ -11,7 +11,9 @@ HowDOI
 
 **Install Howdoi**
 
+```
 pip install howdoi
+```
 
 **Start Howdoi**
 
@@ -21,6 +23,7 @@ howdoi install pandas
 
 **Examples:**
 
+```
 - howdoi find largest element in a list
                highest = max(1, 2, 3) # or max(\[1, 2, 3\]) for lists
 - howdoi for loop in java
@@ -28,3 +31,4 @@ howdoi install pandas
                  String item = i.next();
                  System.out.println(item);
                 }
+```

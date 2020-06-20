@@ -51,7 +51,7 @@ Voila!! So we have created a new column called Capital which has the National ca
 
 **Map Accepts a Function Also**
 
-Let's multiply the Population of this dataframe by 100 and store this value in a new column called as inc\_Population
+Let's multiply the Population of this dataframe by 100 and store this value in a new column called as inc_Population
 
 ```
 df['inc_Population']=df.Population.map(lambda x: x*100)
@@ -97,7 +97,7 @@ Month_Values=
 
 **Replace**
 
-Let's replace the birth\_Month in the above dataframe with their corresponding Names
+Let's replace the birth_Month in the above dataframe with their corresponding Names
 
 ```
 df['birth_Month'] = df.birth_Month.replace(country_capital)
@@ -109,7 +109,7 @@ df['birth_Month'] = df.birth_Month.replace(country_capital)
 
 We will use update where we have to match the dataframe index with the dictionary Keys
 
-Lets use the above dataframe and update the birth\_Month column with the dictionary values where key is meant to be dataframe index, So for the second index 1 it will be updated as January and for the third index i.e. 2 it will be updated as February and so on
+Lets use the above dataframe and update the birth_Month column with the dictionary values where key is meant to be dataframe index, So for the second index 1 it will be updated as January and for the third index i.e. 2 it will be updated as February and so on
 
 ```
 df.birth_Month.update(pd.Series(country_capital))
@@ -117,4 +117,4 @@ df.birth_Month.update(pd.Series(country_capital))
 
 ![](/images/2019/04/image-6.png)
 
-There is no matching value for index 0 in the dictionary that's why the birth\_Month is not updated for that row and all other rows the value is updated from the dictionary matching the dataframe indexes
+There is no matching value for index 0 in the dictionary that's why the birth_Month is not updated for that row and all other rows the value is updated from the dictionary matching the dataframe indexes

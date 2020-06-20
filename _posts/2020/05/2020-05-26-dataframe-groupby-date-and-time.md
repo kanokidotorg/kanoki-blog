@@ -13,7 +13,7 @@ Along with grouper we will also use dataframe Resample function to groupby Date 
 
 ## **Pandas Grouper**
 
-> `pandas.Grouper`**(**_key=None_**,** _level=None_**,** _freq=None_**,** _axis=0_**,** _sort=False_**)**[\[source\]](http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/groupby/grouper.py#L35-L215)[¶](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Grouper.html?highlight=grouper#pandas.Grouper)
+> pandas.Grouper**(**_key=None_**,** _level=None_**,** _freq=None_**,** _axis=0_**,** _sort=False_**)**[\[source\]](http://github.com/pandas-dev/pandas/blob/v1.0.3/pandas/core/groupby/grouper.py#L35-L215)[¶](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Grouper.html?highlight=grouper#pandas.Grouper)
 
 _This specification will select a column via the key parameter, or if the level and/or axis parameters are given, a level of the index of the target object._
 
@@ -21,6 +21,7 @@ Let's jump in to understand how grouper works
 
 ### **Create a TimeSeries Dataframe**
 
+```
 from datetime import datetime
 from pandas import DataFrame
  df\_original = DataFrame(
@@ -38,6 +39,7 @@ from pandas import DataFrame
             }
         )
 df\_original.set\_index('Date',inplace=True)
+```
 
 ![](/images/2020/05/image-12.png)
 
@@ -105,12 +107,13 @@ You cannot use both Level and Key parameters together. It will throw an error wi
 
 Let's create a dataframe with datetime index
 
-df\_original = DataFrame(
+```
+df_original = DataFrame(
             {
                 "Alpha": "A A A A A A A B".split(),
                 "Name": "Mana Pun Mana Mana Rosy Rosy Rosy Mana".split(),
-                "Sample": \[10, 13, 5, 2, 9, 8, 5, 16\],
-                "Date": \[
+                "Sample": [10, 13, 5, 2, 9, 8, 5, 16],
+                "Date": [
                     datetime(2019, 1, 1, 13, 0),
                     datetime(2019, 1, 1, 13, 5),
                     datetime(2019, 10, 1, 20, 0),
@@ -119,15 +122,18 @@ df\_original = DataFrame(
                     datetime(2019, 10, 2, 10, 0),
                     datetime(2019, 12, 2, 12, 0),
                     datetime(2019, 12, 2, 14, 0),
-                \],
+                ],
             }
-        ).set\_index("Date")
+        ).set_index("Date")
+```
 
 ![](/images/2020/05/image-23.png)
 
 We want to group this dataframe on Year End Frequency and it's column Name
 
-df\_original.groupby(\[pd.Grouper(freq="A"), "Name"\]).sum()
+```
+df_original.groupby([pd.Grouper(freq="A"), "Name"]).sum()
+```
 
 ![](/images/2020/05/image-24.png)
 

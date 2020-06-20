@@ -26,8 +26,8 @@ df.head(3)
 All the different columns in the dataframe, Some of these columns are verbose and I will rename to make them concise and more meaningful
 
 ```
-df.rename(columns={"Country (region)": "Country", "Log of GDP\nper capita": "Log_GDP_per_capita",
-                  "Healthy life\nexpectancy":"Health_life_expect"},inplace=True)
+df.rename(columns={"Country (region)": "Country", "Log of GDPnper capita": "Log_GDP_per_capita",
+                  "Healthy lifenexpectancy":"Health_life_expect"},inplace=True)
 df.columns
 ```
 
@@ -68,7 +68,7 @@ df1.plot('Country',['Corruption','Freedom','Generosity','Social support'],kind =
 
 ## **Pandas Box Plot**
 
-For the box plot, get the first five happiest country by slicing the dataframe as you can see in the code df\[:5\] and then use the plot function with `**kind**` box to draw the graph
+For the box plot, get the first five happiest country by slicing the dataframe as you can see in the code df[:5] and then use the plot function with `**kind**` box to draw the graph
 
 ```
 df[:5].plot(x='Country',kind='box')
@@ -181,7 +181,7 @@ df.plot(x='Corruption',y='Freedom',kind='scatter',color='R',grid=True)
 
 ## **Pandas Subplots**
 
-With `**subplot**` you can arrange plots in a regular grid. You need to specify the number of rows and columns and the number of the plot. Using **`layout`** parameter you can define the number of rows and columns. Here we are plotting the histograms for each of the column in dataframe for the first 10 rows(df\[:10\]). In the first figure below our **`layout`** is set as 4 rows and 3 columns and in the second figure the **`layout`** is set as 3 rows and 4 columns.
+With `**subplot**` you can arrange plots in a regular grid. You need to specify the number of rows and columns and the number of the plot. Using **`layout`** parameter you can define the number of rows and columns. Here we are plotting the histograms for each of the column in dataframe for the first 10 rows(df[:10]). In the first figure below our **`layout`** is set as 4 rows and 3 columns and in the second figure the **`layout`** is set as 3 rows and 4 columns.
 
 ```
 df[:10].plot(kind = 'hist',subplots=True, layout = (4,3))
@@ -232,7 +232,7 @@ df.groupby('continent')['continent'].agg('count').plot(kind='pie',title='Group-B
 
 ## **Pandas Groupby Plot Sum**
 
-For each continent calculate the sum of Health\_Life\_expect and plot that in a pie chart
+For each continent calculate the sum of Health_Life_expect and plot that in a pie chart
 
 ```
 df.groupby('continent')['Health_life_expect'].agg(lambda x: sum(x)).plot(kind='pie',title='High Health Life Expectancy')

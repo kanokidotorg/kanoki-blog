@@ -53,7 +53,7 @@ df.reindex(idx)
 
 ## **Find Rows in DF1 Which Are Not Available in DF2**
 
-We will see how to get all the rows in dataframe(df1) which are not available in dataframe(df2). We can use the same merge function as used above only the parameter **indicator** is set to true, which adds a column to output DataFrame called “\_merge” with information on the source of each row. If string, column with information on source of each row will be added to output DataFrame, and column will be named value of string. Information column is Categorical-type and takes on a value of “left\_only” for observations whose merge key only appears in ‘left’ DataFrame, “right\_only” for observations whose merge key only appears in ‘right’ DataFrame, and “both” if the observation’s merge key is found in both
+We will see how to get all the rows in dataframe(df1) which are not available in dataframe(df2). We can use the same merge function as used above only the parameter **indicator** is set to true, which adds a column to output DataFrame called “_merge” with information on the source of each row. If string, column with information on source of each row will be added to output DataFrame, and column will be named value of string. Information column is Categorical-type and takes on a value of “left_only” for observations whose merge key only appears in ‘left’ DataFrame, “right_only” for observations whose merge key only appears in ‘right’ DataFrame, and “both” if the observation’s merge key is found in both
 
 ```
 df = df1.merge(df2, how = 'outer' ,indicator=True).loc[lambda x : x['_merge']=='left_only']
@@ -63,11 +63,11 @@ df
 
 ![](/images/2019/07/image-12.png)
 
-Using the lambda function we have filtered the rows with \_merge value "left\_only" to get all the rows in df1 which are missing from df2
+Using the lambda function we have filtered the rows with _merge value "left_only" to get all the rows in df1 which are missing from df2
 
 ## **Find Rows in DF2 Which Are Not Available in DF1**
 
-Just change the filter value on \_merge column to right\_only to get all the rows which are available in dataframe(df2) only and missing from df1
+Just change the filter value on _merge column to right_only to get all the rows which are available in dataframe(df2) only and missing from df1
 
 Just see the type of merge i.e. parameter how is changed to outer which is basically union of keys from both frames, similar to a SQL full outer join
 
@@ -101,7 +101,7 @@ False
 
 ## **Find Rows Which Are Not common Between Two dataframes**
 
-So far we have seen all the ways to find common rows between two dataframes or rows available in one and missing from another dataframe. Now if we have to get all the rows which are not common between the two dataframe or we want to see all the unique un-matched rows between two dataframe then we can use the concat function with drop\_duplicate.
+So far we have seen all the ways to find common rows between two dataframes or rows available in one and missing from another dataframe. Now if we have to get all the rows which are not common between the two dataframe or we want to see all the unique un-matched rows between two dataframe then we can use the concat function with drop_duplicate.
 
 ```
 pd.concat([df1,df2]).drop_duplicates(keep=False)

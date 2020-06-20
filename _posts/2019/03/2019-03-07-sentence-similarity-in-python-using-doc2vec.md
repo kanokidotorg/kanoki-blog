@@ -146,7 +146,7 @@ for epoch in range(20):
 
 **Test the Model**
 
-After the model is trained we will check if it has learnt all the words and it's contextual meaning. We will search for "Washington" city using most\_similar api and see what is the result?, It should show all the words in the document which is near or similar to Washington contextually
+After the model is trained we will check if it has learnt all the words and it's contextual meaning. We will search for "Washington" city using most_similar api and see what is the result?, It should show all the words in the document which is near or similar to Washington contextually
 
 ```
 model.most_similar('washington')

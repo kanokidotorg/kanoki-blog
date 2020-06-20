@@ -159,7 +159,7 @@ This html file(./templates/index.html) uses bootstrap 4 just to make it work and
 
 **Javascript**
 
-We have written a small JS file (flask\_tuts.js) which is used to get the Query filters from the UI and trigger the AJAX query to send those filters as a parameter to the flask app which then Queries the mongodb and sends back the result to Javascript and after filtering the result it plots the matching nearby restaurant markers on the map using leafletjs
+We have written a small JS file (flask_tuts.js) which is used to get the Query filters from the UI and trigger the AJAX query to send those filters as a parameter to the flask app which then Queries the mongodb and sends back the result to Javascript and after filtering the result it plots the matching nearby restaurant markers on the map using leafletjs
 
 ## **Flask App**
 

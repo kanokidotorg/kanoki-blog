@@ -81,7 +81,7 @@ Here is how the updated dataframe(df1) looks like:
 
 ![](/images/2019/02/df1.jpg)
 
-So wherever there was a false value in the Comparison\_value ndarray in the above step that has been replaced with the old and new value. Now you can export this dataframe into an excel or csv file and name it as Excel\_diff.
+So wherever there was a false value in the Comparison_value ndarray in the above step that has been replaced with the old and new value. Now you can export this dataframe into an excel or csv file and name it as Excel_diff.
 
 I have set the index parameter as false otherwise the index will also be exported in the xlsx file as the first column and I have set the headers as True so that by default the dataframe headers will be the header in excel file as well.
 

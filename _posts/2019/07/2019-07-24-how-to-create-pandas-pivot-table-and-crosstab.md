@@ -59,9 +59,9 @@ df.pivot_table( index=['Product_Category', 'Product'], values=['Sales'], columns
 
 ![](/images/2019/07/image-28.png)
 
-its trying to find a minimum value of the group. For example: first row i.e. Product\_Category: Beauty and Product: sunscreen the minimum sales value between the two rows in the dataframe at index 4 and 8 is 1020
+its trying to find a minimum value of the group. For example: first row i.e. Product_Category: Beauty and Product: sunscreen the minimum sales value between the two rows in the dataframe at index 4 and 8 is 1020
 
-Similarly for row #3 the sales value for two rows Product\_Category: Garments and Product: pyjamas in the dataframe is 9000 and 950 and the minimum value out of two is 950, which is the value for the row#3 under flipkart
+Similarly for row #3 the sales value for two rows Product_Category: Garments and Product: pyjamas in the dataframe is 9000 and 950 and the minimum value out of two is 950, which is the value for the row#3 under flipkart
 
 ## **List of Aggfunc**
 
@@ -75,7 +75,7 @@ df.pivot_table( index=['Product_Category', 'Product'], values=['Sales'], columns
 
 You can see here the two tables one is min and other is sum, enclosed in red box. Ive already explained the min table so lets understand how sum is calculated.
 
-For row#1 Product\_Category: Beauty and Product: sunscreen the two values in the above dataframe are 6000 and 1020 and their sum is 7020 which is the value under alibaba for the first row
+For row#1 Product_Category: Beauty and Product: sunscreen the two values in the above dataframe are 6000 and 1020 and their sum is 7020 which is the value under alibaba for the first row
 
 ## **Pivot Tables Margins**
 
@@ -91,7 +91,7 @@ For example: Row#2 there are two values 4000 and 3000. therefore the All column 
 
 ## **Pivot Table Margins Name**
 
-You can also rename the All column using another params which is margins\_name. So here Ive replaced both the column names as Sub-total
+You can also rename the All column using another params which is margins_name. So here Ive replaced both the column names as Sub-total
 
 ```
 df.pivot_table( index=['Product_Category', 'Product'], values=['Sales'], columns=['site'], aggfunc=[min]
@@ -125,7 +125,7 @@ Row#1 Product Category: Beauty and Product: sunscreen and for site alibaba there
 
 ## **Crosstab Rownames and Column Names**
 
-Lets change the row and column names using these two attibutes rownames and colnames. Let the Product\_Category as PC, Product as P and Sales as S
+Lets change the row and column names using these two attibutes rownames and colnames. Let the Product_Category as PC, Product as P and Sales as S
 
 ```
 pd.crosstab([df.Product_Category,df.Product],df.site,rownames=['PC','P'],colnames=['S'])
@@ -193,7 +193,7 @@ pd.crosstab([df.Product_Category,df.Product],df.site,values=df.Sales,aggfunc=sum
 
 ## **Crosstab Margins and Margins Name**
 
-crosstab do have margins and margin\_names as parameters to calculate the values across the rows and columns, it works the same way as in pivot table. Lets see:
+crosstab do have margins and margin_names as parameters to calculate the values across the rows and columns, it works the same way as in pivot table. Lets see:
 
 ```
 pd.crosstab([df.Product_Category,df.Product],df.site,values=df.Sales,aggfunc=sum,margins=True,margins_name='Sub-Total')
@@ -207,7 +207,7 @@ So the Sub-Total column contains the sum of rows and Sub-Total rows contains the
 
 ## **Export Pivot Table to Excel**
 
-So you have a nice looking Pivot table and you want to export this to an excel. Use Pandas to\_csv function to export the pivot table or crosstab to csv
+So you have a nice looking Pivot table and you want to export this to an excel. Use Pandas to_csv function to export the pivot table or crosstab to csv
 
 ```
 pd.crosstab([df.Product_Category,df.Product],df.site,values=df.Sales,aggfunc=sum,margins=True,margins_name='Sub-Total')

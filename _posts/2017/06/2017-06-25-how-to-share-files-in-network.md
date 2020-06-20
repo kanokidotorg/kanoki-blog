@@ -9,7 +9,7 @@ Follow the steps shown here:
 
 **Step 1:** Ensure python is installed on your machine (latest version is Python 3)
 
-**Step 2:** Open Command Prompt(in Windows) or Terminal(in mac or Linux) Go to the Folder where the file is located for example C:\\Users\\ron\\datafiles\\
+**Step 2:** Open Command Prompt(in Windows) or Terminal(in mac or Linux) Go to the Folder where the file is located for example C:\Users\ron\datafiles\
 
 **Step 3:** Type following command on the Terminal: python -m http.server <port number>
 

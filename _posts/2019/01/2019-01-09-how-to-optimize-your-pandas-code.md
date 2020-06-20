@@ -10,16 +10,20 @@ Few months back I ask one of my Team member a fresh college passout to clean-up 
 
 Here is the snap shot of the data which I have used to explain:
 
+```
 df.head()
+```
 
 ![](/images/2019/01/image-20.png)
 
-Our objective here is to Remove Special Character '&' from the category\_name column of this data set.
+Our objective here is to Remove Special Character '&' from the category_name column of this data set.
 
 We are going to use the following three methods and record the performance of each of these methods.
 
 a) Basic Looping
+
 b) Apply
+
 c) Numba
 
 This is a basic function defined to strip the special character "&" from the category\_name column.
@@ -45,9 +49,9 @@ I am using the %timeit magic function to capture the time it takes to execute a 
 
 it took around 2.19 sec with a Standard Deviation of 119 ms. The basic looping doesn't uses any of the pandas or numpy optimization techniques and hence one of the inefficient way to process large data sets.
 
-\# Looping in Pandas
-%timeit df\['category\_name'\] = remove\_special\_char(df)
-
+```
+# Looping in Pandas %timeit df\['category\_name'\] = remove\_special\_char(df)
+```
 > 2.19 s ± 119 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 
 **Apply**
@@ -98,11 +102,13 @@ As per the documentation:
 
 Following are the Valid eval expression and will be evaluated by the engine:
 
+```
 pd.eval("df1 > df2")
 pd.eval("df1 > 5")
 pd.eval("df1 < df2 and df3 < df4")
 pd.eval("df1 in \[1, 2, 3\]")
 pd.eval("1 < 2 < 3")
+```
 
 **engine=… argument**
 
@@ -149,12 +155,15 @@ Typically, query (as the name suggests) is used to evaluate conditional expressi
 
 This key difference between the two, as mentioned above is how they handle the expression result. This becomes obvious when you actually run an expression through these two functions. For example, consider
 
+```
 %timeit df1.query('start < 0.5 and end < 0.5')
+```
 
 > 4.74 ms ± 800 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 
-%timeit df1.loc\[(df1\['start'\] < 0.5) & (df1\['end'\] < 0.5)\]
-
+```
+%timeit df1.loc[(df1['start'] < 0.5) & (df1['end'] < 0.5)]
+```
 > 4.33 ms ± 353 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 
 You can see loc and Query has almost same performance because
@@ -189,15 +198,20 @@ print("===Eval===")
 %timeit df[df.eval('A > 5')]
 ```
 
+```
 > \===Numexpr===
 > 1.55 ms ± 130 µs per loop (mean ± std. dev. of 7 runs, 1000 loops each)
+```
 
+```
 > \===Query===
 > 3.06 ms ± 290 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+```
 
+```
 > \===Eval===
 > 3.57 ms ± 804 µs per loop (mean ± std. dev. of 7 runs, 100 loops each)
-
+```
 **Performance graph for the time of execution for these three functions:**
 
 ![](/images/2019/01/image-21.png)

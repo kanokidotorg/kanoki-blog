@@ -24,9 +24,11 @@ Python provides an excellent module to handle the iterators and that is called a
 
 **Find Cartesian Product of these three lists:**
 
-A = \['a','b','c'\]
-B = \[1, 2\]
-C=\['p','q','r'\]
+```
+A = ['a','b','c']
+B = [1, 2]
+C=['p','q','r']
+```
 
 **what is Cartesian Product?**
 
@@ -88,7 +90,9 @@ The **accumulate** iterator returns the accumulated sums or the accumulated re
 
 **Find the product of two items in this list:**
 
-data = \[3, 4, 6, 2, 1, 9, 0, 7, 5, 8\]
+```
+data = [3, 4, 6, 2, 1, 9, 0, 7, 5, 8]
+```
 
 **Solution:**
 
@@ -97,20 +101,20 @@ data = \[3, 4, 6, 2, 1, 9, 0, 7, 5, 8\]
 ```
 
 **Expected Result:**
+```
+[3, 12, 72, 144, 144, 1296, 0, 0, 0, 0]
 
-\[3, 12, 72, 144, 144, 1296, 0, 0, 0, 0\]
-
-i.e. \[3,4x3,4x3x6,4x3x6x2,4x3x6x2x1, 4x3x6x2x1x9,
-4x3x6x2x1x9 x0,0x7,0x5,0x8 \]
-
+i.e. [3,4x3,4x3x6,4x3x6x2,4x3x6x2x1, 4x3x6x2x1x9,
+4x3x6x2x1x9 x0,0x7,0x5,0x8 ]
+```
 **Dropwhile and** **takewhile**
 
 As per it's Documentation, it Make an iterator that drops elements from the iterable as long as the predicate is true; afterwards, returns every element. The iterator does not produce _any_ output until the predicate first becomes false, so it may have a lengthy start-up time
 
 **Drop all values to get a list of all zeros in this list**
-
-l= \[0.01, 0.02, 0.01, -0.01, 0, 0, 0, 0, 0, 0, 0, 0, 0\]
-
+```
+l= [0.01, 0.02, 0.01, -0.01, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+```
 **Solution:**
 
 ```
@@ -118,9 +122,9 @@ list(itertools.dropwhile(lambda x: x != 0, l))
 ```
 
 **Result:**
-
-\[ 0, 0, 0, 0, 0, 0, 0, 0, 0 \]
-
+```
+[ 0, 0, 0, 0, 0, 0, 0, 0, 0 ]
+```
 This expression drop all elements in the list until first zero is not encountered
 
 **Another Example, Drop all values to get a list of Non-Zeros in the above list**
@@ -132,17 +136,17 @@ This expression drop all elements in the list until first zero is not encountere
 ```
 
 **Result:**
-
-\[0.01, 0.02, 0.01, -0.01\]
-
+```
+[0.01, 0.02, 0.01, -0.01]
+```
 This expression takes all elements in the list until first zero is not encountered
 
 **Chains**
 
 **Flatten this list:**
-
-l = \[\[1, 2, 3\], \[4, 5, 6\], \[7\], \[8, 9\]\]
-
+```
+l = [[1, 2, 3], [4, 5, 6], [7], [8, 9]]
+```
 **Solution:**
 
 ```
@@ -150,17 +154,17 @@ list(itertools.chain(*list2d))
 ```
 
 **Result:**
-
-\[1,2,3,4,5,6,7,8,9\]
-
+```
+[1,2,3,4,5,6,7,8,9]
+```
 **Chain.fromiterables**
 
 The chain method takes 0 or more arguments, each an iterable, Chain.fromiterables takes one argument which is expected to produce the iterables
 
 **Find Powerset of a this list elements:**
-
-\[1,2,3\]
-
+```
+[1,2,3]
+```
 **What is Powerset?**
 
 ![](/images/2019/02/image-1.png)
@@ -188,9 +192,9 @@ It takes an arbitrary iterable as an argument, and always returns an iterator yi
 source: wikipedia
 
 Find all Permuations of the items in this list:
-
-\[0, 1, 2,\]
-
+```
+[0, 1, 2,]
+```
 **Solution:**
 
 ```
@@ -199,18 +203,18 @@ print(list(obj))
 ```
 
 **Result:**
-
-\[(0, 1, 2), (0, 2, 1), (1, 0, 2), (1, 2, 0), (2, 0, 1), (2, 1, 0)\]
-
+```
+[(0, 1, 2), (0, 2, 1), (1, 0, 2), (1, 2, 0), (2, 0, 1), (2, 1, 0)]
+```
 **Compress:**
 
 It allows you to filters elements, returning only those that have a corresponding element that evaluates to **True**
 
 **Find the words in the below words list which has value in counts list:**
-
-words = \['hello', 'how', 'are', 'you'\]
-counts = \[10, '', 'x', None\]
-
+```
+words = ['hello', 'how', 'are', 'you']
+counts = [10, '', 'x', None]
+```
 **Solution:**
 
 ```
@@ -218,9 +222,9 @@ counts = \[10, '', 'x', None\]
 ```
 
 **Result:**
-
-\['hello', 'are'\]
-
+```
+['hello', 'are']
+```
 **Combinations**
 
 As per Wiki, a **combination** is a selection of items from a collection, such that the order of selection does not matter. For example, given three fruits, say an apple, an orange and a pear, there are three combinations of two that can be drawn from this set: an apple and a pear; an apple and an orange; or a pear and an orange. 
@@ -230,9 +234,9 @@ As per Wiki, a **combination** is a selection of items from a collection, such
 source: Wikipedia
 
 **Find all possible combinations for this list:**
-
-lst = \[1, 2, 3\]
-
+```
+lst = [1, 2, 3]
+```
 **Solution:**
 
 ```
@@ -243,19 +247,19 @@ for i in xrange(1, len(lst)+1):
 ```
 
 **Result:**
-
-\[1, \[\[1\], \[2\], \[3\]\], 2, \[\[1, 2\], \[1, 3\], \[2, 3\]\], 3, \[\[1, 2, 3\]\]\]
-
-Similarly you can use combinations\_with\_replacement method allowing individual elements to be repeated more than once.
+```
+[1, [[1], [2], [3]], 2, [[1, 2], [1, 3], [2, 3]], 3, [[1, 2, 3]]]
+```
+Similarly you can use combinations_with_replacement method allowing individual elements to be repeated more than once.
 
 **islice**
 
 As per the Documentation, it makes an iterator that returns selected elements from the iterable. If _start_ is non-zero, then elements from the iterable are skipped until start is reached. Afterward, elements are returned consecutively unless _step_ is set higher than one which results in items being skipped. If _stop_ is `None`, then iteration continues until the iterator is exhausted, if at all; otherwise, it stops at the specified position. Unlike regular slicing, [`islice()`](https://docs.python.org/3.7/library/itertools.html#itertools.islice) does not support negative values for _start_, _stop_, or _step_. Can be used to extract related fields from data where the internal structure has been flattened
 
 **Slice the first two elements from this list**
-
-\[10, 20, 30, 40, 50, 60\]
-
+```
+[10, 20, 30, 40, 50, 60]
+```
 **Solution:**
 
 ```

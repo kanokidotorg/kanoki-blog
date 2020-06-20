@@ -55,6 +55,7 @@ We should be fitting the ARIMA model to a Stationary and non-seasonal time serie
 
 We will be using the Monthly Temperature datatset of Armori City. You can download it from this [link](https://www.kaggle.com/akioonodera/monthly-temperature-of-aomori-city)
 
+```
 import pandas as pd
 import statsmodels.api as sm
 import matplotlib.pyplot as plt
@@ -68,6 +69,7 @@ df\['temperature'\] = df\['temperature'\]\*(9/5)+32
 df.set\_index('DATE',inplace=True)
 df.to\_csv('./monthly\_temperature\_aomori\_city\_updt.csv',index=True)
 df.head()
+```
 
 ![](/images/2020/04/image-57.png)
 
@@ -75,8 +77,10 @@ df.head()
 
 Let's draw a simple line plot for first 200 rows to understand the pattern in the data and how the temperature is trending. It looks like that a Cyclic pattern is followed here
 
+```
 plt.figure(figsize=(10,4))
 plt.plot(df\[:200\].temperature)
+```
 
 ![](/images/2020/04/image-58.png)
 
@@ -97,10 +101,11 @@ To further analyze the time series data, Decomposition helps to remove the seaso
 Basically Decomposition has three components that is shown in the graphs below i.e Trend, Seasonality and Residual
 
 You have to choose a model type also additive or multiplicative. We have taken an additive model because the seasonality doesn't varies much from start to end of the years
-
+```
 decomposition = sm.tsa.seasonal\_decompose(df.temperature, model='additive')
 plt.rcParams\["figure.figsize"\] = \[16,9\]
 fig = decomposition.plot()
+```
 
 **Trend**
 
@@ -120,6 +125,7 @@ ARIMA model works better on a Non-Stationary data and the first thing that we sh
 
 The ADF test helps to understand whether a change in Y is a linear trend or not. If there is a linear trend but the lagged value cannot explain the change in Y over time, then our data will be deemed non-stationary
 
+```
 from statsmodels.tsa.stattools import adfuller
 def check\_stationarity(timeseries):
     result = adfuller(timeseries,autolag='AIC')
@@ -129,6 +135,7 @@ def check\_stationarity(timeseries):
     print('Critical Values:')
     for key, value in result\[4\].items():
         print('\\t%s: %.3f' % (key, value))
+```
 
 ```
 check_stationarity(df.temperature)
@@ -189,13 +196,14 @@ This time the p-value is 0 which is very good and the test statistics is also le
 ```
 check_stationarity(ts_temp_log_diff)
 ```
-
+```
 The test statistic: -15.725118
 p-value: 0.000000
 Critical Values:
 	1%: -3.434
 	5%: -2.863
 	10%: -2.568
+```
 
 The value of d will be 1 because we have done the data difference one time to achieve stationarity
 
@@ -253,9 +261,11 @@ auto_arima_fit = pm.auto_arima(df, start_p=1, start_q=1,
                              stepwise=True)
 ```
 
+```
 Fit ARIMA: order=(1, 1, 1) seasonal\_order=(0, 1, 1, 12); AIC=7044.189, BIC=7071.210, Fit time=29.769 seconds
 Fit ARIMA: order=(0, 1, 0) seasonal\_order=(0, 1, 0, 12); AIC=8721.729, BIC=8732.538, Fit time=0.218 seconds
 Fit ARIMA: order=(1, 1, 0) seasonal\_order=(1, 1, 0, 12); AIC=8072.542, BIC=8094.159, Fit time=5.261 seconds
+```
 
 This will help to choose the best value of p,q and d based on the lowest AIC and BIC values
 
@@ -327,10 +337,12 @@ In our case we want to validate the predicted and expected value of first three 
 
 Using this returned value and the original value we will plot this and visualize how the predicted and real values differ. The red lines in the graph are original values and green are predicted values
 
+```
 from math import sqrt
 from sklearn.metrics import mean\_squared\_error
 plt.plot(df.temperature\[:36\],color='r')
 plt.plot(results.predict(0,36),color='g')
+```
 
 ![](/images/2020/04/image-63.png)
 
@@ -341,7 +353,9 @@ rmse =sqrt(mean_squared_error(df.temperature, results.predict()))
 print(rmse)
 ```
 
+```
 2.56
+```
 
 ## **Forecast**
 
@@ -383,6 +397,7 @@ Now we will plot the forecast value which is shown as red line for year 2020 thr
 
 The blue strip that you see around the line is the forecast interval which is drawn with the help of fill\_between() api of matplotlib
 
+```
 ax = df\[1600:\].temperature.plot(label='observed', figsize=(20, 15))
 df\_forecast.plot(ax=ax,label='Forecast',color='r')
 ax.fill\_between(df\_forecast.index,
@@ -393,6 +408,7 @@ ax.set\_ylabel('Temp')
 
 plt.legend()
 plt.show()
+```
 
 ![](/images/2020/04/image-65.png)
 

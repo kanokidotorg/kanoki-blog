@@ -27,7 +27,7 @@ We all are surrounded by data and it reveals lot of things to us to make our dec
 
 #### Python Function to Scrap Data using Selenium Webdriver
 
-Just provide the address(Xpath or any other locator) of the data to be extracted and Selenium webdriver extracts all the data from the page just with the help of one api(find\_element\_by\_xpath), See how easy it is. Isn’t it?
+Just provide the address(Xpath or any other locator) of the data to be extracted and Selenium webdriver extracts all the data from the page just with the help of one api(find_element_by_xpath), See how easy it is. Isn’t it?
 
 ![](https://blogvbweb.files.wordpress.com/2017/04/4354c-1s0zz_ppc1wt7q6vuw-ipqa.png)
 
@@ -44,12 +44,13 @@ Data is extracted from the page with the help of webdriver and is stored in a li
 
 Sample Data set for Movie Name, Votes and Director is displayed here, Rest of the data is also stored in individual python list
 
-**_\[‘Bajirao Mastani’, ‘Queen’, ‘Bhaag Milkha Bhaag’, ‘Barfi!’, ‘Zindagi Na Milegi Dobara’\]_**
+```
+**_[‘Bajirao Mastani’, ‘Queen’, ‘Bhaag Milkha Bhaag’, ‘Barfi!’, ‘Zindagi Na Milegi Dobara’]_**
 
-**_\[‘17,362’, ‘39,518’, ‘39,731’, ‘52,308’, ‘41,731’\]_**
+**_[‘17,362’, ‘39,518’, ‘39,731’, ‘52,308’, ‘41,731’]_**
 
-**_\[‘Director: Sanjay Leela Bhansali’, ‘Director: Vikas Bahl’, ‘Director: Anurag Basu’\]_**
-
+**_[‘Director: Sanjay Leela Bhansali’, ‘Director: Vikas Bahl’, ‘Director: Anurag Basu’]_**
+```
 Don’t see any co-relation between these data, if someone have to pick the release year and director for a movie then it’s difficult to get it from these lists, So let’s put the data in a Structured and more meaningful format which will make sense for someone looking at this data. So lets bind the data in Python dictionary
 
 #### Python Dictionary

@@ -38,7 +38,7 @@ grouped.count()
 
 ## **Basic Aggreggation**
 
-Now lets look at the simple aggregations functions that can be applied on the columns for this data. So if you have seen this data then the first thing you would be interested to know is what is the mean or average pulse rate across each of the diet under each id. Here we will first group by id and diet and then use the mean function to get a multi-index dataframe of the groups with the mean values for the column pulse and time\_mins. We can easily find it out from this data that diet with low fat gives less pulse rate than the diet with no fat. Wow so we cleared the misconception with this data that eating fat rich food is not good for health.
+Now lets look at the simple aggregations functions that can be applied on the columns for this data. So if you have seen this data then the first thing you would be interested to know is what is the mean or average pulse rate across each of the diet under each id. Here we will first group by id and diet and then use the mean function to get a multi-index dataframe of the groups with the mean values for the column pulse and time_mins. We can easily find it out from this data that diet with low fat gives less pulse rate than the diet with no fat. Wow so we cleared the misconception with this data that eating fat rich food is not good for health.
 
 ```
 exercise.groupby(['diet']).mean()
@@ -60,7 +60,7 @@ There are other aggregating functions like sum, min, max, std,var etc. We will l
 
 ![](/images/2019/09/image-18.png)
 
-The result of the aggregation will have the group names as the new index along the grouped axis. In the case of multiple keys, the result is a Multi-Index by default, though this can be changed by using the as\_index option. You can set the as\_index parameter as False
+The result of the aggregation will have the group names as the new index along the grouped axis. In the case of multiple keys, the result is a Multi-Index by default, though this can be changed by using the as_index option. You can set the as_index parameter as False
 
 ```
 exercise.groupby(['id','diet'],as_index=False).agg(sum).head()
@@ -68,7 +68,7 @@ exercise.groupby(['id','diet'],as_index=False).agg(sum).head()
 
 or
 
-You can also do a reset\_index
+You can also do a reset_index
 
 ```
 exercise.groupby(['id','diet']).sum().head().reset_index()
@@ -119,8 +119,8 @@ grouped.head()
 ## **Pandas groupby aggregate multiple columns using Named Aggregation**
 
 As per the Pandas Documentation,To support column-specific aggregation with control over the output column names, pandas accepts the special syntax in GroupBy.agg(), known as “named aggregation”, where
-1\. The keywords are the output column names
-2\. The values are tuples whose first element is the column to select and the second element is the aggregation to apply to that column. Pandas provides the pandas.NamedAgg namedtuple with the fields \['column', 'aggfunc'\] to make it clearer what the arguments are. As usual, the aggregation can be a callable or a string alias.
+1. The keywords are the output column names
+2. The values are tuples whose first element is the column to select and the second element is the aggregation to apply to that column. Pandas provides the pandas.NamedAgg namedtuple with the fields ['column', 'aggfunc'] to make it clearer what the arguments are. As usual, the aggregation can be a callable or a string alias.
 
 So we can specify for each column what is the aggregation function we want to apply and give a customize name to it.
 
@@ -135,7 +135,7 @@ exercise.groupby(['id','diet']).agg(min_pulse=pd.NamedAgg(column='pulse', aggfun
 
 ## **Column Indexing**
 
-The groupby object can be indexed by a column and the result will be a Series groupby object. Let's use series groupby object time\_mins and calculate its mean. So we get the total time for each of the kind.
+The groupby object can be indexed by a column and the result will be a Series groupby object. Let's use series groupby object time_mins and calculate its mean. So we get the total time for each of the kind.
 
 ```
 exercise.groupby('kind')['time_mins'].mean()
@@ -149,7 +149,7 @@ exercise.groupby('kind')['pulse'].mean()
 
 ![](/images/2019/09/image-8.png)
 
-## **Pandas groupby get\_group**
+## **Pandas groupby get_group**
 
 Another useful method to select a group from the groupby object so from the groupby object we want to get kind - walking and it gives a dataframe with all rows of walking group. Basically it gets you all the rows of the group you are seeking for
 
@@ -195,7 +195,7 @@ grouped.query('pulse > 2')
 
 ## **Groupby Cumulative Sum**
 
-So you want to do a cumulative sum of all the pulse and time\_mins for each group, which means to add up those column values for each group
+So you want to do a cumulative sum of all the pulse and time_mins for each group, which means to add up those column values for each group
 
 ```
 exercise.groupby(['id','diet']).agg(sum).groupby('diet').cumsum()
@@ -205,7 +205,7 @@ exercise.groupby(['id','diet']).agg(sum).groupby('diet').cumsum()
 
 ## **Filtering Multi-index Columns**
 
-There is a small work around for filtering the multi-index grouped dataframe. Suppose you want to get all the rows where pulse max,min difference is greater than 10 and time\_mins max value is greater than or equal to 30
+There is a small work around for filtering the multi-index grouped dataframe. Suppose you want to get all the rows where pulse max,min difference is greater than 10 and time_mins max value is greater than or equal to 30
 
 ```
 grouped[(grouped[('pulse','diff')]>10) & (grouped[('time_mins','max')]>=30)]
@@ -234,7 +234,7 @@ exercise.groupby('id').apply(norm_by_data2)
 
 ## **Pandas groupby aggregate to list**
 
-Many a times we have seen instead of applying aggregation function we want the values of each group to be bind in a list. So if you want to list of all the time\_mins in each group by id and diet then here is how you can do it
+Many a times we have seen instead of applying aggregation function we want the values of each group to be bind in a list. So if you want to list of all the time_mins in each group by id and diet then here is how you can do it
 
 ```
 exercise.groupby(['id','diet'])['time_mins'].apply(list)

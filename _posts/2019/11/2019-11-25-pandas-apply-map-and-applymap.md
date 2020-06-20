@@ -13,7 +13,7 @@ In this post we will see how to apply a function along the axis of a dataframe u
 
 **applymap**: It is used for element wise operation across one or more rows and columns of a dataframe. It has been optimized and some cases work faster than apply but it's good to compare it with apply before going for any heavier operation . Example: df.applymap(np.square), it will give a dataframe with number squared
 
-**map**: It can be used only for a Series object and helps to substitutes the series value from the lookup dictionary, Series or a function and missing value will be substituted as NaN. Since it works only with series or dictionary so you can expect a better and optimized performance. Example: df\['Col1'\].map({'Trenton':'New Jersey', 'NYC':'New York', 'Los Angeles':'California'})
+**map**: It can be used only for a Series object and helps to substitutes the series value from the lookup dictionary, Series or a function and missing value will be substituted as NaN. Since it works only with series or dictionary so you can expect a better and optimized performance. Example: df['Col1'].map({'Trenton':'New Jersey', 'NYC':'New York', 'Los Angeles':'California'})
 
 ## **How to use Pandas apply?**
 
@@ -34,7 +34,7 @@ df
 
 ### **Define function****s**
 
-We will define two functions to apply to this dataframe, function multiply\_by\_2 will be applied across the column and multiply\_col1\_col2 will be applied across the rows of dataframe
+We will define two functions to apply to this dataframe, function multiply_by_2 will be applied across the column and multiply_col1_col2 will be applied across the rows of dataframe
 
 ```
 def multiply_by_2(col):
@@ -46,7 +46,7 @@ def multiply_col1_col2(col):
 
 ### **Apply function across dataframe columns(axis=0)**
 
-Now apply the function multiply\_by\_2 across the columns, so by default the value of axis=0, so we have to just pass the function without axis parameter
+Now apply the function multiply_by_2 across the columns, so by default the value of axis=0, so we have to just pass the function without axis parameter
 
 ```
 df.apply(multiply_by_2)
@@ -60,7 +60,7 @@ All the cell values are doubled
 
 ### **Apply function across dataframe rows(axis=1)**
 
-Now apply the function multiply\_col1\_col2 across the rows of the dataframe. Here we have set the axis parameter as 1 (axis=1)
+Now apply the function multiply_col1_col2 across the rows of the dataframe. Here we have set the axis parameter as 1 (axis=1)
 
 ```
 df.apply(multiply_col1_col2,axis=1)
@@ -68,10 +68,12 @@ df.apply(multiply_col1_col2,axis=1)
 
 It will return a series object with values obtained by multiplying col1 and col2 with the same indexes
 
+```
 A1     50
 B1    200
 C1    450
 dtype: int64
+```
 
 ### **Create a new Column col1xcol2 with the above series**
 
@@ -83,11 +85,11 @@ df['col1Xcol2'] = df.apply(multiply_col1_col2,axis=1)
 
 ![](/images/2019/11/image-20.png)
 
-## **Pandas apply function with Result\_type parameter**
+## **Pandas apply function with Result_type parameter**
 
 It's a parameter set to {expand, reduce or broadcast} to get the desired type of result. the default value is None
 
-In the above scenario if result\_type is set to broadcast then the output will be a dataframe substituted by the Col1xCol2 value
+In the above scenario if result_type is set to broadcast then the output will be a dataframe substituted by the Col1xCol2 value
 
 ```
 df.apply(multiply_col1_col2,axis=1,result_type='broadcast')
@@ -97,24 +99,24 @@ df.apply(multiply_col1_col2,axis=1,result_type='broadcast')
 
 The results is broadcasted to the original shape of the frame, the original index and columns is retained
 
-To understand result\_type as expand and reduce we will first create a function that returns a list value
+To understand result_type as expand and reduce we will first create a function that returns a list value
 
 ```
 def multi_and_list(col):
     return [col['a']*2,col['b']*2,col['c']*2]
 ```
 
-Now apply this function across the dataframe column with result\_type as expand
+Now apply this function across the dataframe column with result_type as expand
 
 ```
 df.apply(multi_and_list,axis=1,result_type='expand')
 ```
 
-if result\_type is set as expand then It returns a dataframe though the function returns a list.
+if result_type is set as expand then It returns a dataframe though the function returns a list.
 
 ![](/images/2019/11/image-22.png)
 
-result\_type reduce is just opposite of expand and returns a Series if possible rather than expanding list-like results
+result_type reduce is just opposite of expand and returns a Series if possible rather than expanding list-like results
 
 ## **How to use lambda with apply?**
 
@@ -217,7 +219,7 @@ df.applymap(lambda x: x**2)
 
 ![](/images/2019/11/image-26.png)
 
-There are more vectorized way of doing this operation is available like df \*2 which is much faster and optimized
+There are more vectorized way of doing this operation is available like df *2 which is much faster and optimized
 
 ## **How to use Pandas map?**
 

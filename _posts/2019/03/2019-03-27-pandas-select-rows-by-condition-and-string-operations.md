@@ -115,7 +115,7 @@ The Pahun column is split into three different column i.e. pahun\_1,pahun\_2,pah
 
 **String Slice**
 
-Lets create a new column (name\_trunc) where we want only the first three character of all the names. so for Allan it would be All and for Mike it would be Mik and so on. The string indexing is quite common task and used for lot of String operations
+Lets create a new column (name_trunc) where we want only the first three character of all the names. so for Allan it would be All and for Mike it would be Mik and so on. The string indexing is quite common task and used for lot of String operations
 
 ```
 df['name_trunc']=df.name.str.slice(start=0, stop=3, step=1)
@@ -140,13 +140,13 @@ import re
 df.Grade.str.findall('A', flags=re.IGNORECASE)
 ```
 
-This will give all the values which have Grade A so the result will be a series with all the matching patterns in a list. for example: for the first row return value is \[A\]
+This will give all the values which have Grade A so the result will be a series with all the matching patterns in a list. for example: for the first row return value is [A]
 
 **Pandas Concat Columns**
 
 We have seen situations where we have to merge two or more columns and perform some operations on that column. so in this section we will see how to merge two column values with a separator
 
-We will create a new column (Name\_Zodiac) which will contain the concatenated value of Name and Zodiac Column with a underscore(\_) as separator
+We will create a new column (Name_Zodiac) which will contain the concatenated value of Name and Zodiac Column with a underscore(_) as separator
 
 ```
 df['name_zodiac'] = df.name.str.cat(df.Zodiac,sep='_')

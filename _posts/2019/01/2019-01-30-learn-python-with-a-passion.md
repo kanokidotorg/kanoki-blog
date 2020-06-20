@@ -34,15 +34,13 @@ Learn this from one of the best course available on internet and that too from G
 It covers all the basics that you need to head start and then you can go with your own pace and understand the examples given in this tutorial. Take your time and don't rush to finish off everything in a Week. It's
 a fantastic course and doing it slowly build your fundamentals strong for the language.
 
-Practice - Project Euler
+**Practice - Project Euler**
 
 Practice is key to success and same implies here, Leverage your learning to solve some real time problems and what else can be best to start than Project Euler. It's not a cake walk to solve [project euler problems](https://projecteuler.net/problem=22) and it really takes lot of effort to understand and then code a solution. So to have a good start you can initially start with old Archive problems which are pretty decent and as you go ahead the problem complexity level increase. You can try top 10-15 problems and that will help you to implement some
 of your learning from Step 1
 
 An Example how to implement dictionary
-
 ![](/images/2019/01/image-29.png)
-
 ```
 import string
 from typing import List, Dict

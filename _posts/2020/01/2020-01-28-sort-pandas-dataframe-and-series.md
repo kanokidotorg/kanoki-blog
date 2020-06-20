@@ -11,12 +11,12 @@ However sometimes you may find it confusing on how to sort values by two columns
 
 In this post we will learn sorting a dataframe and Series using the following functions
 
-> **a) sort\_values
-> b) sort\_index
+> a) sort_values
+> b) sort_index
 > c) Categorical Series
 > d) numpy sort and argsort
 > e) Reindex
-> f) And Sorted() function**
+> f) And Sorted() function
 
 Let's create a dataframe of 11 counties with their CO2 emission and population and a column for the continent they belong to
 
@@ -31,633 +31,123 @@ df = pd.DataFrame({
                  })
 ```
 
-**Country**
-
-**Co2\_emission**
-
-**Population\_million**
-
-**Continent**
-
-0
-
-USA
-
-5107.393
-
-329.0
-
-NA
-
-1
-
-China
-
-10877.218
-
-1433.0
-
-Asia
-
-2
-
-India
-
-2454.774
-
-1366.0
-
-Asia
-
-3
-
-Russia
-
-1764.866
-
-145.0
-
-EU
-
-4
-
-Switzerland
-
-39.738
-
-8.5
-
-EU
-
-5
-
-Japan
-
-1320.776
-
-126.0
-
-Asia
-
-6
-
-Sweden
-
-NaN
-
-10.0
-
-EU
-
-7
-
-Singapore
-
-55.018
-
-5.8
-
-Asia
-
-8
-
-South Korea
-
-673.324
-
-51.0
-
-Asia
-
-9
-
-UK
-
-379.150
-
-67.0
-
-EU
-
-10
-
-Australia
-
-764.866
-
-NaN
-
-AU
+{:.table}
+{:.table-striped}
+||Country|Co2_emission|Population_million|Continent|
+|--- |--- |--- |--- |--- |
+|0|USA|5107.393|329.0|NA|
+|1|China|10877.218|1433.0|Asia|
+|2|India|2454.774|1366.0|Asia|
+|3|Russia|1764.866|145.0|EU|
+|4|Switzerland|39.738|8.5|EU|
+|5|Japan|1320.776|126.0|Asia|
+|6|Sweden|NaN|10.0|EU|
+|7|Singapore|55.018|5.8|Asia|
+|8|South Korea|673.324|51.0|Asia|
+|9|UK|379.150|67.0|EU|
+|10|Australia|764.866|NaN|AU|
 
 ## **Sort dataframe by column Values**
 
-Here we are sorting the dataframe by column values i.e. population\_in\_million
+Here we are sorting the dataframe by column values i.e. population_in_million
 
-sort\_values functions sorts the dataframe by the column values provided as the first argument and setting ascending as True/False will display the results in that order
+sort_values functions sorts the dataframe by the column values provided as the first argument and setting ascending as True/False will display the results in that order
 
 ```
 df.sort_values('Population_million',ascending = False)
 ```
 
-**Country**
-
-**Co2\_emission**
-
-**Population\_million**
-
-**Continent**
-
-1
-
-China
-
-10877.218
-
-1433.0
-
-Asia
-
-2
-
-India
-
-2454.774
-
-1366.0
-
-Asia
-
-0
-
-USA
-
-5107.393
-
-329.0
-
-NA
-
-3
-
-Russia
-
-1764.866
-
-145.0
-
-EU
-
-5
-
-Japan
-
-1320.776
-
-126.0
-
-Asia
-
-9
-
-UK
-
-379.150
-
-67.0
-
-EU
-
-8
-
-South Korea
-
-673.324
-
-51.0
-
-Asia
-
-6
-
-Sweden
-
-NaN
-
-10.0
-
-EU
-
-4
-
-Switzerland
-
-39.738
-
-8.5
-
-EU
-
-7
-
-Singapore
-
-55.018
-
-5.8
-
-Asia
-
-10
-
-Australia
-
-764.866
-
-NaN
-
-AU
+{:.table}
+{:.table-striped}
+||Country|Co2_emission|Population_million|Continent|
+|--- |--- |--- |--- |--- |
+|1|China|10877.218|1433.0|Asia|
+|2|India|2454.774|1366.0|Asia|
+|0|USA|5107.393|329.0|NA|
+|3|Russia|1764.866|145.0|EU|
+|5|Japan|1320.776|126.0|Asia|
+|9|UK|379.150|67.0|EU|
+|8|South Korea|673.324|51.0|Asia|
+|6|Sweden|NaN|10.0|EU|
+|4|Switzerland|39.738|8.5|EU|
+|7|Singapore|55.018|5.8|Asia|
+|10|Australia|764.866|NaN|AU|
 
 ## **Sort Dataframe with NaN on Top or Bottom**
 
 The column contains the NaN value and you can choose to display the NaN values either on Top or Bottom row of the sorted dataframe
 
-na\_position parameters you can set as first or last to push those values on the top or the bottom of dataframe
+na_position parameters you can set as first or last to push those values on the top or the bottom of dataframe
 
 ```
 df.sort_values('Population_million',ascending = False,na_position = 'first')
 ```
 
-**Country**
-
-**Co2\_emission**
-
-**Population\_million**
-
-**Continent**
-
-10
-
-Australia
-
-764.866
-
-NaN
-
-AU
-
-1
-
-China
-
-10877.218
-
-1433.0
-
-Asia
-
-2
-
-India
-
-2454.774
-
-1366.0
-
-Asia
-
-0
-
-USA
-
-5107.393
-
-329.0
-
-NA
-
-3
-
-Russia
-
-1764.866
-
-145.0
-
-EU
-
-5
-
-Japan
-
-1320.776
-
-126.0
-
-Asia
-
-9
-
-UK
-
-379.150
-
-67.0
-
-EU
-
-8
-
-South Korea
-
-673.324
-
-51.0
-
-Asia
-
-6
-
-Sweden
-
-NaN
-
-10.0
-
-EU
-
-4
-
-Switzerland
-
-39.738
-
-8.5
-
-EU
-
-7
-
-Singapore
-
-55.018
-
-5.8
-
-Asia
+{:.table}
+{:.table-striped}
+||Country|Co2_emission|Population_million|Continent|
+|--- |--- |--- |--- |--- |
+|10|Australia|764.866|NaN|AU|
+|1|China|10877.218|1433.0|Asia|
+|2|India|2454.774|1366.0|Asia|
+|0|USA|5107.393|329.0|NA|
+|3|Russia|1764.866|145.0|EU|
+|5|Japan|1320.776|126.0|Asia|
+|9|UK|379.150|67.0|EU|
+|8|South Korea|673.324|51.0|Asia|
+|6|Sweden|NaN|10.0|EU|
+|4|Switzerland|39.738|8.5|EU|
+|7|Singapore|55.018|5.8|Asia|
 
 ## **Sort dataframe rows by multiple columns**
 
 You can also provide the list of columns to be sorted and their order also a list of boolean
 
-Here we are sorting the dataframe first by column CO2\_emission and then by Population\_million and we want the order of the CO2\_emission in ascending and population\_million in Descending
+Here we are sorting the dataframe first by column CO2_emission and then by Population_million and we want the order of the CO2_emission in ascending and population_million in Descending
 
 ```
 df.sort_values(by = ['Co2_emission','Population_million'],ascending = [True,False])
 ```
 
-**Country**
-
-**Co2\_emission**
-
-**Population\_million**
-
-**Continent**
-
-4
-
-Switzerland
-
-39.738
-
-8.5
-
-EU
-
-7
-
-Singapore
-
-55.018
-
-5.8
-
-Asia
-
-9
-
-UK
-
-379.150
-
-67.0
-
-EU
-
-8
-
-South Korea
-
-673.324
-
-51.0
-
-Asia
-
-10
-
-Australia
-
-764.866
-
-NaN
-
-AU
-
-5
-
-Japan
-
-1320.776
-
-126.0
-
-Asia
-
-3
-
-Russia
-
-1764.866
-
-145.0
-
-EU
-
-2
-
-India
-
-2454.774
-
-1366.0
-
-Asia
-
-0
-
-USA
-
-5107.393
-
-329.0
-
-NA
-
-1
-
-China
-
-10877.218
-
-1433.0
-
-Asia
-
-6
-
-Sweden
-
-NaN
-
-10.0
-
-EU
+{:.table}
+{:.table-striped}
+||Country|Co2_emission|Population_million|Continent|
+|--- |--- |--- |--- |--- |
+|4|Switzerland|39.738|8.5|EU|
+|7|Singapore|55.018|5.8|Asia|
+|9|UK|379.150|67.0|EU|
+|8|South Korea|673.324|51.0|Asia|
+|10|Australia|764.866|NaN|AU|
+|5|Japan|1320.776|126.0|Asia|
+|3|Russia|1764.866|145.0|EU|
+|2|India|2454.774|1366.0|Asia|
+|0|USA|5107.393|329.0|NA|
+|1|China|10877.218|1433.0|Asia|
+|6|Sweden|NaN|10.0|EU|
 
 ## **Sort text column by Alphabetical order**
 
-if there is a text column and you want to sort it just alphabetically then applying sort\_values on that column will do so
+if there is a text column and you want to sort it just alphabetically then applying sort_values on that column will do so
 
 ```
 df.sort_values(by='Country')
 ```
 
-**Country**
-
-**Co2\_emission**
-
-**Population\_million**
-
-**Continent**
-
-10
-
-Australia
-
-764.866
-
-NaN
-
-AU
-
-1
-
-China
-
-10877.218
-
-1433.0
-
-Asia
-
-2
-
-India
-
-2454.774
-
-1366.0
-
-Asia
-
-5
-
-Japan
-
-1320.776
-
-126.0
-
-Asia
-
-3
-
-Russia
-
-1764.866
-
-145.0
-
-EU
-
-7
-
-Singapore
-
-55.018
-
-5.8
-
-Asia
-
-8
-
-South Korea
-
-673.324
-
-51.0
-
-Asia
-
-6
-
-Sweden
-
-NaN
-
-10.0
-
-EU
-
-4
-
-Switzerland
-
-39.738
-
-8.5
-
-EU
-
-9
-
-UK
-
-379.150
-
-67.0
-
-EU
-
-0
-
-USA
-
-5107.393
-
-329.0
-
-NA
+{:.table}
+{:.table-striped}
+||Country|Co2_emission|Population_million|Continent|
+|--- |--- |--- |--- |--- |
+|10|Australia|764.866|NaN|AU|
+|1|China|10877.218|1433.0|Asia|
+|2|India|2454.774|1366.0|Asia|
+|5|Japan|1320.776|126.0|Asia|
+|3|Russia|1764.866|145.0|EU|
+|7|Singapore|55.018|5.8|Asia|
+|8|South Korea|673.324|51.0|Asia|
+|6|Sweden|NaN|10.0|EU|
+|4|Switzerland|39.738|8.5|EU|
+|9|UK|379.150|67.0|EU|
+|0|USA|5107.393|329.0|NA|
 
 ## **Sort by Custom list or Dictionary using Categorical Series**
 
@@ -665,7 +155,7 @@ Here we wanted to sort the dataframe by the continent column but in a particular
 
 That custom order can be a list or the keys of a dictionary
 
-\[ "NA", "Asia", "AU", "EU"\])
+[ "NA", "Asia", "AU", "EU"])
 
 or
 
@@ -675,7 +165,9 @@ Pandas has an excellent feature called [Categorical Series](http://pandas.pydata
 
 First make the Continent column a categorical and specify the ordering to use by passing a list value as the categories argument
 
-df \[ 'Continent'\] = pd.Categorical(df\['Continent'\], categories=\["NA", "Asia", "AU", "EU"\])
+```
+df [ 'Continent'] = pd.Categorical(df['Continent'], categories=["NA", "Asia", "AU", "EU"])
+```
 
 Finally, sort the values by Continent column and it will order the rows as per the custom list passed in the categories column
 
@@ -683,105 +175,25 @@ Finally, sort the values by Continent column and it will order the rows as per t
 df.sort_values(by='Continent')
 ```
 
-Country
-
-**Co2\_emission**
-
-**Population\_million**
-
-**Continent**
-
-USA
-
-5107.393
-
-329.0
-
-NA
-
-China
-
-10877.218
-
-1433.0
-
-Asia
-
-India
-
-2454.774
-
-1366.0
-
-Asia
-
-Japan
-
-1320.776
-
-126.0
-
-Asia
-
-Singapore
-
-55.018
-
-5.8
-
-Asia
-
-South Korea
-
-673.324
-
-51.0
-
-Asia
-
-Australia
-
-764.866
-
-NaN
-
-AU
-
-Russia
-
-1764.866
-
-145.0
-
-EU
-
-Switzerland
-
-39.738
-
-8.5
-
-EU
-
-Sweden
-
-NaN
-
-10.0
-
-EU
-
-UK
-
-379.150
-
-67.0
-
-EU
+{:.table}
+{:.table-striped}
+|Country|Co2_emission|Population_million|Continent|
+|--- |--- |--- |--- |
+|USA|5107.393|329.0|NA|
+|China|10877.218|1433.0|Asia|
+|India|2454.774|1366.0|Asia|
+|Japan|1320.776|126.0|Asia|
+|Singapore|55.018|5.8|Asia|
+|South Korea|673.324|51.0|Asia|
+|Australia|764.866|NaN|AU|
+|Russia|1764.866|145.0|EU|
+|Switzerland|39.738|8.5|EU|
+|Sweden|NaN|10.0|EU|
+|UK|379.150|67.0|EU|
 
 ## **Sort dataframe based on a custom list**
 
-It's not necessary that everytime you use the sort\_values function for sorting
+It's not necessary that everytime you use the sort_values function for sorting
 
 Here is a unique case if you have list of countries and want to arrange the dataframe rows based on the elements inside this list
 
@@ -793,231 +205,51 @@ df.set_index('Country',inplace=True)
 df.reindex(reorderlist)
 ```
 
-Country
+{:.table}
+{:.table-striped}
+|Country|Co2_emission|Population_million|Continent|
+|--- |--- |--- |--- |
+|China|10877.218|1433.0|Asia|
+|Russia|1764.866|145.0|EU|
+|Australia|764.866|NaN|AU|
+|India|2454.774|1366.0|Asia|
+|Japan|1320.776|126.0|Asia|
+|Singapore|55.018|5.8|Asia|
+|South Korea|673.324|51.0|Asia|
+|UK|379.150|67.0|EU|
+|USA|5107.393|329.0|NA|
+|Sweden|NaN|10.0|EU|
+|Switzerland|39.738|8.5|EU|
 
-**Co2\_emission**
-
-**Population\_million**
-
-**Continent**
-
-China
-
-10877.218
-
-1433.0
-
-Asia
-
-Russia
-
-1764.866
-
-145.0
-
-EU
-
-Australia
-
-764.866
-
-NaN
-
-AU
-
-India
-
-2454.774
-
-1366.0
-
-Asia
-
-Japan
-
-1320.776
-
-126.0
-
-Asia
-
-Singapore
-
-55.018
-
-5.8
-
-Asia
-
-South Korea
-
-673.324
-
-51.0
-
-Asia
-
-UK
-
-379.150
-
-67.0
-
-EU
-
-USA
-
-5107.393
-
-329.0
-
-NA
-
-Sweden
-
-NaN
-
-10.0
-
-EU
-
-Switzerland
-
-39.738
-
-8.5
-
-EU
 
 ## **reset index after sorting dataframe**
 
-When you sort the dataframe the index are moved up and down and to re-arrange the index you can use reset\_index function and set drop as True to drop the index column which will be inserted as a new column
+When you sort the dataframe the index are moved up and down and to re-arrange the index you can use reset_index function and set drop as True to drop the index column which will be inserted as a new column
 
 ```
 df.sort_values('Population_million',ascending = False).reset_index(drop=True)
 ```
 
-**Country**
+{:.table}
+{:.table-striped}
+||Country|Co2_emission|Population_million|Continent|
+|--- |--- |--- |--- |--- |
+|0|China|10877.218|1433.0|Asia|
+|1|India|2454.774|1366.0|Asia|
+|2|USA|5107.393|329.0|NA|
+|3|Russia|1764.866|145.0|EU|
+|4|Japan|1320.776|126.0|Asia|
+|5|UK|379.150|67.0|EU|
+|6|South Korea|673.324|51.0|Asia|
+|7|Sweden|NaN|10.0|EU|
+|8|Switzerland|39.738|8.5|EU|
+|9|Singapore|55.018|5.8|Asia|
+|10|Australia|764.866|NaN|AU|
 
-**Co2\_emission**
-
-**Population\_million**
-
-**Continent**
-
-0
-
-China
-
-10877.218
-
-1433.0
-
-Asia
-
-1
-
-India
-
-2454.774
-
-1366.0
-
-Asia
-
-2
-
-USA
-
-5107.393
-
-329.0
-
-NA
-
-3
-
-Russia
-
-1764.866
-
-145.0
-
-EU
-
-4
-
-Japan
-
-1320.776
-
-126.0
-
-Asia
-
-5
-
-UK
-
-379.150
-
-67.0
-
-EU
-
-6
-
-South Korea
-
-673.324
-
-51.0
-
-Asia
-
-7
-
-Sweden
-
-NaN
-
-10.0
-
-EU
-
-8
-
-Switzerland
-
-39.738
-
-8.5
-
-EU
-
-9
-
-Singapore
-
-55.018
-
-5.8
-
-Asia
-
-10
-
-Australia
-
-764.866
-
-NaN
-
-AU
 
 ## **Sort dataframe by date column**
 
-sort\_values functions let you sort the dataframe by dates also
+sort_values functions let you sort the dataframe by dates also
 
 Let's create a column with date range
 
@@ -1031,277 +263,49 @@ Sort the column by Date in descending order
 df.sort_values('Date',ascending=False,inplace=True)
 ```
 
-**Country**
 
-**Co2\_emission**
-
-**Population\_million**
-
-**Continent**
-
-**Date**
-
-10
-
-Australia
-
-764.866
-
-NaN
-
-AU
-
-2019-01-22
-
-9
-
-UK
-
-379.150
-
-67.0
-
-EU
-
-2019-01-21
-
-8
-
-South Korea
-
-673.324
-
-51.0
-
-Asia
-
-2019-01-20
-
-7
-
-Singapore
-
-55.018
-
-5.8
-
-Asia
-
-2019-01-19
-
-6
-
-Sweden
-
-NaN
-
-10.0
-
-EU
-
-2019-01-18
-
-5
-
-Japan
-
-1320.776
-
-126.0
-
-Asia
-
-2019-01-17
-
-4
-
-Switzerland
-
-39.738
-
-8.5
-
-EU
-
-2019-01-16
-
-3
-
-Russia
-
-1764.866
-
-145.0
-
-EU
-
-2019-01-15
-
-2
-
-India
-
-2454.774
-
-1366.0
-
-Asia
-
-2019-01-14
-
-1
-
-China
-
-10877.218
-
-1433.0
-
-Asia
-
-2019-01-13
-
-0
-
-USA
-
-5107.393
-
-329.0
-
-NA
-
-2019-01-12
-
-## **Sort dataframe by datetime index using sort\_index**
-
-You can also sort the df by datetime index using the sort\_index function
+{:.table}
+{:.table-striped}
+||Country|Co2_emission|Population_million|Continent|Date|
+|--- |--- |--- |--- |--- |--- |
+|10|Australia|764.866|NaN|AU|2019-01-22|
+|9|UK|379.150|67.0|EU|2019-01-21|
+|8|South Korea|673.324|51.0|Asia|2019-01-20|
+|7|Singapore|55.018|5.8|Asia|2019-01-19|
+|6|Sweden|NaN|10.0|EU|2019-01-18|
+|5|Japan|1320.776|126.0|Asia|2019-01-17|
+|4|Switzerland|39.738|8.5|EU|2019-01-16|
+|3|Russia|1764.866|145.0|EU|2019-01-15|
+|2|India|2454.774|1366.0|Asia|2019-01-14|
+|1|China|10877.218|1433.0|Asia|2019-01-13|
+|0|USA|5107.393|329.0|NA|2019-01-12|
+
+
+## **Sort dataframe by datetime index using sort_index**
+
+You can also sort the df by datetime index using the sort_index function
 
 First set the date column created above as an index and then sort the index
 
 ```
 df.set_index('Date').sort_index()
 ```
+{:.table}
+{:.table-striped}
+|Date|Country|Co2_emission|Population_million|Continent|
+|--- |--- |--- |--- |--- |
+|2019-01-12|USA|5107.393|329.0|NA|
+|2019-01-13|China|10877.218|1433.0|Asia|
+|2019-01-14|India|2454.774|1366.0|Asia|
+|2019-01-15|Russia|1764.866|145.0|EU|
+|2019-01-16|Switzerland|39.738|8.5|EU|
+|2019-01-17|Japan|1320.776|126.0|Asia|
+|2019-01-18|Sweden|NaN|10.0|EU|
+|2019-01-19|Singapore|55.018|5.8|Asia|
+|2019-01-20|South Korea|673.324|51.0|Asia|
+|2019-01-21|UK|379.150|67.0|EU|
+|2019-01-22|Australia|764.866|NaN|AU|
 
-Date
-
-**Country**
-
-**Co2\_emission**
-
-**Population\_million**
-
-**Continent**
-
-2019-01-12
-
-USA
-
-5107.393
-
-329.0
-
-NA
-
-2019-01-13
-
-China
-
-10877.218
-
-1433.0
-
-Asia
-
-2019-01-14
-
-India
-
-2454.774
-
-1366.0
-
-Asia
-
-2019-01-15
-
-Russia
-
-1764.866
-
-145.0
-
-EU
-
-2019-01-16
-
-Switzerland
-
-39.738
-
-8.5
-
-EU
-
-2019-01-17
-
-Japan
-
-1320.776
-
-126.0
-
-Asia
-
-2019-01-18
-
-Sweden
-
-NaN
-
-10.0
-
-EU
-
-2019-01-19
-
-Singapore
-
-55.018
-
-5.8
-
-Asia
-
-2019-01-20
-
-South Korea
-
-673.324
-
-51.0
-
-Asia
-
-2019-01-21
-
-UK
-
-379.150
-
-67.0
-
-EU
-
-2019-01-22
-
-Australia
-
-764.866
-
-NaN
-
-AU
 
 ## **Sort dataframe by row values**
 
@@ -1313,37 +317,14 @@ Let's create a dataframe of numbers first
 df = pd.DataFrame(data={'x':[28,10,90], 'y':[45,58,67],'z':[19,82,37]}, index=['a', 'b', 'c'])
 ```
 
-x
+||x|y|z|
+|--- |--- |--- |--- |
+|a|28|45|19|
+|b|10|58|82|
+|c|90|67|37|
 
-y
 
-z
-
-a
-
-28
-
-45
-
-19
-
-b
-
-10
-
-58
-
-82
-
-c
-
-90
-
-67
-
-37
-
-**Sort row values using sort\_values**
+**Sort row values using sort_values**
 
 We are sorting the above dataframe based on the values in row a and by default it is ascending order
 
@@ -1351,35 +332,12 @@ We are sorting the above dataframe based on the values in row a and by default i
 df.sort_values(by='a', axis=1)
 ```
 
-z
+||z|x|y|
+|--- |--- |--- |--- |
+|a|19|28|45|
+|b|82|10|58|
+|c|37|90|67|
 
-x
-
-y
-
-a
-
-19
-
-28
-
-45
-
-b
-
-82
-
-10
-
-58
-
-c
-
-37
-
-90
-
-67
 
 Note: In all the below cases the output will be same as the above table
 
@@ -1416,10 +374,10 @@ df.reindex(sorted(df.columns, key=lambda x: df[x]['a']), axis=1)
 So we have reached to the end of this blog post and just wanted to highlight few key points that we have learn in this blog post
 
 1. Sorting of the dataframe by single, multiple column values and arranging the sorted columns in ascending and descending order
-2. How to use sort\_values functions and the arguments like na\_position, ascending etc.
+2. How to use sort_values functions and the arguments like na_position, ascending etc.
 3. Sorting columns based on a custom list or dictionary and using Pandas Categorical Series and reindex
-4. How to Sort with date column and datetime index using sort\_index
-5. Sorting based on a specific row values by different methods like numpy argsort, sort\_values and reindex
+4. How to Sort with date column and datetime index using sort_index
+5. Sorting based on a specific row values by different methods like numpy argsort, sort_values and reindex
 
 if there is any additional function which you know can be used to sort the rows and column values in a dataframe then please leave your comments in the comment section below
 

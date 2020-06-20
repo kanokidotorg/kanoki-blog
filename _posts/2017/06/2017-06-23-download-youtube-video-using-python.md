@@ -9,7 +9,7 @@ It's a real excitement Watching Youtube videos offline by downloading it to your
 
 **Step 1**: Open a Terminal and type this command
 
-**pip install youtube\-dl**
+**pip install youtube-dl**
 
 **Step 2**: Open editor and write a small script as shown here
 

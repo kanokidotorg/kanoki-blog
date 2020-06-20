@@ -27,11 +27,13 @@ Look at this data the dates are not in a specific interval. it's just captured r
 
 By specific interval we meant the difference between the two successive date row should be something like 15 secs, 30 seconds, 30 minutes or 1 hour
 
+```
 import pandas as pd
-df = pd.read\_csv('./datatest.txt')
-df1 = pd.read\_csv('./datatest\_next.txt')
-df2 = pd.concat(\[df,df1\])
-df2\[ 'date' \] = pd.to\_datetime(df2\['date'\])
+df = pd.read_csv('./datatest.txt')
+df1 = pd.read_csv('./datatest_next.txt')
+df2 = pd.concat([df,df1])
+df2[ 'date' ] = pd.to_datetime(df2['date'])
+```
 
 ![Resample and Interpolation](/images/2020/04/image.png)
 
@@ -39,9 +41,9 @@ df2\[ 'date' \] = pd.to\_datetime(df2\['date'\])
 
 For the resampling method we have to make sure the dataframe must have a datetime-like index (DatetimeIndex, PeriodIndex, or TimedeltaIndex), or pass datetime-like values to the on or level keyword
 
-First we will set the date column as index using set\_index function
+First we will set the date column as index using ```set_index``` function
 
-The datetime columns should be a datetime object and not a string. if it is a string then convert to datetime using pd.to\_datetime() method as we have done above
+The datetime columns should be a datetime object and not a string. if it is a string then convert to datetime using ```pd.to_datetime()``` method as we have done above
 
 For using the resample() function we need to set the frequency for how we want to downsample or Upsample the timeseries data i.e. Hourly(H), Daily(D), 3 seconds(3s) etc.
 
@@ -117,7 +119,9 @@ Let's take the first example where we resampled the data hourly and check the nu
 
 We will just check one column where the NaN values are created. So I will pick temperature here
 
-df\[df\['Temperature'\].isna()\]
+```
+df[df['Temperature'].isna()]
+```
 
 So there are 171 rows which have NaN values which is created by resample function since there was no data available for these hours in the original data
 
@@ -145,8 +149,11 @@ As per wiki:
 
 We are using temperature column (Series object) to fill the Nan's and plot the data. You can use a dataframe object as well
 
-\# Linear Interpolate
-df3\['Temperature'\].interpolate('linear').plot()
+# Linear Interpolate
+
+```
+df3['Temperature'].interpolate('linear').plot()
+```
 
 ![Linear Interpolation](/images/2020/04/image-8.png)
 
@@ -158,8 +165,10 @@ This is evident from the figure above for Temperatue column. There is a linear l
 
 Let's check the values in dataframe after Linear Interpolation
 
-df3 = df2.set\_index('date').resample('H').mean().interpolate('linear')
-df3\[(df3.index > '2015-02-05')&(df3.index < '2015-02-11')\]
+```
+df3 = df2.set_index('date').resample('H').mean().interpolate('linear')
+df3[(df3.index > '2015-02-05')&(df3.index < '2015-02-11')]
+```
 
 ![Resample and Interpolation](/images/2020/04/image-12.png)
 
@@ -171,16 +180,18 @@ There are different method of Polynomial interpolation like polynomial, spline a
 
 You need to specify the order for this interpolation method
 
-\# Polynomial Interpolation
-df3\['Temperature'\].interpolate('Polynomial', order=2).plot()
+```
+# Polynomial Interpolation
+df3['Temperature'].interpolate('Polynomial', order=2).plot()
+```
 
 ![Polynomial Interpolation](/images/2020/04/image-7.png)
 
 Let's see the real values in the dataframe now
-
-df3 = df2.set\_index('date').resample('H').mean().interpolate('polynomial',order=2)
-df3\[(df3.index > '2015-02-05')&(df3.index < '2015-02-11')\]
-
+```
+df3 = df2.set_index('date').resample('H').mean().interpolate('polynomial',order=2)
+df3[(df3.index > '2015-02-05')&(df3.index < '2015-02-11')]
+```
 ![Resample and Interpolation](/images/2020/04/image-10.png)
 
 First we resample the original dataframe to Hourly and applied mean

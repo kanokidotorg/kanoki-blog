@@ -62,11 +62,11 @@ Download Data Link: [Kaggle-World-Happiness-Report-2019](https://www.kaggle.com/
 
 ## **Pandas extract**
 
-Extract the first 5 characters of each country using ^(start of the String) and {5} (for 5 characters) and create a new column first\_five\_letter
+Extract the first 5 characters of each country using ^(start of the String) and {5} (for 5 characters) and create a new column first_five_letter
 
 ```
 import numpy as np
-df['first_five_Letter']=df['Country (region)'].str.extract(r'(^\w{5})')
+df['first_five_Letter']=df['Country (region)'].str.extract(r'(^w{5})')
 df.head()
 ```
 
@@ -74,7 +74,7 @@ df.head()
 
 ## **Pandas Count**
 
-First we are counting the countries starting with character 'F'. It returns two elements but not france because the character 'f' here is in lower case. you can add both Upper and Lower case by using \[Ff\]
+First we are counting the countries starting with character 'F'. It returns two elements but not france because the character 'f' here is in lower case. you can add both Upper and Lower case by using [Ff]
 
 ```
 S=pd.Series(['Finland','Colombia','Florida','Japan','Puerto Rico','Russia','france'])
@@ -128,12 +128,12 @@ df[df['Country (region)'].str.match('^P.*')== True]
 
 ## **Pandas Replace**
 
-Replaces all the occurence of matched pattern in the string. We want to remove the dash(-) followed by number in the below pandas series object. The regex checks for a dash(-) followed by a numeric digit (represented by \\d) and replace that with an empty string and the inplace parameter set as True will update the existing series. The output is list of countres without the dash and number.
+Replaces all the occurence of matched pattern in the string. We want to remove the dash(-) followed by number in the below pandas series object. The regex checks for a dash(-) followed by a numeric digit (represented by d) and replace that with an empty string and the inplace parameter set as True will update the existing series. The output is list of countres without the dash and number.
 
 ```
 # Remove the dash(-) followed by number from all countries in the Series
 S=pd.Series(['Finland-1','Colombia-2','Florida-3','Japan-4','Puerto Rico-5','Russia-6','france-7'])
-S.replace('(-\d)','',regex=True, inplace = True)
+S.replace('(-d)','',regex=True, inplace = True)
 ```
 
 **Output:**
@@ -155,7 +155,9 @@ S=pd.Series(['Finland','Colombia','Florida','Japan','Puerto Rico','Russia','fran
 [itm[0] for itm in S.str.findall('^[Ff].*') if len(itm)>0]
 ```
 
-**Output:** \['Finland', 'Florida', 'france'\]
+```
+**Output:** ['Finland', 'Florida', 'france']
+```
 
 ## **Pandas Contains**
 
@@ -184,13 +186,13 @@ df[df['Country (region)'].str.contains('^I.*')==True]
 
 ## **Pandas Split**
 
-This is equivalent to str.split() and accepts regex, if no regex passed then the default is \\s (for whitespace). Here we are splitting the text on white space and expands set as True splits that into 3 different columns
+This is equivalent to str.split() and accepts regex, if no regex passed then the default is \s (for whitespace). Here we are splitting the text on white space and expands set as True splits that into 3 different columns
 
 You can also specify the param n to Limit number of splits in output
 
 ```
 s = pd.Series(["StatueofLiberty built-on 28-Oct-1886"])
-s.str.split(r"\s", n=-1,expand=True)
+s.str.split(r"s", n=-1,expand=True)
 ```
 
 ![](/images/2019/11/image-7.png)

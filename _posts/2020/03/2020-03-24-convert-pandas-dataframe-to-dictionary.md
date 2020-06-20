@@ -59,17 +59,19 @@ Cecilia
 
 Memphis
 
-## **Pandas to\_dict() function**
+## **Pandas ```to_dict()``` function**
 
 A simple function to convert the dataframe to dictionary. So let's convert the above dataframe to dictionary without passing any parameters
 
 ```
 df.to_dict()
 ```
-
+```
 {'Name': {0: 'John', 1: 'Sara', 2: 'Peter', 3: 'Cecilia'},
  'Age': {0: 38, 1: 47, 2: 63, 3: 28},
  'City': {0: 'Boston', 1: 'Charlotte', 2: 'London', 3: 'Memphis'}}
+```
+
 
 It returns the Column header as Key and each row as value and their key as index of the datframe
 
@@ -99,11 +101,14 @@ Now change the orient to list and see what type of dictionary we get as an outpu
 ```
 df.to_dict('list')
 ```
+```
 
-{'Name': \['John', 'Sara', 'John', 'Sara'\],
- 'Sem': \['Sem1', 'Sem1', 'Sem2', 'Sem2'\],
- 'Subject': \['Mathematics', 'Biology', 'Biology', 'Mathematics'\],
- 'Grade': \['A', 'B', 'A+', 'B++'\]}
+{'Name': ['John', 'Sara', 'John', 'Sara'],
+ 'Sem': ['Sem1', 'Sem1', 'Sem2', 'Sem2'],
+ 'Subject': ['Mathematics', 'Biology', 'Biology', 'Mathematics'],
+ 'Grade': ['A', 'B', 'A+', 'B++']}
+```
+
 
 It returns Column Headers as Key and all the row as list of values
 
@@ -114,8 +119,9 @@ Let's change the orient to records and check the result
 ```
 df.to_dict('records')
 ```
-
- \[{'Name': 'John', 'Age': 38, 'City': 'Boston'},  {'Name': 'Sara', 'Age': 47, 'City': 'Charlotte'},  {'Name': 'Peter', 'Age': 63, 'City': 'London'},  {'Name': 'Cecilia', 'Age': 28, 'City': 'Memphis'}\]
+```
+[{'Name': 'John', 'Age': 38, 'City': 'Boston'},  {'Name': 'Sara', 'Age': 47, 'City': 'Charlotte'},  {'Name': 'Peter', 'Age': 63, 'City': 'London'},  {'Name': 'Cecilia', 'Age': 28, 'City': 'Memphis'}]
+```
 
 it returns the list of dictionary and each dictionary contains the individual rows
 
@@ -127,22 +133,26 @@ So we are setting the index of dataframe as Name first and then Transpose the Da
 df.set_index('Name').T.to_dict('list')
 ```
 
-{'John': \[38, 'Boston'\],
- 'Sara': \[47, 'Charlotte'\],
- 'Peter': \[63, 'London'\],
- 'Cecilia': \[28, 'Memphis'\]}
+```
+{'John': [38, 'Boston'],
+ 'Sara': [47, 'Charlotte'],
+ 'Peter': [63, 'London'],
+ 'Cecilia': [28, 'Memphis']}
+```
 
 It returns Name as Key and the other values Age and City as list
 
 ## **Converting Timestamp data to dictionary**
 
-Let's see how to\_dict function works with timestamp data
+Let's see how ```to_dict``` function works with timestamp data
 
 Let's create a simple dataframe with date and time values in it
 
+```
 tsmp = Timestamp("20200101")
-data = DataFrame({"A": \[tsmp, tsmp\], "B": \[tsmp, tsmp\]})
+data = DataFrame({"A": [tsmp, tsmp], "B": [tsmp, tsmp]})
 data
+```
 
 **A**
 
@@ -164,10 +174,12 @@ data
 data.to_dict(orient="records")
 ```
 
-\[{'A': Timestamp('2020-01-01 00:00:00'),
+```
+[{'A': Timestamp('2020-01-01 00:00:00'),
   'B': Timestamp('2020-01-01 00:00:00')},
  {'A': Timestamp('2020-01-01 00:00:00'),
-  'B': Timestamp('2020-01-01 00:00:00')}\]
+  'B': Timestamp('2020-01-01 00:00:00')}]
+```
 
 It returns list of dictionary and each row values is a dictionary having colum label as key and timestamp object as their values
 
@@ -183,15 +195,15 @@ df = DataFrame(list(data), columns=["d"])
 result = df.to_dict(orient="records")
 result
 ```
-
-\[{'d': Timestamp('2017-11-18 21:53:00.219225+0000', tz='UTC')},
- {'d': Timestamp('2017-11-18 22:06:30.061810+0000', tz='UTC')}\]
-
+```
+[{'d': Timestamp('2017-11-18 21:53:00.219225+0000', tz='UTC')},
+ {'d': Timestamp('2017-11-18 22:06:30.061810+0000', tz='UTC')}]
+```
 It returns the list of dictionary with timezone info
 
 ## **Dataframe to OrderedDict and defaultdict**
 
-### **to\_dict() Into parameter:**
+### **to_dict() Into parameter:**
 
 You can specify the type from the collections.abc.Mapping subclass used for all Mappings in the return value
 
@@ -207,18 +219,18 @@ test_data = {"A": {"1": 1, "2": 2}, "B": {"1": "1", "2": "2", "3": "3"}}
 ```
 DataFrame(test_data).to_dict(into=OrderedDict)
 ```
-
-OrderedDict(\[('A',
-              OrderedDict(\[(0, Timestamp('2013-01-01 00:00:00')),
-                           (1, Timestamp('2013-01-01 00:00:00'))\])),
+```
+OrderedDict([('A',
+              OrderedDict([(0, Timestamp('2013-01-01 00:00:00')),
+                           (1, Timestamp('2013-01-01 00:00:00'))])),
              ('B',
-              OrderedDict(\[(0, Timestamp('2013-01-01 00:00:00')),
-                           (1, Timestamp('2013-01-01 00:00:00'))\]))\])
-
+              OrderedDict([(0, Timestamp('2013-01-01 00:00:00')),
+                           (1, Timestamp('2013-01-01 00:00:00'))]))])
+```
 ```
 DataFrame(test_data).to_dict(into=defaultdict(list))
 ```
-
+```
 defaultdict(list,
             {'A': defaultdict(list,
                          {0: Timestamp('2013-01-01 00:00:00'),
@@ -226,7 +238,7 @@ defaultdict(list,
              'B': defaultdict(list,
                          {0: Timestamp('2013-01-01 00:00:00'),
                           1: Timestamp('2013-01-01 00:00:00')})})
-
+```
 ```
 DataFrame(test_data).to_dict(into=dict)
 ```
@@ -245,8 +257,8 @@ df = pd.DataFrame({'Serial_No': [0,1,1,1,2,2,3,3,4,5,5,5],'Segment':['A','B','C'
                                                                      'A','B','A','D','A',
                                                                     'A','C'],'Area':[23,45,64,23,64,65,23,45,23,64,23,64]})
 ```
-
-**Serial\_No**
+```
+**Serial_No**
 
 **Segment**
 
@@ -348,14 +360,14 @@ C
 
 64
 
-We will group the above dataframe by column Serial\_No and all the values in Area column of that group will be displayed as list
-
+We will group the above dataframe by column Serial_No and all the values in Area column of that group will be displayed as list
+```
 ```
 df.groupby(['Serial_No'])['Area'].apply(list).to_dict()
 ```
-
-{0: \[23\], 1: \[45, 64, 23\], 2: \[64, 65\], 3: \[23, 45\], 4: \[23\], 5: \[64, 23, 64\]}
-
+```
+{0: [23], 1: [45, 64, 23], 2: [64, 65], 3: [23, 45], 4: [23], 5: [64, 23, 64]}
+```
 ## **Convert Dataframe to Nested Dictionary**
 
 This is a very interesting example where we will create a nested dictionary from a dataframe
@@ -473,7 +485,7 @@ print (json.dumps(ppdict, indent=2))
 
 So just to summarize our key learning in this post, here are some of the main points that we touched upon:
 
-- How to convert a dataframe into a dictionary using to\_dict() function
+- How to convert a dataframe into a dictionary using ```to_dict()``` function
 - Using the oriented parameter to customize the result of our dictionary
 - into parameter can be used to specify the return type as defaultdict, Ordereddict and Counter
 - How a data with timestamp and datetime values can be converted into a dictionary

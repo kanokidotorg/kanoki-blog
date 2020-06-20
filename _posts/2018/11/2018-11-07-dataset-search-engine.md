@@ -9,13 +9,9 @@ At a very high level, this dataset search engine relies on the dataset providers
 
 Overall it's a great tool by Google which can really help the data scientist community to look for the dataset instead of searching for it on a web search engine.
 
- 
-
- **Home Page:**
+**Home Page:**
 
 ![](/images/2018/11/datasetsearch.png)
-
- 
 
 **Search Result:**
 

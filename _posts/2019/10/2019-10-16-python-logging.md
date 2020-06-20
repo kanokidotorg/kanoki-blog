@@ -86,7 +86,7 @@ When you run the above code this is the output that you see
 
 ### **Log to a File**
 
-In the above code just add filename parameter to basicconfig() settings. This will create a File Handler instead of a default Stream handler and all logs message will be written to my\_logs.log file
+In the above code just add filename parameter to basicconfig() settings. This will create a File Handler instead of a default Stream handler and all logs message will be written to my_logs.log file
 
 ```
 logging.basicConfig(level=logging.DEBUG,filename='./my_logs.log')
@@ -226,7 +226,7 @@ ch = logging.FileHandler('my_file_1.log')
 logger.addHandler(ch)
 ```
 
-The above code will write the log to a file my\_file\_1.log in the parent directory
+The above code will write the log to a file my_file_1.log in the parent directory
 
 **Output in a log file:**
 
@@ -266,18 +266,18 @@ formatter = logging.Formatter('{"time":%(asctime)s,"file_name": "%(filename)s:%(
 ```
 
 **Output:**
-
-> _{"time":2019-10-15 18:20:50,773,"file\_name": "test.py:19" ,"level": "INFO" ,"msg":"division by zero" }
-> {"time":2019-10-15 18:20:50,773,"file\_name": "test.py:11" ,"level": "INFO" ,"msg":"You are adding zero to a number" }
-> {"time":2019-10-15 18:20:50,773,"file\_name": "test.py:26" ,"level": "DEBUG" ,"msg":"You are multiplying zero to a number, Result will be a Zero" }_
-
+```
+> _{"time":2019-10-15 18:20:50,773,"file_name": "test.py:19" ,"level": "INFO" ,"msg":"division by zero" }
+> {"time":2019-10-15 18:20:50,773,"file_name": "test.py:11" ,"level": "INFO" ,"msg":"You are adding zero to a number" }
+> {"time":2019-10-15 18:20:50,773,"file_name": "test.py:26" ,"level": "DEBUG" ,"msg":"You are multiplying zero to a number, Result will be a Zero" }_
+```
 ## **Custom fields in Log Format**
 
 The filter class is used to filter the log records So that a logger will output the desired log message.
 
 You can also add keyword arguments(kwargs) to a log message using the Filter method and print that in the log messages directly
 
-> _{"time":2019-10-16 06:48:23,585,"file\_name": "test.py:27" ,"level": "INFO" ,**"msg":"Division","User":"min2bro"** }_
+> _{"time":2019-10-16 06:48:23,585,"file_name": "test.py:27" ,"level": "INFO" ,**"msg":"Division","User":"min2bro"** }_
 
 Here is an example of Filter which add additional blocks in the message for **`User`** and **`Custom_msg`**
 
@@ -362,10 +362,11 @@ if __name__ == '__main__':
 ```
 
 **Output:**
-
+```
 > _{"time":2019-10-16 06:48:23,585,"file\_name": "test.py:27" ,"level": "INFO" ,"msg":"Division","User":"min2bro" }
 > {"time":2019-10-16 06:48:23,589,"file\_name": "test.py:19" ,"level": "INFO" ,"msg":"addition","User":"min2bro" }
 > {"time":2019-10-16 06:48:23,590,"file\_name": "test.py:34" ,"level": "DEBUG" ,"msg":"Multiplication","User":"min2bro" }_
+```
 
 ## **Logging Variable Data**
 

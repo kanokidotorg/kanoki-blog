@@ -83,7 +83,7 @@ df[df.groupby(['Name','City'])['Age'].transform('sum') > 40]
 
 ## **How to use Transform with Lambda?**
 
-We can also use transform with Lambda or any custom function. which is use for transforming the data. If a function, must either work when passed a DataFrame or when passed to DataFrame.apply . Here we are trying to divide the combined Ages by 2 (half of the group combined age). Look at Bob, Seattle row , we have seen their combined age in the group was 40 and after applying lambda with transform the new column half\_age has half the value of Sum column i.e. 20
+We can also use transform with Lambda or any custom function. which is use for transforming the data. If a function, must either work when passed a DataFrame or when passed to DataFrame.apply . Here we are trying to divide the combined Ages by 2 (half of the group combined age). Look at Bob, Seattle row , we have seen their combined age in the group was 40 and after applying lambda with transform the new column half_age has half the value of Sum column i.e. 20
 
 ```
 df['half_age']=df.groupby(['Name','City'])['Age'].transform(lambda x: x.sum()/2)

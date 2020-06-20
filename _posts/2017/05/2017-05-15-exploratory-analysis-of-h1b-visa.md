@@ -15,12 +15,15 @@ Will analyze the H1B visa data from 2011 and find out how this visa program has 
 
  **Read the data and import in pandas dataframe**
 
-> df = pd.read\_csv('./h1b\_kaggle.csv')
+```
+> df = pd.read_csv('./h1b_kaggle.csv')
+```
 
 **Drop the null values from the list**
 
+```
 > df=df.dropna()
-
+```
 **What are the different H1B visa status in this entire dataset**
 
 ![Screen Shot 2017-05-15 at 21.58.33](https://techpickup.files.wordpress.com/2017/05/screen-shot-2017-05-15-at-21-58-33.png)

@@ -19,14 +19,19 @@ Append is used for appending the values at the end of the array provided the arr
 
 Whereas Concatenate is used for joining the sequence of array along an existing axis
 
-a= np.array(\[\[1, 2, 3\], \[4, 5, 6\]\])
-
-array(\[\[1, 2, 3\],
-       \[4, 5, 6\]\])
-
-b = np.array(\[7,8,9\])
-
-array(\[7, 8, 9\])
+```
+a= np.array([[1, 2, 3], [4, 5, 6]])
+```
+```
+array([[1, 2, 3],
+       [4, 5, 6]])
+```
+```
+b = np.array([7,8,9])
+```
+```
+array([7, 8, 9])
+```
 
 Can you append array b to array a?
 
@@ -43,18 +48,20 @@ Change the shape of array b from (3,) to (1,3)
 ```
 b = np.array([[7,8,9]])
 ```
-
-array(\[\[7, 8, 9\]\])
+```
+array([[7, 8, 9]])
+```
 
 Now try appending b to a and it will work
 
 ```
 np.append(a,b, axis=0)
 ```
-
-array(\[\[1, 2, 3\],
-       \[4, 5, 6\],
-       \[7, 8, 9\]\])
+```
+array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+```
 
 ## **Numpy concatenate 1D arrays**
 
@@ -64,7 +71,7 @@ Take two one dimensional arrays and concatenate it as a array sequence
 
 ![](/images/2020/01/image-17.png)
 
-So you have to pass \[a,b\] inside the concatenate function because concatenate function is used to join sequence of arrays
+So you have to pass [a,b] inside the concatenate function because concatenate function is used to join sequence of arrays
 
 ```
 import numpy
@@ -75,11 +82,13 @@ numpy.concatenate(a, b)
 
 **Output:**
 
-array(\[1, 2, 3, 5, 6\])
+```
+array([1, 2, 3, 5, 6])
+```
 
-### **numpy r\_**
+### **numpy r_**
 
-We can also concatenate these two 1D arrays using numpy r\_ . It's a simple way to build up arrays quickly
+We can also concatenate these two 1D arrays using numpy r_ . It's a simple way to build up arrays quickly
 
 it returns a concatenated ndarray or matrix
 
@@ -96,8 +105,9 @@ a = np.array([1, 2,3])
 b = np.array([5, 6,7])
 np.stack([a,b]).reshape(-1)
 ```
-
-array(\[1, 2, 3, 5, 6, 7\])
+```
+array([1, 2, 3, 5, 6, 7])
+```
 
 You have to reshape the resultant array to flatten it and get a 1D array
 
@@ -110,9 +120,9 @@ a = np.array((1,2,3))
 b = np.array((5,6))
 np.hstack((a,b))
 ```
-
-array(\[1, 2, 3, 5, 6\])
-
+```
+array([1, 2, 3, 5, 6])
+```
 ## **Numpy Concatenate 2D arrays**
 
 ```
@@ -122,14 +132,14 @@ b = np.array([[5, 6]])
 ```
 
 a:
-
-array(\[\[1, 2\],
-       \[3, 4\]\])
-
+```
+array([[1, 2],
+       [3, 4]])
+```
 b:
-
-array(\[\[5, 6\]\])
-
+```
+array([[5, 6]])
+```
 Now, Concatenate these two arrays along the rows
 
 ![](/images/2020/01/image-21.png)
@@ -139,12 +149,12 @@ Look at the axis value it is passed as 0 to merge along the rows
 ```
 np.concatenate((a, b), axis=0)
 ```
-
+```
 Output:
-array(\[\[1, 2\],
-       \[3, 4\],
-       \[5, 6\]\])
-
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+```
 ### **numpy vstack**
 
 It Stack arrays in sequence vertically i.e row wise
@@ -178,17 +188,19 @@ Transpose the array B and then concatenate along axis = 1
 np.concatenate((a, b.T), axis=1)
 ```
 
-array(\[\[1, 2, 5\],
-       \[3, 4, 6\]\])
+```
+array([[1, 2, 5],
+       [3, 4, 6]])
+```
 
 if we give axis as None then it will flatten the 2D arrays and convert to 1D array
 
 ```
 np.concatenate((a, b), axis=None)
 ```
-
-array(\[1, 2, 3, 4, 5, 6\])
-
+```
+array([1, 2, 3, 4, 5, 6])
+```
 ## **Numpy Concatenate 1D array to 2D array**
 
 ![](/images/2020/01/image-23.png)
@@ -207,10 +219,10 @@ Now we will concatenate this along rows to get a 2D array
 ```
 np.vstack((a,b))
 ```
-
-array(\[\[1, 2, 3\],
-       \[2, 3, 4\]\])
-
+```
+array([[1, 2, 3],
+       [2, 3, 4]])
+```
 **Using numpy concatenate**
 
 For this you have to reshape the original arrays
@@ -218,10 +230,10 @@ For this you have to reshape the original arrays
 ```
 np.concatenate([a.reshape(1,3),b.reshape(1,3)])
 ```
-
-array(\[\[1, 2, 3\],
-       \[2, 3, 4\]\])
-
+```
+array([[1, 2, 3],
+       [2, 3, 4]])
+```
 if you want to concatenate these two arrays along axis = 1
 
 ![](/images/2020/01/image-25.png)
@@ -233,11 +245,11 @@ a = np.array((1,2,3))
 b = np.array((4,5,6))
 np.stack((a,b),axis=1)
 ```
-
-array(\[\[1, 4\],
-       \[2, 5\],
-       \[3, 6\]\])
-
+```
+array([[1, 4],
+       [2, 5],
+       [3, 6]])
+```
 **Using Concatenate**
 
 ```
@@ -258,46 +270,47 @@ np.hstack([a.reshape(3,1),b.reshape(3,1)])
 a = np.array([[1, 2], [3, 4]])
 b = np.array([[5, 6],[7,8]])
 ```
-
+```
 a:
-array(\[\[1, 2\],
-       \[3, 4\]\])
-b:
- array(\[\[5, 6\],
-        \[7, 8\]\])
+array([[1, 2],
+       [3, 4]])
 
+b:
+ array([[5, 6],
+        [7, 8]])
+```
 ```
 np.stack((a,b))
 ```
+```
+array([[[1, 2],
+        [3, 4]],
 
-array(\[\[\[1, 2\],
-        \[3, 4\]\],
-
-       \[\[5, 6\],
-        \[7, 8\]\]\])
-
+       [[5, 6],
+        [7, 8]]])
+```
 **Stack along axis = 1**
 
-```
+
 np.stack((a,b),axis=1)
 ```
 
- array(\[\[\[1, 2\],
-         \[5, 6\]\],
+ array([[[1, 2],
+         [5, 6]],
 
-          \[\[3, 4\],
-          \[7, 8\]\]\])
-
+          [[3, 4],
+          [7, 8]]])
+```
 **Stack along axis = -1 i.e. last axis**
 
 ```
 np.stack((a,b),axis=-1)
 ```
+```
+array([[[1, 5],
+        [2, 6]],
 
-array(\[\[\[1, 5\],
-        \[2, 6\]\],
-
-       \[\[3, 7\],
-        \[4, 8\]\]\])
-
+       [[3, 7],
+        [4, 8]]])
+```
 * * *

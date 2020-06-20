@@ -9,11 +9,11 @@ JSON is widely used format for storing the data and exchanging. Many of the API'
 
 In this post we will learn how to import a JSON File, JSON String, JSON API Response and import it to Pandas dataframe and work with it.
 
-Pandas has built-in function read\_json to import the JSON Strings and Files into pandas dataframe and json\_normalize function works with nested json but it's little hard to understand how to use it. We will understand that hard part in a simpler way in this post
+Pandas has built-in function read_json to import the JSON Strings and Files into pandas dataframe and json_normalize function works with nested json but it's little hard to understand how to use it. We will understand that hard part in a simpler way in this post
 
-## **Pandas Read\_JSON**
+## **Pandas Read_JSON**
 
-You can read a JSON string and convert it into a pandas dataframe using read\_json() function. Here is a json string stored in variable data
+You can read a JSON string and convert it into a pandas dataframe using read_json() function. Here is a json string stored in variable data
 
 ```
 data = '''[{
@@ -54,7 +54,7 @@ pd.read_json(data,orient='columns')
 
 ![](/images/2019/12/image.png)
 
-## **orient parameter in read\_json**
+## **orient parameter in read_json**
 
 orient parameter is set to define the format of the input JSON. As per the official documentation the orient parameter can be any of the following values
 
@@ -102,7 +102,9 @@ df.to_json(orient='split')
 
 The output is a JSON String with keys as columns, index and data so basically it splitted the above dataframe into these three key and their corresponding values
 
-**Output:** '{"columns":\["c1","c2"\],"index":\["r1","r2"\],"data":\[\[1,2\],\[3,4\]\]}'
+```
+**Output:** '{"columns":["c1","c2"],"index":["r1","r2"],"data":[[1,2],[3,4]]}'
+```
 
 ### **orient records**
 
@@ -114,13 +116,15 @@ df.to_json(orient='records')
 
 So here in the output column c1,c2 for row r1,r2 is displapyed inside the list
 
-**Output:** '\[{"c1":1,"c2":2},{"c1":3,"c2":4}\]'
+```
+**Output:** '[{"c1":1,"c2":2},{"c1":3,"c2":4}]'
+```
 
 **read json with orient**
 
 As shown above if we set the orient as any of the above strings then it will import the data accordingly
 
-Going back to our read\_json function above we have seen that setting the parameter orient index imports all the column values row wise
+Going back to our read_json function above we have seen that setting the parameter orient index imports all the column values row wise
 
 Similarly in this statement the json string values are imported as columns and the index is r1,r2 because the ouput above was '{"r1":{"c1":1,"c2":2},"r2":{"c1":3,"c2":4}}'
 
@@ -130,7 +134,7 @@ pd.read_json(_, orient='index')
 
 ![](/images/2019/12/image-2.png)
 
-Here the index changes to 0,1 because we have set the orient as records and all the values are imported as columns for each row because the output above for orient record is list of column values as dictionary '\[{"c1":1,"c2":2},{"c1":3,"c2":4}\]'
+Here the index changes to 0,1 because we have set the orient as records and all the values are imported as columns for each row because the output above for orient record is list of column values as dictionary '[{"c1":1,"c2":2},{"c1":3,"c2":4}]'
 
 ```
 pd.read_json(_, orient='records')
@@ -138,9 +142,9 @@ pd.read_json(_, orient='records')
 
 ![](/images/2019/12/image-3.png)
 
-## **JSON\_Normalize function**
+## **JSON_Normalize function**
 
-### Import nested JSON API Response using json\_normalize
+### Import nested JSON API Response using json_normalize
 
 We are using openweather api to get the climate details for the next 30 days for the city of Mountain View in US
 
@@ -172,7 +176,7 @@ weather_api_data=json.loads(weather_json.text)
  'message': 0.587190406}
 ```
 
-Use json\_normalize() function to convert the api response into dataframe. In the next section we will understand how the record path and meta parameters are used to convert the nested json to dataframe
+Use json_normalize() function to convert the api response into dataframe. In the next section we will understand how the record path and meta parameters are used to convert the nested json to dataframe
 
 ```
 
@@ -185,11 +189,11 @@ df.head()
 
 ![](/images/2019/12/image-4.png)
 
-### **how json\_normalize works for nested JSON**
+### **how json_normalize works for nested JSON**
 
-**record\_path**
+**record_path**
 
-We have to specify the Path in each object to list of records. In the above json "list" is the json object that contains list of json object which we want to import in the dataframe, basically list is the nested object in the entire json. so we specify this path under records\_path
+We have to specify the Path in each object to list of records. In the above json "list" is the json object that contains list of json object which we want to import in the dataframe, basically list is the nested object in the entire json. so we specify this path under records_path
 
 ```
 df=json_normalize(weather_api_data,record_path = ['list'])
@@ -204,15 +208,15 @@ meta=['cod',['city','country'],['city','name'],['city','id'],['city','coord','la
   ['city','coord','lon']]
 ```
 
-You must be wondering why there are list inside that meta list like \['city','country'\] , \['city','name'\] etc.
+You must be wondering why there are list inside that meta list like ['city','country'] , ['city','name'] etc.
 
 If you check the above JSON, city is a json object which has coordinate, country, id and name fields inside it
 
-So in order to import all those fields in the dataframe we have to specify that as a list inside the meta list like \['city','coord','lat'\] , \['city','name'\] etc.
+So in order to import all those fields in the dataframe we have to specify that as a list inside the meta list like ['city','coord','lat'] , ['city','name'] etc.
 
 In the dataframe those columns are shown as city.coord.lat and city.name
 
-**Another Example of nested json response using json\_normalize**
+**Another Example of nested json response using json_normalize**
 
 Let's understand this using another example
 
@@ -267,11 +271,11 @@ data = {
 }
 ```
 
-Our data is stored in results field, so we will use data\['results'\] as our dictionary item to be imported into dataframe
+Our data is stored in results field, so we will use data['results'] as our dictionary item to be imported into dataframe
 
-In this json we have field ProductSMCP which is a json array and we will pass that in record\_path parameter
+In this json we have field ProductSMCP which is a json array and we will pass that in record_path parameter
 
-In the meta parameter we will pass other fields which we want to import in the dataframe i.e. meta = \['Settlement',\['Xref','SCSP'\],\['Xref','BBT'\],'\_id',\['Product','Description'\]\]
+In the meta parameter we will pass other fields which we want to import in the dataframe i.e. meta = ['Settlement',['Xref','SCSP'],['Xref','BBT'],'_id',['Product','Description']]
 
 Here is the complete line of code for importing this json into dataframe
 
@@ -285,7 +289,7 @@ You cannot see other fields of Product like Typelevel1, Typelevel2 etc. because 
 
 ## **Conclusion**:
 
-So we have come to an end of this long post and we have seen different ways to import the regular and nested JSON into pandas dataframe using read\_json() and json\_normalize()
+So we have come to an end of this long post and we have seen different ways to import the regular and nested JSON into pandas dataframe using read_json() and json_normalize()
 
 We have also seen how to import Json data from api response and json string directly into a pandas dataframe
 

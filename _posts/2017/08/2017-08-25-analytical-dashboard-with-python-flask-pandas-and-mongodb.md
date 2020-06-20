@@ -19,18 +19,20 @@ In this article I’m not focusing on the basics of python flask and assumes tha
 
 **Querying the MongoDB:**
 
-cursor=collection.find\_one({"data.msg.payload.Mobileidentifier”:MobileID},sort=\[("data.msg.payload.ScanStartTimestamp", -1)\])
+cursor=collection.find_one({"data.msg.payload.Mobileidentifier”:MobileID},sort=[("data.msg.payload.ScanStartTimestamp", -1)])
 
 So I’m trying to run a Query to find the first data with respect to a specific mobile gateway and sorted in Descending order, which will give me the latest record from the query.
 
 **Storing the Data in Python list:**
 
-if (cursor\['data'\]\['msg'\]\[len(cursor\['data'\]\['msg'\])-1\]\['payload'\]\['NoOfidDetected'\]>0 and len(cursor\['data'\]\['msg'\])>1):
-     ScanStartTimestamp.append(cursor\['data'\]\['msg'\]\[len(cursor\['data'\]\['msg'\])-1\]\['payload'\]\['ScanStartTimestamp'\])
-     MobileID.append(cursor\['data'\]\['msg'\]\[len(cursor\['data'\]\['msg'\]) - 1\]\['payload'\]\['MobileID'\])
-     PhonePlatform.append(cursor\['data'\]\['msg'\]\[len(cursor\['data'\]\['msg'\]) - 1\]\['payload'\]\['PhonePlatform'\])
-     time.append(cursor\['data'\]\['msg'\]\[ind\]\['ids'\]\[0\]\['\_time'\])
-      beaconid.append(cursor\['data'\]\['msg'\]\[ind\]\['ids'\]\[0\]\['beaconid’\])
+```
+if (cursor['data']['msg'][len(cursor['data']['msg'])-1]['payload']['NoOfidDetected']>0 and len(cursor['data']['msg'])>1):
+     ScanStartTimestamp.append(cursor['data']['msg'][len(cursor['data']['msg'])-1]['payload']['ScanStartTimestamp'])
+     MobileID.append(cursor['data']['msg'][len(cursor['data']['msg']) - 1]['payload']['MobileID'])
+     PhonePlatform.append(cursor['data']['msg'][len(cursor['data']['msg']) - 1]['payload']['PhonePlatform'])
+     time.append(cursor['data']['msg'][ind]['ids'][0]['_time'])
+      beaconid.append(cursor['data']['msg'][ind]['ids'][0]['beaconid’])
+```
 
 We stored all the data in a Python list for each items to be displayed on the Datable i.e. ScanStartTimestamp, MobileID, PhonePlatform, time, beaconid.
 
@@ -38,6 +40,7 @@ We stored all the data in a Python list for each items to be displayed on the Da
 
 All the list created above is now created and stored in Pandas Dataframe
 
+```
  df = pd.DataFrame(
   {'ScanStartTimestamp': ScanStartTimestamp,
   'time': time,
@@ -48,18 +51,18 @@ All the list created above is now created and stored in Pandas Dataframe
 
 **Convert Dataframe to HTML and return to Template Engine:**
 
-**df.to\_html()**
+**df.to_html()**
 
-@app.route('/', methods=\['POST','GET'\])
+@app.route('/', methods=['POST','GET'])
 def index():
 
-cursor=collection.find\_one({"data.msg.payload.Mobileidentifier”:MobileID},sort=\[("data.msg.payload.ScanStartTimestamp", -1)\])
-if (cursor\['data'\]\['msg'\]\[len(cursor\['data'\]\['msg'\])-1\]\['payload'\]\['NoOfidDetected'\]\>0 and len(cursor\['data'\]\['msg'\])>1):
- ScanStartTimestamp.append(cursor\['data'\]\['msg'\]\[len(cursor\['data'\]\['msg'\])-1\]\['payload'\]\['ScanStartTimestamp'\])
- MobileID.append(cursor\['data'\]\['msg'\]\[len(cursor\['data'\]\['msg'\]) - 1\]\['payload'\]\['MobileID'\])
- PhonePlatform.append(cursor\['data'\]\['msg'\]\[len(cursor\['data'\]\['msg'\]) - 1\]\['payload'\]\['PhonePlatform'\])
- time.append(cursor\['data'\]\['msg'\]\[ind\]\['ids'\]\[0\]\['\_time'\])
- beaconid.append(cursor\['data'\]\['msg'\]\[ind\]\['ids'\]\[0\]\['beaconid’\])
+cursor=collection.find_one({"data.msg.payload.Mobileidentifier”:MobileID},sort=[("data.msg.payload.ScanStartTimestamp", -1)])
+if (cursor['data']['msg'][len(cursor['data']['msg'])-1]['payload']['NoOfidDetected']>0 and len(cursor['data']['msg'])>1):
+ ScanStartTimestamp.append(cursor['data']['msg'][len(cursor['data']['msg'])-1]['payload']['ScanStartTimestamp'])
+ MobileID.append(cursor['data']['msg'][len(cursor['data']['msg']) - 1]['payload']['MobileID'])
+ PhonePlatform.append(cursor['data']['msg'][len(cursor['data']['msg']) - 1]['payload']['PhonePlatform'])
+ time.append(cursor['data']['msg'][ind]['ids'][0]['_time'])
+ beaconid.append(cursor['data']['msg'][ind]['ids'][0]['beaconid’])
 
 df = pd.DataFrame(
  {'ScanStartTimestamp': ScanStartTimestamp,
@@ -69,13 +72,14 @@ df = pd.DataFrame(
  'PhonePlatform':PhonePlatform,
  })
 
-return render\_template("user.html",show=df.to\_html())
+return render_template("user.html",show=df.to_html())
 
  Template will look like this:
 
-<div\>     
+<div>     
 {{ show | safe}}
- </div\>
+ </div>
+```
 
 **Showing Google Map:**
 
@@ -83,19 +87,20 @@ return render\_template("user.html",show=df.to\_html())
 
 You have to return the lat, long and custom text to be displayed on the map to the template engine:
 
-Tagloc\=\[lat, longi, 'MobileGateway-Loc'\]
+```
+Tagloc=[lat, longi, 'MobileGateway-Loc']
 
-<div\>
+<div>
       <div id="gcontainer" style="width: 600px; height: 400px; margin: 0 auto">
-</div\>
+</div>
 
 <script language="JavaScript">
 function drawChart() {
    // Define the chart to be drawn.
-    var data = google.visualization.arrayToDataTable(\[
-       \['Lat', 'Long', 'Name'\],
+    var data = google.visualization.arrayToDataTable([
+       ['Lat', 'Long', 'Name'],
        {{ Tagloc|safe }},
-   \]);
+   ]);
    // Set chart options
    var options = {
       showTip: true    
@@ -105,22 +110,24 @@ function drawChart() {
    chart.draw(data, options);
 }
 google.charts.setOnLoadCallback(drawChart);
-</script\>
+</script>
+```
 
 **Exporting the data from the Pandas Dataframe:**
 
 So Once the Dataframe is ready from the lists then you can use the below piece of code to export the dataframe as csv.
 
-@app.route('/export', methods=\['GET', 'POST'\])
+```
+@app.route('/export', methods=['GET', 'POST'])
 def export():
 
-cursor=collection.find\_one({"data.msg.payload.Mobileidentifier”:MobileID},sort=\[("data.msg.payload.ScanStartTimestamp", -1)\])
-if (cursor\['data'\]\['msg'\]\[len(cursor\['data'\]\['msg'\])-1\]\['payload'\]\['NoOfidDetected'\]>0 and len(cursor\['data'\]\['msg'\])>1):
-            ScanStartTimestamp.append(cursor\['data'\]\['msg'\]\[len(cursor\['data'\]\['msg'\])-1\]\['payload'\]\['ScanStartTimestamp'\])
-            MobileID.append(cursor\['data'\]\['msg'\]\[len(cursor\['data'\]\['msg'\]) - 1\]\['payload'\]\['MobileID'\])
-            PhonePlatform.append(cursor\['data'\]\['msg'\]\[len(cursor\['data'\]\['msg'\]) - 1\]\['payload'\]\['PhonePlatform'\])
-            time.append(cursor\['data'\]\['msg'\]\[ind\]\['ids'\]\[0\]\['\_time'\])
-            beaconid.append(cursor\['data'\]\['msg'\]\[ind\]\['ids'\]\[0\]\['beaconid’\])
+cursor=collection.find_one({"data.msg.payload.Mobileidentifier”:MobileID},sort=[("data.msg.payload.ScanStartTimestamp", -1)])
+if (cursor['data']['msg'][len(cursor['data']['msg'])-1]['payload']['NoOfidDetected']>0 and len(cursor['data']['msg'])>1):
+            ScanStartTimestamp.append(cursor['data']['msg'][len(cursor['data']['msg'])-1]['payload']['ScanStartTimestamp'])
+            MobileID.append(cursor['data']['msg'][len(cursor['data']['msg']) - 1]['payload']['MobileID'])
+            PhonePlatform.append(cursor['data']['msg'][len(cursor['data']['msg']) - 1]['payload']['PhonePlatform'])
+            time.append(cursor['data']['msg'][ind]['ids'][0]['_time'])
+            beaconid.append(cursor['data']['msg'][ind]['ids'][0]['beaconid’])
 
 df = pd.DataFrame(
     {'ScanStartTimestamp': ScanStartTimestamp,
@@ -130,18 +137,21 @@ df = pd.DataFrame(
      'PhonePlatform':PhonePlatform,
    })
 
-    resp = make\_response(df.to\_csv())
-    resp.headers\["Content-Disposition"\] = "attachment; filename=export.csv"
-    resp.headers\["Content-Type"\] = "text/csv"
+    resp = make_response(df.to_csv())
+    resp.headers["Content-Disposition"] = "attachment; filename=export.csv"
+    resp.headers["Content-Type"] = "text/csv"
 return resp
+```
 
 **Template:**
 
-<div id\="exptocsv">
+```
+<div id="exptocsv">
       <form action="/export" method="POST">
         <input type="text" name="etocsvtext" style="border-color:black" minlength="44" maxlength="44">
       <input type='submit' value='Export Details' />
-      </form\>
-</div\>
+      </form>
+</div>
+```
 
 So you have seen how easy it is to create an Analytical Dashboard within a weekend. To improve the look and feel you can add some css and fancy JS and HTML but that was not something I was looking for at this point in time, So I have created a bare minimum dashboard running on Python flask which serves our current need. Also the Python Pandas helped a lot to play with the data and display it in the required format

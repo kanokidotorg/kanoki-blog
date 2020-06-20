@@ -52,9 +52,9 @@ cities_df['lon'] = np.radians(cities_df['lon'])
 
 ![](/images/2019/12/image-7.png)
 
-### **Scipy get\_metrics()**
+### **Scipy get_metrics()**
 
-Scipy has a distance metrics class to find out the fast distance metrics. You can access the following metrics as shown in the image below using the get\_metrics() method of this class and find the distance between using the two points
+Scipy has a distance metrics class to find out the fast distance metrics. You can access the following metrics as shown in the image below using the get_metrics() method of this class and find the distance between using the two points
 
 Here is the table from the original scipy [documentation](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html#sklearn.neighbors.DistanceMetric) :
 
@@ -72,39 +72,44 @@ dist = DistanceMetric.get_metric('haversine')
 
 We have created a dist object with haversine metrics above and now we will use [pairwise()](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html#sklearn.neighbors.DistanceMetric.pairwise) function to calculate the haversine distance between each of the element with each other in this array
 
-[pairwise()](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html#sklearn.neighbors.DistanceMetric.pairwise) accepts a 2D matrix in the form of \[latitude,longitude\] in radians and computes the distance matrix as output in radians too.
+[pairwise()](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html#sklearn.neighbors.DistanceMetric.pairwise) accepts a 2D matrix in the form of [latitude,longitude] in radians and computes the distance matrix as output in radians too.
 
 **Input**:
 
 Input to pairwise() function is numpy.ndarray. So we have created a 2D matrix containing the Lat/Long of all the cities in the above dataframe
 
-cities\_df\[\['lat','lon'\]\].to\_numpy()
+```
+cities_df[['lat','lon']].to_numpy()
 
-array(\[\[12.9716, 77.5946\],
-       \[19.076 , 72.877 \],
-       \[28.7041, 77.1025\],
-       \[22.5726, 88.639 \],
-       \[13.0827, 80.2707\],
-       \[23.2599, 77.4126\]\])
+array([[12.9716, 77.5946],
+       [19.076 , 72.877 ],
+       [28.7041, 77.1025],
+       [22.5726, 88.639 ],
+       [13.0827, 80.2707],
+       [23.2599, 77.4126]])
+```
 
 We will pass this ndarray in pairwise() function which returns the ouput as ndarray too
 
- dist.pairwise(cities\_df \[\['lat','lon'\]\].to\_numpy())\*6373
-
+```
+ dist.pairwise(cities_df [['lat','lon']].to_numpy())*6373
+```
 **Output:**
 
 Final Output of pairwise function is a numpy matrix which we will convert to a dataframe to view the results with City labels and as a distance matrix
 
 Considering earth spherical radius as 6373 in kms, Multiply the result with 6373 to get the distance in KMS. For miles multiply by 3798
 
-dist.pairwise(cities\_df\[\['lat','lon'\]\].to\_numpy())\*6373
+```
+dist.pairwise(cities_df[['lat','lon']].to_numpy())*6373
 
- array(\[\[   0. ,  845.62832501, 1750.66416275, 1582.52517566,          290.26311647, 1144.52705214\],
-\[ 845.62832501,    0. , 1153.62973323, 1683.20328341,         1033.47995206,  661.62108356\],
-\[1750.66416275, 1153.62973323,    0. , 1341.80906015,         1768.20631663,  606.34972183\],
-\[1582.52517566, 1683.20328341, 1341.80906015,    0. ,         1377.28350373, 1152.40418062\],
-\[ 290.26311647, 1033.47995206, 1768.20631663, 1377.28350373,            0. , 1171.47693568\],
-\[1144.52705214,  661.62108356,  606.34972183, 1152.40418062,         1171.47693568,    0. \]\])
+ array([[   0. ,  845.62832501, 1750.66416275, 1582.52517566,          290.26311647, 1144.52705214],
+[ 845.62832501,    0. , 1153.62973323, 1683.20328341,         1033.47995206,  661.62108356],
+[1750.66416275, 1153.62973323,    0. , 1341.80906015,         1768.20631663,  606.34972183],
+[1582.52517566, 1683.20328341, 1341.80906015,    0. ,         1377.28350373, 1152.40418062],
+[ 290.26311647, 1033.47995206, 1768.20631663, 1377.28350373,            0. , 1171.47693568],
+[1144.52705214,  661.62108356,  606.34972183, 1152.40418062,         1171.47693568,    0. ]])
+```
 
 ### **Create Dataframe of Distance Matrix**
 
@@ -114,7 +119,9 @@ So the index of this dataframe is the list of city and the columns are also the 
 
 Now if you look at the row and cell of any of the city it will show the distance between them
 
- pd.DataFrame(dist.pairwise(cities\_df\[\['lat','lon'\]\].to\_numpy())\*6373,  columns=cities\_df.city.unique(), index=cities\_df.city.unique())
+```
+ pd.DataFrame(dist.pairwise(cities_df[['lat','lon']].to_numpy())*6373,  columns=cities_df.city.unique(), index=cities_df.city.unique())
+```
 
 ![](/images/2019/12/image-8.png)
 
@@ -130,7 +137,7 @@ Here is the simple calling format:
 
 We will use the same dataframe which we used above to find the distance matrix using scipy spatial pdist function
 
-pd.DataFrame(squareform(pdist(cities\_df.iloc\[:, 1:\])), columns=cities\_df.city.unique(), index=cities\_df.city.unique())
+pd.DataFrame(squareform(pdist(cities_df.iloc[:, 1:])), columns=cities_df.city.unique(), index=cities_df.city.unique())
 
 We are using square form which is another function to convert vector-form distance vector to a square-form distance matrix, and vice-versa
 
@@ -188,7 +195,7 @@ Let's calculate the haversine distance between origin and destination city using
 haversine_vectorize(orig_dest_df['orig_lon'],orig_dest_df['orig_lat'],orig_dest_df['dest_lon'],
                    orig_dest_df['dest_lat'])
 ```
-
+```
 0    1143.449512
 1     844.832190
 2    1152.543623
@@ -196,10 +203,11 @@ haversine_vectorize(orig_dest_df['orig_lon'],orig_dest_df['orig_lat'],orig_dest_
 4    1766.541600
 5    1151.319225
 dtype: float64
+```
 
 ### **Add column to Dataframe using vectorize function**
 
-Let's create a new column called haversine\_dist and add to the original dataframe
+Let's create a new column called haversine_dist and add to the original dataframe
 
 ```
 orig_dest_df['haversine_dist'] = haversine_vectorize(orig_dest_df['orig_lon'],orig_dest_df['orig_lat'],orig_dest_df['dest_lon'],orig_dest_df['dest_lat'])
@@ -222,7 +230,7 @@ We have a small dataset but for really large data in millions also it works fast
 
 So far we have seen the different ways to calculate the pairwise distance and compute the distance matrix using Scipy's spatial distance and Distance Metrics class.
 
-Scipy Distance functions are a fast and easy to compute the distance matrix for a sequence of lat,long in the form of \[long, lat\] in a 2D array. The output is a numpy.ndarray and which can be imported in a pandas dataframe
+Scipy Distance functions are a fast and easy to compute the distance matrix for a sequence of lat,long in the form of [long, lat] in a 2D array. The output is a numpy.ndarray and which can be imported in a pandas dataframe
 
 Using numpy and vectorize function we have seen how to calculate the haversine distance between two points or geo coordinates really fast and without an explicit looping
 

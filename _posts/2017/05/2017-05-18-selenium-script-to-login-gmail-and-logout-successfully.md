@@ -8,6 +8,7 @@ https://youtu.be/awJ16Ec-3ak
 
 **Java Code for Gmail Login:**
 
+```
 \[code language="Java"\]
 
 package mypackage;
@@ -39,7 +40,8 @@ WebElement myDynamicElement = (new WebDriverWait(driver, 15)).until(ExpectedCond
 }
 
 }
-
+```
+```
 \[/code\]
 
 **Python Code for Facebook Login:**
@@ -65,3 +67,4 @@ from selenium import webdriver from selenium.webdriver.common.keys import Keys
 //Close Driver driver.close()
 
 \[/code\]
+```

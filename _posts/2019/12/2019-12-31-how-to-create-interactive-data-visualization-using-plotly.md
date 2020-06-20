@@ -54,8 +54,8 @@ df.head(3)
 The original column names are long therefore we will rename those columns to something meaningful
 
 ```
-df.rename(columns={"Country (region)": "Country", "Log of GDP\nper capita": "Log_GDP_per_capita",
-                  "Healthy life\nexpectancy":"Health_life_expect"},inplace=True)
+df.rename(columns={"Country (region)": "Country", "Log of GDPnper capita": "Log_GDP_per_capita",
+                  "Healthy lifenexpectancy":"Health_life_expect"},inplace=True)
 ```
 
 ## **Plotly Bar Chart**
@@ -118,9 +118,9 @@ fig.show()
 
 ![](/images/2019/12/image-30.png)
 
-## **add\_trace and Box Plot**
+## **add_trace and Box Plot**
 
-We will plot the box graph now and this time we will update the figure object using the add\_trace() method
+We will plot the box graph now and this time we will update the figure object using the add_trace() method
 
 New traces can be added to a graph object figure using the `add_trace` method.
 
@@ -162,7 +162,7 @@ As per the definition in official plotly documentation:
 
 > A scatterplot matrix is a matrix associated to n numerical arrays (data variables), X1,X2,…,XnX1,X2,…,Xn , of the same length. The cell (i,j) of such a matrix displays the scatter plot of the variable Xi versus Xj.
 
-We are using the plotly express scatter\_matrix function to plot the first four columns of the dataframe excluding Country column
+We are using the plotly express scatter_matrix function to plot the first four columns of the dataframe excluding Country column
 
 We can specify the columns to be displayed in the dimensions parameter and represent color using any of the column
 
@@ -177,7 +177,7 @@ fig.show()
 
 In this below line chart we will set x limit from 0 to 20 and y limit from 0 to 100
 
-we are slicing the original dataframe(df\[:20\]) to get first 20 happiest countries and
+we are slicing the original dataframe(df[:20]) to get first 20 happiest countries and
 
 then use `**Line**` function with X-axis set as numpy ndarray with range of 100 and Y-axis set as Array of Freedom column for first top 20 highest country
 
@@ -201,7 +201,7 @@ fig.show()
 
 You can also set your own tick value array and pass it to tickvals parameter
 
-Because we are passing \[0,5,10,15,20\] array to the tickvals argument in the update\_xaxes() function the plot shows the same values for the x-axis
+Because we are passing [0,5,10,15,20] array to the tickvals argument in the update_xaxes() function the plot shows the same values for the x-axis
 
 ```
 fig = go.Figure(data=[
@@ -231,7 +231,7 @@ fig.show()
 
 ![](/images/2019/12/image-37.png)
 
-## **add\_trace and line style**
+## **add_trace and line style**
 
 We can also style the line plots like color and dash of the traces, adds trace names, modifies line width, and adds plot and axes titles
 
@@ -265,11 +265,11 @@ fig.show()
 
 ## **Line Shape**
 
-Because in the above line chart you have not set the line\_shape argument so by default it was linear
+Because in the above line chart you have not set the line_shape argument so by default it was linear
 
 However if you want to select some other shape for the lines then select from the following options: linear, spline, vhv, hvh,vh, hv
 
-We have selected a line\_shape hvh here
+We have selected a line_shape hvh here
 
 ```
 fig = go.Figure()

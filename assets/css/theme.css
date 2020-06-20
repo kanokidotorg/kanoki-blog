@@ -667,12 +667,14 @@ article p,article pre,article figure,article img,article blockquote,article ifra
 	margin-bottom:2rem;
 }
 article blockquote {
-	padding-left:40px;
+	padding-left:20px;
 	margin-left:0px;
 	font-style:italic;
 	position:relative;
+	background: rgba(0, 0, 0, 0.1);
+    border-left: 6px solid rgba(0, 0, 0, 0.2);
 }
-article blockquote:before {
+/*article blockquote:before {
 	content:"“";
 	font-family:Georgia;
 	font-size:8rem;
@@ -681,7 +683,7 @@ article blockquote:before {
 	opacity:1;
 	float:left;
 	line-height:1;
-}
+}*/
 article:first-letter {
 	float:left;
 	font-size:5em;

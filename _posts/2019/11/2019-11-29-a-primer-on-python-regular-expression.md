@@ -13,101 +13,30 @@ Every character in a regular expression is either a meta-character or a literal.
 
 ## **List of widely used Meta-characters:**
 
-table.customTable { width: 70%; background-color: #FFFFFF; border-collapse: collapse; border-width: 2px; border-color: #7ea8f8; border-style: solid; color: #000000; } <div></div> table.customTable td, table.customTable th { border-width: 2px; border-color: #7ea8f8; border-style: solid; padding: 5px; } <div></div> table.customTable thead { background-color: #7ea8f8; }
+|Meta-Characters|Description|
+|--- |--- |
+|.|Matches any character except a newline|
+|^|Matches start of the String|
+|$|Matches end of the String|
+|[]|Indicate a Set of Characters|
+|[^]|Match any character except given|
+|()|capture and group|
+|||Match either abc or def|
+|\|Either escapes special characters or denotes special sequence|
 
-Meta-Characters
-
-Description
-
-.
-
-Matches any character except a newline
-
-^
-
-Matches start of the String
-
-$
-
-Matches end of the String
-
-\[\]
-
-Indicate a Set of Characters
-
-\[^\]
-
-Match any character except given
-
-()
-
-capture and group
-
-|
-
-Match either abc or def
-
-\\
-
-Either escapes special characters or denotes special sequence
 
 **Examples**:
 
-table.customTable { width: 70%; background-color: #FFFFFF; border-collapse: collapse; border-width: 2px; border-color: #7ea8f8; border-style: solid; color: #000000; } <div></div> table.customTable td, table.customTable th { border-width: 2px; border-color: #7ea8f8; border-style: solid; padding: 5px; } <div></div> table.customTable thead { background-color: #7ea8f8; }
-
-Regex
-
-String
-
-Results
-
-a.c
-
-asc,apc,b6c,a5c
-
-'asc', 'apc', 'a5c'
-
-(^a.+\\d)
-
-abad6c
-
-'abad6'
-
-(\\d.+b$)
-
-abad6cb
-
-'6cb'
-
-\\d(\[a-z\]+)\\d
-
-197-63abd698-cdef
-
-'abd'
-
-\\w(\[^a-z\]+)\\w
-
-abABCd
-
-'ABC'
-
-(\\w.+) (\\w.+)
-
-My hero
-
-('My', 'hero')
-
-abc | def
-
-124-pdef9-24abc98
-
-'def','abc'
-
-\\\*
-
-hgy\*opt
-
-\*
+|Regex|String|Results|
+|--- |--- |--- |
+|a.c|asc,apc,b6c,a5c|‘asc’, ‘apc’, ‘a5c’|
+|(^a.+\d)|abad6c|‘abad6’|
+|(\d.+b$)|abad6cb|‘6cb’|
+|\d([a-z]+)\d|197-63abd698-cdef|‘abd’|
+|\w([^a-z]+)\w|abABCd|‘ABC’|
+|(\w.+) (\w.+)|My hero|(‘My’, ‘hero’)|
+|abc | def|124-pdef9-24abc98|‘def’,’abc’|
+|\*|hgy*opt|*|
 
 ## **Quantifiers**
 
@@ -117,77 +46,24 @@ The most common quantifiers are the question mark ?, the asterisk \* and the plu
 
 ### **List of common Quantifiers**
 
-table.customTable { width: 70%; background-color: #FFFFFF; border-collapse: collapse; border-width: 2px; border-color: #7ea8f8; border-style: solid; color: #000000; } <div></div> table.customTable td, table.customTable th { border-width: 2px; border-color: #7ea8f8; border-style: solid; padding: 5px; } <div></div> table.customTable thead { background-color: #7ea8f8; }
-
-Quantifier
-
-Description
-
-?
-
-Match 0 or One repetitions of preceding RE
-
-\*
-
-Match 0 or more repetitions of preceding RE
-
-+
-
-Match 1 or more repetitions of preceding RE but not Zero. Will not match ac
-
-{n}
-
-Matches exactly n copies of the preceding RE, it's 2 here
-
-{m,n}
-
-Match minimum of m and maximum of n repetitions of preceding RE
+|Quantifier|Description|
+|--- |--- |
+|?|Match 0 or One repetitions of preceding RE|
+|*|Match 0 or more repetitions of preceding RE|
+|+|Match 1 or more repetitions of preceding RE but not Zero. Will not match ac|
+|{n}|Matches exactly n copies of the preceding RE, it’s 2 here|
+|{m,n}|Match minimum of m and maximum of n repetitions of preceding RE|
 
 **Examples**:
 
-table.customTable { width: 70%; background-color: #FFFFFF; border-collapse: collapse; border-width: 2px; border-color: #7ea8f8; border-style: solid; color: #000000; } <div></div> table.customTable td, table.customTable th { border-width: 2px; border-color: #7ea8f8; border-style: solid; padding: 5px; } <div></div> table.customTable thead { background-color: #7ea8f8; }
-
-Regex
-
-String
-
-Results
-
-ab?c
-
-ac
-
-ac
-
-de\*fg
-
-dfg
-
-dfg
-
-ab+c
-
-abbbc
-
-abbbc
-
-\\d(\[a-z\]+)\\d
-
-197-63abd698-cdef
-
-'abd'
-
-a{2}
-
-24abc98aa0
-
-aa
-
-c{3,4}
-
-aacccbbb
-
-ccc
+|Regex|String|Results|
+|--- |--- |--- |
+|ab?c|ac|ac|
+|de*fg|dfg|dfg|
+|ab+c|abbbc|abbbc|
+|\d([a-z]+)\d|197-63abd698-cdef|‘abd’|
+|a{2}|24abc98aa0|aa|
+|c{3,4}|aacccbbb|ccc|
 
 ## **Special Sequence:**
 
@@ -195,101 +71,29 @@ it contains an escape character() followed by the below literals which gives the
 
 ### **List of commonly used special sequences**
 
-table.customTable { width: 70%; background-color: #FFFFFF; border-collapse: collapse; border-width: 2px; border-color: #7ea8f8; border-style: solid; color: #000000; } <div></div> table.customTable td, table.customTable th { border-width: 2px; border-color: #7ea8f8; border-style: solid; padding: 5px; } <div></div> table.customTable thead { background-color: #7ea8f8; }
-
-Meta-Characters
-
-Description
-
-\\d
-
-Matches decimal digits including \[0-9\]
-
-\\D
-
-Opposite of \\d i.e. \[^0-9\]. Matches any character which is not decimal
-
-\\w
-
-\[A-Za-z0-9\_\]
-
-\\W
-
-Matches any character which is not word character
-
-\\s
-
-Whitespace
-
-\\S
-
-Matches any character not whitespace
-
-\\b
-
-Matches empty string at start or end of a word
-
-\\B
-
-Matches empty string when not at start or end of a word
+|Meta-Characters|Description|
+|--- |--- |
+|\d|Matches decimal digits including [0-9]|
+|\D|Opposite of \d i.e. [^0-9]. Matches any character which is not decimal|
+|\w|[A-Za-z0-9_]|
+|\W|Matches any character which is not word character|
+|\s|Whitespace|
+|\S|Matches any character not whitespace|
+|\b|Matches empty string at start or end of a word|
+|\B|Matches empty string when not at start or end of a word|
 
 **Examples:**
 
-table.customTable { width: 70%; background-color: #FFFFFF; border-collapse: collapse; border-width: 2px; border-color: #7ea8f8; border-style: solid; color: #000000; } <div></div> table.customTable td, table.customTable th { border-width: 2px; border-color: #7ea8f8; border-style: solid; padding: 5px; } <div></div> table.customTable thead { background-color: #7ea8f8; }
-
-Regex
-
-String
-
-Results
-
-\\d
-
-Absdd45sd23sd
-
-ac
-
-\\D
-
-dfg
-
-dfg
-
-\\w
-
-abbbc
-
-abbbc
-
-\\W
-
-197-63abd698-cdef
-
-'abd'
-
-\\s
-
-24abc98aa0
-
-aa
-
-\\S
-
-aacccbbb
-
-ccc
-
-\\b
-
-24abc98aa0
-
-aa
-
-\\B
-
-aacccbbb
-
-ccc
+|Regex|String|Results|
+|--- |--- |--- |
+|\d|Absdd45sd23sd|ac|
+|\D|dfg|dfg|
+|\w|abbbc|abbbc|
+|\W|197-63abd698-cdef|‘abd’|
+|\s|24abc98aa0|aa|
+|\S|aacccbbb|ccc|
+|\b|24abc98aa0|aa|
+|\B|aacccbbb|ccc|
 
 ## **How to use Regular Expression in Python?**
 
@@ -562,21 +366,23 @@ re.compile(expr,re.DEBUG)
 
 **Output**:
 
-MAX\_REPEAT 2 2
+```
+MAX_REPEAT 2 2
   IN
-    CATEGORY CATEGORY\_DIGIT
+    CATEGORY CATEGORY_DIGIT
 SUBPATTERN 1 0 0
-  MAX\_REPEAT 1 MAXREPEAT
+  MAX_REPEAT 1 MAXREPEAT
     ANY None
-MAX\_REPEAT 2 2
+MAX_REPEAT 2 2
   IN
-    CATEGORY CATEGORY\_DIGIT
+    CATEGORY CATEGORY_DIGIT
+```
 
 ## **How to handle Error in Regular Expression?**
 
 An exception is raised when an invalid regular expression is passed to the function or when aan error occurs during compile.
 
-Here we are passing \\k an invalid sequence and it throws an exception when compiled.
+Here we are passing \k an invalid sequence and it throws an exception when compiled.
 
 ```
 # Error in Regex
@@ -588,7 +394,7 @@ except re.error as e:
     print(e)
 ```
 
-**Output:** bad escape \\k at position 3
+**Output:** bad escape \k at position 3
 
 ## **Conclusion:**
 

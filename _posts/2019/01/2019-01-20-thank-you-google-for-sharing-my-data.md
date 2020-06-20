@@ -39,8 +39,11 @@ Downloaded Location data is in the form of JSON and it contains all the informat
 Few major data attributes that you see in this data are:
 
 a) **timestamps**: milliseconds
+
 b) **latitudeE7**: latitude of the place
+
 c) **longitudeE7**: Longitude of the place
+
 d) **Activity**: **types**: ON\_FOOT
 
 WALKING

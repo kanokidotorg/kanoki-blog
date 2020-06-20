@@ -15,12 +15,14 @@ We can create a Dictionary using key:value pairs separated by commas or using th
 
 ### **Using comma separated key value pair**
 
+```
 d = {
 "name": "Charlie",
 "age": 42,
 "city": "NYC",
 "state": "NY",
 "rank": 1.0 }
+```
 
 ### **Using dict constructor**
 
@@ -55,7 +57,7 @@ def func(**kw):
   print(kw.keys())
 ```
 
-Calling the above function in Python 3.5 and before returns an un-ordered dict\_keys. Check the output the keys are randomly ordered
+Calling the above function in Python 3.5 and before returns an un-ordered dict_keys. Check the output the keys are randomly ordered
 
 ```
 func(a=1, b=2, c=3, d=4, e=5)
@@ -63,13 +65,17 @@ func(a=1, b=2, c=3, d=4, e=5)
 
 **Output in Python 3.5 and before:**
 
-dict\_keys(\['c', 'd', 'e', 'b', 'a'\]) # Keys are randomly ordered
+```
+dict_keys(['c', 'd', 'e', 'b', 'a']) # Keys are randomly ordered
+```
 
-Calling the same function in python3.6 and above returns a dict\_keys in the same order as it has been passed in the function
+Calling the same function in python3.6 and above returns a dict_keys in the same order as it has been passed in the function
 
 **Output in Python 3.6 and above:**
 
-dict\_keys(\['a', 'b', 'c', 'd', 'e'\]) # Keys are ordered
+```
+dict_keys(['a', 'b', 'c', 'd', 'e']) # Keys are ordered
+```
 
 ## **Iterating thru a dictionary**
 
@@ -94,11 +100,13 @@ for keys in d:
 
 **Output:**
 
+```
 name : charlie
 age : 42
 city : NYC
 state : NY
 rank : 1.0
+```
 
 ## **Dictionary view objects**
 
@@ -118,31 +126,33 @@ len(d)
 
 ### **list of dictionary keys**
 
-the keys() function returns dict\_keys() which is wrapped with the list to get a list object.
+the keys() function returns dict_keys() which is wrapped with the list to get a list object.
 
 ```
  list(d.keys())
 ```
 
 **Output:**
-
-\['name', 'age', 'city', 'state', 'rank'\]
+```
+['name', 'age', 'city', 'state', 'rank']
+```
 
 ### **list of dictionary values**
 
-the values() function returns dict\_values() which is wrapped with the list to get a list object
+the values() function returns dict_values() which is wrapped with the list to get a list object
 
 ```
 list(d.values())
 ```
 
 **Output:**
-
-\['charlie', 42, 'NYC', 'NY', 1.0\]
+```
+['charlie', 42, 'NYC', 'NY', 1.0]
+```
 
 ### **Iterate thru dict values**
 
-The dict\_values is an iterable so you can directly iterate through the values of dictionaries using for loop
+The dict_values is an iterable so you can directly iterate through the values of dictionaries using for loop
 
 ```
 for value in d.values():
@@ -151,15 +161,17 @@ for value in d.values():
 
 **Output:**
 
+```
 Charlie
 42
 NYC
 NY
 1.0
+```
 
 ### **Iterate thru dict keys**
 
-The dict\_keys is an iterable so you can directly iterate through the keys of dictionaries using for loop
+The dict_keys is an iterable so you can directly iterate through the keys of dictionaries using for loop
 
 ```
 for key in d.keys():
@@ -167,12 +179,13 @@ for key in d.keys():
 ```
 
 **Output:**
-
+```
 name
 age
 city
 state
 rank
+```
 
 ### **Iterate key, value pair using dict.items**
 
@@ -185,11 +198,13 @@ for key,value in d.items():
 
 **Output:**
 
+```
 name : Charlie
 age : 42
 city : NYC
 state : NY
 rank : 1.0
+```
 
 ## **Dictionary Comprehension**
 
@@ -217,13 +232,14 @@ Let's understand this with a small example
 
 Here is a dictionary of city and respective states:
 
-> city\_state\_dict = {
+```
+> city_state_dict = {
 > "NYC": "New York",
 > "Boston": "Massachussets",
 > "Charlotte": "North Carolina",
 > "Los Angeles": "California",
 > "Minnetonka": "Minnesota" }
-
+```
 We have to output the state name when user enters a city
 
 When city is in Dictionary Key:
@@ -269,7 +285,7 @@ if you are using python 3.6 and above then do not worry the dictionary are order
 
 ### **Sorting Dictionary by Keys**
 
-You can pass the entire dictionary dict\_items as an argument to sorted function and it will return a list of tuples after sorting which can be converted back to dictionary using the dict constructor
+You can pass the entire dictionary dict_items as an argument to sorted function and it will return a list of tuples after sorting which can be converted back to dictionary using the dict constructor
 
 ```
 d = {'B':10,'A': 4}
@@ -296,8 +312,9 @@ sorted(d, key=d.get)
 ```
 
 **Output:**
-
-\['c', 'a', 'b'\]
+```
+['c', 'a', 'b']
+```
 
 if you want the list of keys to be in descending order above then add another argument called reverse as True and this will give the keys based on their values arranged in descending order
 
@@ -309,8 +326,9 @@ sorted(d, key=d.get, reverse=True)
 ```
 
 **Output:**
-
-\['b', 'a', 'c'\]
+```
+['b', 'a', 'c']
+```
 
 ## **Enumerate Dictionary**
 
@@ -318,9 +336,9 @@ You can also enumerate through the dictionary and can get the index of each of t
 
 In the final output you can see the index for each of the key .
 
-Just remember d.keys(), d.values() returns a dict\_keys object which behaves a lot more like a set than a list
+Just remember d.keys(), d.values() returns a dict_keys object which behaves a lot more like a set than a list
 
-Therefore, dict.values() needs to be wrapped in a list. You can see in the below code we have used **list(d.values())\[index\]**
+Therefore, dict.values() needs to be wrapped in a list. You can see in the below code we have used **list(d.values())[index]**
 
 ```
 d = {'a':1000, 'b':3000, 'c': 100, 'd':542,'e':790, 'f': 1042}
@@ -387,7 +405,7 @@ del d['f']
 
 If you aren't sure about the key exists in dictionary then use dict.pop().
 
-This will return d\['f'\] if key exists in the dictionary, and None otherwise.
+This will return d['f'] if key exists in the dictionary, and None otherwise.
 
 If the second parameter is not specified (i.e. d.pop('f')) and key does not exist, a KeyError is raised.
 
@@ -397,7 +415,7 @@ d.pop('f', None)
 
 ## **Merge two or more Dictionaries**
 
-You can use the dictionary unpacking operator \*\* to merge two or more dictionary into one single dictionary and then you can iterate this new merged dictionary
+You can use the dictionary unpacking operator ** to merge two or more dictionary into one single dictionary and then you can iterate this new merged dictionary
 
 Here is an example:
 

@@ -29,19 +29,23 @@ then we call that the documents are independent of each other.
 **Dot Product:**
 This is also called as Scalar product since the dot product of two vectors gives a scalar result. For example
 
-**Vector(A)** = \[5,0,2\]
-**Vector(B)** = \[2,5,0\]
-
+```
+**Vector(A)** = [5,0,2]
+**Vector(B)** = [2,5,0]
+```
 Their dot product
-**vector(A).vector(B)** = 5_2+0_5+2\*0=10+0+0
-\=10
+
+```
+**vector(A).vector(B)** = 5_2+0_5+2*0=10+0+0
+=10
+```
 
 So the Geometric definition of dot product of two vectors is the dot product of two vectors is equal to the product of their lengths, multiplied by the cosine of the angle between them. So more the documents are similar lesser the angle between them and Cosine of Angle increase as the value of angle decreases since Cos 0 =1 and Cos 90 = 0, You can see higher the angle between the vectors the cosine is tending towards 0 and lesser the angle Cosine tends to 1.
 
 ![](/images/2018/12/dot_product_projection.png)
 
 
-****Numerical Feature Vectors****
+## Numerical Feature Vectors
 
 As a first step to calculate the cosine similarity between the documents you need to convert the documents/Sentences/words in a form of
 feature vector first. There are several methods like Bag of Words and TF-IDF for feature extracction. The most simple and intuitive is BOW which counts the unique words in documents and frequency of each of the words.
@@ -79,9 +83,9 @@ The major issue with Bag of Words Model is that the words with higher frequency 
 We will see how tf-idf score of a word to rank it's importance is calculated in a document
 
 tfidf score of a word w:
-
-tf(w)\*idf(w)
-
+```
+tf(w)*idf(w)
+```
 Where, tf(w) = Number of times the word appears in a document/Total number of words in the document
 
 idf(w) = Number of documents/Number of documents that contains word w

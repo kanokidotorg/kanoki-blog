@@ -5,4 +5,4 @@ categories: [ Data Science, Python ]
 tags: [ Pandas, Python ]
 ---
 
-https://gist.github.com/a578d89ba0cc004d5e4cbadf6d143ca0
+<script src="https://gist.github.com/a578d89ba0cc004d5e4cbadf6d143ca0.js"></script>

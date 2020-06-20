@@ -7,7 +7,7 @@ tags: [ DataScience, Pandas, Python ]
 
 Accessing a single value or setting up the value of single row is sometime required when we doesn't want to create a new Dataframe for just updating that single cell value. There are indexing and slicing methods available but to access a single cell values there are Pandas in-built functions at and iat.
 
-Since indexing with \[\] must handle a lot of cases (single-label access, slicing, boolean indexing, etc.), it has a bit of overhead in order to figure out what you’re asking for. If you only want to access a scalar value, the fastest way is to use the at and iat methods, which are implemented on all of the data structures.
+Since indexing with [] must handle a lot of cases (single-label access, slicing, boolean indexing, etc.), it has a bit of overhead in order to figure out what you’re asking for. If you only want to access a scalar value, the fastest way is to use the at and iat methods, which are implemented on all of the data structures.
 
 Similarly to loc, at provides label based scalar lookups, while, iat provides integer based lookups analogously to iloc
 

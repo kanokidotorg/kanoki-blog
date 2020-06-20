@@ -9,20 +9,14 @@ The major challenge which a data scientists face today is to visualize or unders
 
 Facets has two visualization tools: Facets Overview and Facets Dive, Overview will be general enough to be used for summary statistics of any set of data. The feature statistics are different depending on the feature data type (numeric, string, or raw bytes) Whereas Dive provides an interactive interface for exploring the relationship between data points across all the of the different feature dataset.
 
- 
-
 **Mass Shootings Dataset.csv**
 
 **Source**: [https://www.kaggle.com/zusmani/us-mass-shootings-last-50-years/data](https://www.kaggle.com/zusmani/us-mass-shootings-last-50-years/data)
 
 ![](/images/2017/10/Screen-Shot-2017-10-07-at-16.06.19.png) ![](/images/2017/10/Screen-Shot-2017-10-07-at-16.05.08.png)
 
- 
-
- 
-
 **Useful Links:**
 
- **Facet Website**: [https://pair-code.github.io/facets/](https://pair-code.github.io/facets/)
+**Facet Website**: [https://pair-code.github.io/facets/](https://pair-code.github.io/facets/)
 
- **Facet Overview Github**: [https://github.com/PAIR-code/facets/tree/master/facets\_overview](https://github.com/PAIR-code/facets/tree/master/facets_overview)
+**Facet Overview Github**: [https://github.com/PAIR-code/facets/tree/master/facets\_overview](https://github.com/PAIR-code/facets/tree/master/facets_overview)

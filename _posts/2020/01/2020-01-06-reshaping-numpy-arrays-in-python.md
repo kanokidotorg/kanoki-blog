@@ -87,7 +87,7 @@ Therefore a 1-D array containing input array elements is returned
 
 **a**: input array
 
-**order** \= _{‘C’,’F’, ‘A’, ‘K’}, optional_ and by default it is 'C'
+**order** = _{‘C’,’F’, ‘A’, ‘K’}, optional_ and by default it is 'C'
 
 We have order type 'C' and 'F' in above section.  
 
@@ -98,12 +98,14 @@ and ‘K’ means to read the elements in the order they occur in memory
 Let's understand the ravel function with the help of an example
 
 **Create an Array**
+```
+x = np.array([[1, 2, 3], [4, 5, 6]])
+```
 
-x = np.array(\[\[1, 2, 3\], \[4, 5, 6\]\])
-
-array(\[\[1, 2, 3\],
-       \[4, 5, 6\]\])
-
+```
+array([[1, 2, 3],
+       [4, 5, 6]])
+```
 ### **numpy ravel with order C**
 
 Now we will apply ravel() function to this array x with default order type 'C'
@@ -112,7 +114,7 @@ Now we will apply ravel() function to this array x with default order type 'C'
 np.ravel(x)
 ```
 
-array(\[1, 2, 3, 4, 5, 6\])
+array([1, 2, 3, 4, 5, 6])
 
 Because the order is C contiguous i.e. row major as explained in above section the output is same as array stored in the memory block for C contiguous array
 
@@ -123,8 +125,9 @@ Now apply the nump.ravel() function to same array and this time order is set as 
 ```
 np.ravel(x, order='F')
 ```
-
-array(\[1, 4, 2, 5, 3, 6\])
+```
+array([1, 4, 2, 5, 3, 6])
+```
 
 So the order is F i.e. column major therefore the output is same as value stored in memory for F contiguous
 
@@ -135,9 +138,9 @@ Let's transpose the original array x to get a F contiguous array and then apply 
 ```
 np.ravel(x.T)
 ```
-
-array(\[1, 4, 2, 5, 3, 6\])
-
+```
+array([1, 4, 2, 5, 3, 6])
+```
 So the output is same as ravel with order F above
 
 Next we will pass the order as 'A' in this ravel function
@@ -145,8 +148,9 @@ Next we will pass the order as 'A' in this ravel function
 ```
 np.ravel(x.T,order='A')
 ```
-
-array(\[1, 2, 3, 4, 5, 6\])
+```
+array([1, 2, 3, 4, 5, 6])
+```
 
 So the output is same as order with 'C' because we passed order 'A' and original array x is C-like order so it remains same even after it's Transposed
 
@@ -162,7 +166,7 @@ This function gives a new shape to the input array and without changing the data
 
 **newshape**: new desired shape of the array which should be compatible with the original shape. and if given -1 then the value is inferred from the length of array
 
-**order** \= _{‘C’,’F’, ‘A’, ‘K’}, optional_ and by default it is 'C'
+**order** = _{‘C’,’F’, ‘A’, ‘K’}, optional_ and by default it is 'C'
 
 Now reshaping is like raveling the input array and then inserting the elements from the raveled array into the new array
 
@@ -172,31 +176,33 @@ Let's understand this with the help of some code
 
 **Create an Array**
 
-x = np.array(\[\[1, 2, 3\], \[4, 5, 6\]\])
+```
+x = np.array([[1, 2, 3], [4, 5, 6]])
 
-array(\[\[1, 2, 3\],
-       \[4, 5, 6\]\])
-
+array([[1, 2, 3],
+       [4, 5, 6]])
+```
 This a 2x3 array and we want to reshape it to 3x2
 
 ```
 np.reshape(x,(3,2))
 ```
 
-array(\[\[1, 2\],
-       \[3, 4\],
-       \[5, 6\]\])
-
+```
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+```
 Let's pass the ravelled x into the reshape function and see what happens
 
 ```
 np.reshape(np.ravel(x),(3,2))
 ```
-
-array(\[\[1, 2\],
-       \[3, 4\],
-       \[5, 6\]\])
-
+```
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+```
 So the output is same as the previous output because as explained above reshaping is like ravelling the data first and then reshaping it
 
 **newshape dimension as -1**
@@ -204,11 +210,11 @@ So the output is same as the previous output because as explained above reshapin
 ```
 np.reshape(np.ravel(x),(3,-1))
 ```
-
-array(\[\[1, 2\],
-       \[3, 4\],
-       \[5, 6\]\])
-
+```
+array([[1, 2],
+       [3, 4],
+       [5, 6]])
+```
 The output is same here as previous one with shape (3,2) because when dimension -1 is given then it infers the value as 2 based on original shape of array
 
 ## **numpy reshape 1D to 2D**
@@ -218,19 +224,19 @@ The output is same here as previous one with shape (3,2) because when dimension 
 ```
 A = np.array([1,2,3,4,5,6])
 ```
-
-array(\[1, 2, 3, 4, 5, 6\])
-
+```
+array([1, 2, 3, 4, 5, 6])
+```
 **convert 1D array to 2D using reshape**
 
 ```
 np.reshape(A,(3,2))
 ```
-
-array(\[\[1, 2\],
-\[3, 4\],
-\[5, 6\]\])
-
+```
+array([[1, 2],
+[3, 4],
+[5, 6]])
+```
 ## **Conclusion**
 
 In this post you've learnt about numpy reshape and ravel functions

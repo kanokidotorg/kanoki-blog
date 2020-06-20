@@ -80,7 +80,7 @@ Index(['a', 'b', 'z', 'd', 'e'], dtype='object')
 
 **Pandas rename single column**
 
-Rename single column e with new\_e
+Rename single column e with new_e
 
 ```
 df.columns=[it.replace('e','new_e') for it in df.columns]
@@ -96,7 +96,7 @@ df.rename(columns={'e':'new_e'},inplace=True)
 
 **Pandas Rename Multiple Columns**
 
-We will now change the column z as new\_z and d as new\_d
+We will now change the column z as new_z and d as new_d
 
 ```
 df.columns = ['a','b','new_z','new_d','v']
@@ -134,7 +134,7 @@ df[df.columns.drop(None)]
 
 **Rename Columns by Index**
 
-Here we are replacing the second column b with new\_b
+Here we are replacing the second column b with new_b
 
 ```
 df.rename(columns={ df.columns[1]: "new_b" })
@@ -163,7 +163,7 @@ df
 
 **Find Column difference between two dataframes**
 
-Let's create two dataframe first and find out the columns difference between the two dataframe column values. The first dataframe has columns \[name,Age,Zodiac,Grade,City\] and second one has column \[name,Age,Favs,Grade,Interest\]
+Let's create two dataframe first and find out the columns difference between the two dataframe column values. The first dataframe has columns ```[name,Age,Zodiac,Grade,City] and second one has column [name,Age,Favs,Grade,Interest]```
 
 ```
 df = pd.DataFrame({'name':['Allan','Mike','Brenda','Holy'], 'Age': [30,20,25,18],'Zodiac':['Aries','Leo','Virgo','Libra'],'Grade':['A','AB','B','AA'],'City':['Aura','Somerville','Boon','Gannon']})
@@ -185,4 +185,4 @@ You can see the Above code gives us the two column names i.e. Favs and Interest 
 
 **Conclusion**
 
-So we have seen how easy it is to Rename the column names and re-order the column values using df.rename and df.columns. There are lot of other useful functions within df.columns like equals, factorize, get\_values etc. which can be used for any operations with the column names and values.
+So we have seen how easy it is to Rename the column names and re-order the column values using df.rename and df.columns. There are lot of other useful functions within df.columns like equals, factorize, get_values etc. which can be used for any operations with the column names and values.

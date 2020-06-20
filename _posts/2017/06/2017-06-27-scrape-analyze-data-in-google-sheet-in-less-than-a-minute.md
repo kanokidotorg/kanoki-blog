@@ -16,7 +16,7 @@ Literature & Education, Arts, Public Affairs, Trade & Industry, Social Work, Civ
 
 **Wikipedia URL for the data**:
 
-[https://en.wikipedia.org/wiki/List\_of\_Padma\_Vibhushan\_award\_recipients](https://en.wikipedia.org/wiki/List_of_Padma_Vibhushan_award_recipients)
+[https://en.wikipedia.org/wiki/List_of_Padma_Vibhushan_award_recipients](https://en.wikipedia.org/wiki/List_of_Padma_Vibhushan_award_recipients)
 
 Now to import the data from this site to Google spreadsheet, We will use a simple one line formula to Imports data from a table or list within an HTML page.
 
@@ -32,7 +32,7 @@ Check other functions also:
 
 To scrape the data from the above URL, our above values for IMPORTHTML would be as follows:
 
-**URL**: [https://en.wikipedia.org/wiki/List\_of\_Padma\_Vibhushan\_award\_recipients](https://en.wikipedia.org/wiki/List_of_Padma_Vibhushan_award_recipients)
+**URL**: [https://en.wikipedia.org/wiki/List_of_Padma_Vibhushan_award_recipients](https://en.wikipedia.org/wiki/List_of_Padma_Vibhushan_award_recipients)
 
 **Query**: “table”
 
@@ -42,7 +42,7 @@ Select cell A1 and add the formula as shown in the figure below and press Enter 
 
 > IMPORTHTML("[https://en.wikipedia.org/wiki/](https://en.wikipedia.org/wiki/List_of_Padma_Vibhushan_award_recipients)
 >
-> [List\_of\_Padma\_Vibhushan\_award\_recipients](https://en.wikipedia.org/wiki/List_of_Padma_Vibhushan_award_recipients)","table",7)
+> [List_of_Padma_Vibhushan_award_recipients](https://en.wikipedia.org/wiki/List_of_Padma_Vibhushan_award_recipients)","table",7)
 
 ![Screen Shot 2017-06-27 at 21.50.54](https://techpickup.files.wordpress.com/2017/06/screen-shot-2017-06-27-at-21-50-54.png)
 

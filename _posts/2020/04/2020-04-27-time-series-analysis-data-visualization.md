@@ -28,8 +28,8 @@ We will load the dataset in a pandas dataframe and convert the Months column to 
 ```
 import pandas as pd
 df = pd.read\_csv('./AirPassengers.csv')
-df\['Month'\] = pd.to\_datetime(df\['Month'\])
-df.columns = \['Month','Passenger'\]
+df['Month'] = pd.to_datetime(df['Month'])
+df.columns = ['Month','Passenger']
 df.head()
 ```
 
@@ -75,7 +75,9 @@ This looks more clear and the Quarterly data points i.e. Red markers are visible
 
 A Scatter plot in time series is as important than with any other data. Here we are plotting the difference between adjacent time points using Pandas diff() function and plotted a diff plot between passenger and GDP
 
+```
 df.diff().plot(figsize=(20,6),kind='scatter',x = 'GDP', y = 'Passenger',color='black')
+```
 
 ![](/images/2020/04/image-37.png)
 
@@ -91,10 +93,10 @@ A lag plot helps to check if a time series data set is random or not. A random d
 
 It is a scatter plot where one data point is plotted against the other with a fixed amount of lag. So a first order lag plot is using a lag of 1
 
-For plotting lag chart we can use Pandas lag\_plot() function. The x-axis contains y(t) and y-axis contains the data point after 1 lag point i.e. y(t+1)
+For plotting lag chart we can use Pandas lag_plot() function. The x-axis contains y(t) and y-axis contains the data point after 1 lag point i.e. y(t+1)
 
 ```
-pd.plotting.lag\_plot(df\['Passenger'\])
+pd.plotting.lag_plot(df['Passenger'])
 ```
 
 ![](/images/2020/04/image-38.png)
@@ -107,9 +109,11 @@ Lag can also be useful to identify the suitable time series model for the data. 
 
 We will make a 2D histogram or a density heatmap using matplotlib hist2d() function with Year on X-axis and Number of Passengers on Y-axis
 
-x=df\['Year'\]
-y=df\['Passenger'\]
+```
+x=df['Year']
+y=df['Passenger']
 plt.hist2d(x, y)
+```
 
 ![](/images/2020/04/image-39.png)
 
@@ -126,10 +130,11 @@ ax = df.plot.hexbin(x='Year', y='Passenger', gridsize=20)
 ## **3D Visualization of Time Series Plot**
 
 Let's create two additional columns i.e. Month and Year. We will extract the values of these columns from the Month column
-
-df\['Month\_name'\]=df\['Month'\].dt.month
-df\['Year'\]=df\['Month'\].dt.year
+```
+df['Month_name']=df['Month'].dt.month
+df['Year']=df['Month'].dt.year
 df.head()
+```
 
 This is how our new dataframe looks like with two additional columns for Month and Year
 
@@ -139,14 +144,16 @@ We will plot a 3-Dimension plot of our data using two datetime dimension i.e. X-
 
 This Graph doesn't show any extra insight than 2D graph seen before but a 3D Visualization gives much more better shape than a 2D graph because of data paucity and randomness
 
-from mpl\_toolkits import mplot3d
+```
+from mpl_toolkits import mplot3d
 ax = plt.axes(projection='3d')
 
 # Data for three-dimensional scattered points
-ydata = df\['Year'\]
-xdata = df\['Month\_name'\]
-zdata = df\['Passenger'\]
-ax.scatter3D(xdata, ydata, zdata, c=zdata, cmap='Vega10\_r');
+ydata = df['Year']
+xdata = df['Month_name']
+zdata = df['Passenger']
+ax.scatter3D(xdata, ydata, zdata, c=zdata, cmap='Vega10_r');
+```
 
 ![](/images/2020/04/image-41.png)
 
@@ -161,12 +168,12 @@ Moving Average is calculated by taking the mean of set of data within a fixed wi
 Let's calculate the moving average of Passenger column in our dataset with a window size of 3 . We will calculate the average of the passengers count for every 3 months and store it in a new column called Rolling Mean
 
 Pandas has a rolling() function to calculate the rolling mean of a dataframe or Series
-
-df\['rolling\_mean'\]=df\['Passenger'\].rolling(12).mean()
-
+```
+df['rolling_mean']=df['Passenger'].rolling(12).mean()
+```
 ![](/images/2020/04/image-43.png)
 
-The first two values of rolling\_mean Column is NaN because the window size is set to 3 so it will start by calculating the mean of first 3 months of 1949 i.e. Row # 0,1 and 2 and then Row# 1,2 and 3
+The first two values of rolling_mean Column is NaN because the window size is set to 3 so it will start by calculating the mean of first 3 months of 1949 i.e. Row # 0,1 and 2 and then Row# 1,2 and 3
 
 Exponential Smoothing(EWMA) unlike moving average which doesn’t treat all the data points equally while smoothing. Most of the time in a Time series data we want to treat the most recent data with more weight than the previous data
 
@@ -174,17 +181,19 @@ n EWMA we are weighting the more recent points higher than the lags or lesser re
 
 Let's Calculate the EWMA for our data using Pandas ewm() function with a smoothing level of 0.6. You can try with different alpha levels and check the output and use the most appropriate alpha level for your data
 
-df\['EWM\_ALPHA\_06'\] = df\['Passenger'\].ewm(alpha=0.2).mean()
+```
+df['EWM_ALPHA_06'] = df['Passenger'].ewm(alpha=0.2).mean()
+```
 
 ![](/images/2020/04/image-45.png)
 
 Now let's plot these two Columns rolling means and EWMA with the original data and check how does the new smoothed values look like
 
 ```
-df.reset\_index().plot(figsize=(15,6),kind='line',x = 'index', y = 'Passenger')
+df.reset_index().plot(figsize=(15,6),kind='line',x = 'index', y = 'Passenger')
 plt.grid(True)
-plt.plot(df\['rolling\_mean'\],label='roll\_mean',color='r')
-plt.plot(df\['EWM\_ALPHA\_06'\],label='ewma',color='g')
+plt.plot(df['rolling_mean'],label='roll_mean',color='r')
+plt.plot(df['EWM_ALPHA_06'],label='ewma',color='g')
 plt.legend(loc=2)
 plt.show()
 ```
@@ -221,12 +230,14 @@ In this plot we will have Month on the X-axis and Passenger count on the Y-axis 
 
 This graphs shows us more about the Seasonality in the data
 
+```
 fig, ax = plt.subplots(figsize=(15,6))
 
-for name, group in df\[:60\].groupby('Year'):
-    group.plot(x='Month\_name',y='Passenger', ax=ax, label=name)
+for name, group in df[:60].groupby('Year'):
+    group.plot(x='Month_name',y='Passenger', ax=ax, label=name)
 
 plt.show()
+```
 
 ![](/images/2020/04/image-50.png)
 
@@ -234,12 +245,14 @@ plt.show()
 
 In this plot we will have Years on X-axis and Passenger count for each Month on Y-axis. We can see very year there is an increasing trend of passengers. The line for two months i.e. July and August shows more faster growth rate than the other months
 
+```
 fig, ax = plt.subplots(figsize=(15,6))
 
-for name, group in df\[:120\].groupby('Month\_name'):
+for name, group in df[:120].groupby('Month_name'):
     group.plot(x='Year',y='Passenger', ax=ax, label=name,title='Plot by Month')
 
 plt.show()
+```
 
 ![](/images/2020/04/image-51.png)
 

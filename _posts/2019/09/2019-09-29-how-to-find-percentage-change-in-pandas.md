@@ -5,7 +5,7 @@ categories: [ Data Science, Pandas, Python, Python, Data Science ]
 tags: [ DataScience, Pandas, Python ]
 ---
 
-So you are interested to find the percentage change in your data. Well it is a way to express the change in a variable over the period of time and it is heavily used when you are analyzing or comparing the data. In this post we will see how to calculate the percentage change using pandas pct\_change() api and how it can be used with different data sets using its various arguments.
+So you are interested to find the percentage change in your data. Well it is a way to express the change in a variable over the period of time and it is heavily used when you are analyzing or comparing the data. In this post we will see how to calculate the percentage change using pandas pct_change() api and how it can be used with different data sets using its various arguments.
 
 As per the documentation, the definition of pandas pct\_change method and its parameters are as shown:
 
