@@ -21,43 +21,13 @@ df = pd.DataFrame({'Name': ['John', 'Sara','Peter','Cecilia'],
 df
 ```
 
-**Name**
+||Name|Age|City|
+|--- |--- |--- |--- |
+|0|John|38|Boston|
+|1|Sara|47|Charlotte|
+|2|Peter|63|London|
+|3|Cecilia|28|Memphis|
 
-**Age**
-
-**City**
-
-0
-
-John
-
-38
-
-Boston
-
-1
-
-Sara
-
-47
-
-Charlotte
-
-2
-
-Peter
-
-63
-
-London
-
-3
-
-Cecilia
-
-28
-
-Memphis
 
 ## **Pandas ```to_dict()``` function**
 
@@ -85,10 +55,12 @@ Let's change the orient of this dictionary and set it to index
 df.to_dict('index')
 ```
 
+```
 {0: {'Name': 'John', 'Age': 38, 'City': 'Boston'},
  1: {'Name': 'Sara', 'Age': 47, 'City': 'Charlotte'},
  2: {'Name': 'Peter', 'Age': 63, 'City': 'London'},
  3: {'Name': 'Cecilia', 'Age': 28, 'City': 'Memphis'}}
+```
 
 Now the Dictionary key is the index of the dataframe and values are each row
 
@@ -154,21 +126,11 @@ data = DataFrame({"A": [tsmp, tsmp], "B": [tsmp, tsmp]})
 data
 ```
 
-**A**
+||A|B|
+|--- |--- |--- |
+|0|2020-01-01|2020-01-01|
+|1|2020-01-01|2020-01-01|
 
-**B**
-
-0
-
-2020-01-01
-
-2020-01-01
-
-1
-
-2020-01-01
-
-2020-01-01
 
 ```
 data.to_dict(orient="records")
@@ -257,111 +219,25 @@ df = pd.DataFrame({'Serial_No': [0,1,1,1,2,2,3,3,4,5,5,5],'Segment':['A','B','C'
                                                                      'A','B','A','D','A',
                                                                     'A','C'],'Area':[23,45,64,23,64,65,23,45,23,64,23,64]})
 ```
-```
-**Serial_No**
 
-**Segment**
 
-**Area**
-
-0
-
-0
-
-A
-
-23
-
-1
-
-1
-
-B
-
-45
-
-2
-
-1
-
-C
-
-64
-
-3
-
-1
-
-C
-
-23
-
-4
-
-2
-
-B
-
-64
-
-5
-
-2
-
-A
-
-65
-
-6
-
-3
-
-B
-
-23
-
-7
-
-3
-
-A
-
-45
-
-8
-
-4
-
-D
-
-23
-
-9
-
-5
-
-A
-
-64
-
-10
-
-5
-
-A
-
-23
-
-11
-
-5
-
-C
-
-64
+||Serial_No|Segment|Area|
+|--- |--- |--- |--- |
+|0|0|A|23|
+|1|1|B|45|
+|2|1|C|64|
+|3|1|C|23|
+|4|2|B|64|
+|5|2|A|65|
+|6|3|B|23|
+|7|3|A|45|
+|8|4|D|23|
+|9|5|A|64|
+|10|5|A|23|
+|11|5|C|64|
 
 We will group the above dataframe by column Serial_No and all the values in Area column of that group will be displayed as list
-```
+
 ```
 df.groupby(['Serial_No'])['Area'].apply(list).to_dict()
 ```
@@ -379,53 +255,14 @@ df = pd.DataFrame({'Name':['John','Sara','John','Sara'],'Sem':['Sem1','Sem1','Se
  df
 ```
 
-**Name**
 
-**Sem**
+||Name|Sem|Subject|Grade|
+|--- |--- |--- |--- |--- |
+|0|John|Sem1|Mathematics|A|
+|1|Sara|Sem1|Biology|B|
+|2|John|Sem2|Biology|A+|
+|3|Sara|Sem2|Mathematics|B++|
 
-**Subject**
-
-**Grade**
-
-0
-
-John
-
-Sem1
-
-Mathematics
-
-A
-
-1
-
-Sara
-
-Sem1
-
-Biology
-
-B
-
-2
-
-John
-
-Sem2
-
-Biology
-
-A+
-
-3
-
-Sara
-
-Sem2
-
-Mathematics
-
-B++
 
 Now we are interested to build a dictionary out of this dataframe where the key will be Name and the two Semesters (Sem 1 and Sem 2) will be nested dictionary keys and for each Semester we want to display the Grade for each Subject.
 
@@ -458,6 +295,7 @@ ppdict = {n: grp.loc[n].to_dict('index')
 print (json.dumps(ppdict, indent=2))
 ```
 
+```
 {
   "John": {
     "Sem1": {
@@ -480,6 +318,7 @@ print (json.dumps(ppdict, indent=2))
     }
   }
 }
+```
 
 ## **Conclusion**
 
