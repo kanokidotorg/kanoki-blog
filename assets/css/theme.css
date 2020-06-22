@@ -810,3 +810,9 @@ div.a2a_full_footer {display:none;}
     border: none;
     min-height: 255px;
 }
+
+@media (max-width: 576px) {
+	.page-mob{
+		width: 100%!important;
+	}
+ }
