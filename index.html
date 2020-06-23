@@ -178,7 +178,9 @@ description: "Transforming World with Data"
                         {% if paginator.previous_page %}
                         <li class="page-item">
                             {% if paginator.previous_page == 1 %}
-                            <a class="page-link" href="{{ page.paginate.root }}" rel="prev">&laquo; Prev<span class="sr-only"> page</span></a>
+                            <a class="page-link" href="{{ "/" }}" rel="prev">&laquo; Prev<span class="sr-only"> page</span></a>
+							{% elsif paginator.previous.page == 2 %}
+                            <a class="page-link" href="{{ "/" }}" rel="prev">&laquo; Prev<span class="sr-only"> page</span></a>
                             {% else %}
                             <a class="page-link" href="{{ paginator.previous_page_path }}" rel="prev">&laquo; Prev<span class="sr-only"> page</span></a>
                             {% endif %}
