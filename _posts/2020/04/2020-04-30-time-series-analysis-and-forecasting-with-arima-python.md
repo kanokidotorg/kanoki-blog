@@ -62,12 +62,12 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set(rc={'figure.figsize':(15,6)})
 %matplotlib inline
-df = pd.read\_csv('./monthly\_temperature\_aomori\_city.csv')
-df\['DATE'\] = pd.to\_datetime(df\[\['year', 'month'\]\].assign(DAY=1))
-df.drop(\['year','month'\],inplace=True,axis=1)
-df\['temperature'\] = df\['temperature'\]\*(9/5)+32
-df.set\_index('DATE',inplace=True)
-df.to\_csv('./monthly\_temperature\_aomori\_city\_updt.csv',index=True)
+df = pd.read\_csv('./monthly_temperature_aomori_city.csv')
+df['DATE'] = pd.to_datetime(df[['year', 'month']].assign(DAY=1))
+df.drop(['year','month'],inplace=True,axis=1)
+df['temperature'] = df['temperature']*(9/5)+32
+df.set_index('DATE',inplace=True)
+df.to_csv('./monthly_temperature_aomori_city_updt.csv',index=True)
 df.head()
 ```
 
@@ -79,7 +79,7 @@ Let's draw a simple line plot for first 200 rows to understand the pattern in th
 
 ```
 plt.figure(figsize=(10,4))
-plt.plot(df\[:200\].temperature)
+plt.plot(df[:200].temperature)
 ```
 
 ![](/images/2020/04/image-58.png)
@@ -102,8 +102,8 @@ Basically Decomposition has three components that is shown in the graphs below i
 
 You have to choose a model type also additive or multiplicative. We have taken an additive model because the seasonality doesn't varies much from start to end of the years
 ```
-decomposition = sm.tsa.seasonal\_decompose(df.temperature, model='additive')
-plt.rcParams\["figure.figsize"\] = \[16,9\]
+decomposition = sm.tsa.seasonal_decompose(df.temperature, model='additive')
+plt.rcParams["figure.figsize"] = [16,9]
 fig = decomposition.plot()
 ```
 
@@ -127,14 +127,14 @@ The ADF test helps to understand whether a change in Y is a linear trend or not.
 
 ```
 from statsmodels.tsa.stattools import adfuller
-def check\_stationarity(timeseries):
+def check_stationarity(timeseries):
     result = adfuller(timeseries,autolag='AIC')
-    dfoutput = pd.Series(result\[0:4\], index=\['Test Statistic','p-value','#Lags Used','Number of Observations Used'\])
-    print('The test statistic: %f' % result\[0\])
-    print('p-value: %f' % result\[1\])
+    dfoutput = pd.Series(result[0:4], index=['Test Statistic','p-value','#Lags Used','Number of Observations Used'])
+    print('The test statistic: %f' % result[0])
+    print('p-value: %f' % result[1])
     print('Critical Values:')
-    for key, value in result\[4\].items():
-        print('\\t%s: %.3f' % (key, value))
+    for key, value in result[4].items():
+        print('%s: %.3f' % (key, value))
 ```
 
 ```
@@ -262,9 +262,9 @@ auto_arima_fit = pm.auto_arima(df, start_p=1, start_q=1,
 ```
 
 ```
-Fit ARIMA: order=(1, 1, 1) seasonal\_order=(0, 1, 1, 12); AIC=7044.189, BIC=7071.210, Fit time=29.769 seconds
-Fit ARIMA: order=(0, 1, 0) seasonal\_order=(0, 1, 0, 12); AIC=8721.729, BIC=8732.538, Fit time=0.218 seconds
-Fit ARIMA: order=(1, 1, 0) seasonal\_order=(1, 1, 0, 12); AIC=8072.542, BIC=8094.159, Fit time=5.261 seconds
+Fit ARIMA: order=(1, 1, 1) seasonal_order=(0, 1, 1, 12); AIC=7044.189, BIC=7071.210, Fit time=29.769 seconds
+Fit ARIMA: order=(0, 1, 0) seasonal_order=(0, 1, 0, 12); AIC=8721.729, BIC=8732.538, Fit time=0.218 seconds
+Fit ARIMA: order=(1, 1, 0) seasonal_order=(1, 1, 0, 12); AIC=8072.542, BIC=8094.159, Fit time=5.261 seconds
 ```
 
 This will help to choose the best value of p,q and d based on the lowest AIC and BIC values
@@ -339,8 +339,8 @@ Using this returned value and the original value we will plot this and visualize
 
 ```
 from math import sqrt
-from sklearn.metrics import mean\_squared\_error
-plt.plot(df.temperature\[:36\],color='r')
+from sklearn.metrics import mean_squared_error
+plt.plot(df.temperature[:36],color='r')
 plt.plot(results.predict(0,36),color='g')
 ```
 
@@ -398,13 +398,13 @@ Now we will plot the forecast value which is shown as red line for year 2020 thr
 The blue strip that you see around the line is the forecast interval which is drawn with the help of fill\_between() api of matplotlib
 
 ```
-ax = df\[1600:\].temperature.plot(label='observed', figsize=(20, 15))
-df\_forecast.plot(ax=ax,label='Forecast',color='r')
-ax.fill\_between(df\_forecast.index,
-                ci\[:,0\],
-                ci\[:,1\], color='b', alpha=.25)
-ax.set\_xlabel('Year')
-ax.set\_ylabel('Temp')
+ax = df[1600:].temperature.plot(label='observed', figsize=(20, 15))
+df_forecast.plot(ax=ax,label='Forecast',color='r')
+ax.fill_between(df_forecast.index,
+                ci[:,0],
+                ci[:,1], color='b', alpha=.25)
+ax.set_xlabel('Year')
+ax.set_ylabel('Temp')
 
 plt.legend()
 plt.show()
