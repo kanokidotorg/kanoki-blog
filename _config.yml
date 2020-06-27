@@ -10,7 +10,7 @@ banner_image : 'images/kanoki.jpg'
 include: ["_pages"]
 permalink: /:year/:month/:day/:title/
 search: false # true or false for serach
-google_analytics: "UA-XXXXXXXX-X"
+google_analytics: "UA-102260785-1"
 #google_ad_client : ""
 
 # Plugins
