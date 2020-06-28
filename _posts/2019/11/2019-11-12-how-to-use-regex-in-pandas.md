@@ -9,43 +9,17 @@ There are several pandas methods which accept the regex in pandas to find the pa
 
 Here are the pandas functions that accepts regular expression:
 
-table.customTable { width: 100%; background-color: #FFFFFF; border-collapse: collapse; border-width: 2px; border-color: #7ea8f8; border-style: solid; color: #000000; } <div></div> table.customTable td, table.customTable th { border-width: 2px; border-color: #7ea8f8; border-style: solid; padding: 5px; } <div></div> table.customTable thead { background-color: #7ea8f8; }
+| Methods     	| Description                                                                                                                     	|
+|-------------	|---------------------------------------------------------------------------------------------------------------------------------	|
+| count()     	| Count occurrences of pattern in each string of the Series/Index                                                                 	|
+| replace()   	| Replace the search string or pattern with the given value                                                                       	|
+| contains()  	| Test if pattern or regex is contained within a string of a Series or Index. Calls re.search() and returns a boolean             	|
+| extract()   	| Extract capture groups in the regex pat as columns in a DataFrame and returns the captured groups                               	|
+| findall()   	| Find all occurrences of pattern or regular expression in the Series/Index. Equivalent to applying re.findall() on all elements  	|
+| match()     	| Determine if each string matches a regular expression. Calls re.match() and returns a boolean                                   	|
+| split()     	| Equivalent to str.split() and Accepts String or regular expression to split on                                                  	|
+| rsplit()    	| Equivalent to str.rsplit() and Splits the string in the Series/Index from the end                                               	|
 
-Methods
-
-Description
-
-count()
-
-Count occurrences of pattern in each string of the Series/Index
-
-replace()
-
-Replace the search string or pattern with the given value
-
-contains()
-
-Test if pattern or regex is contained within a string of a Series or Index. Calls re.search() and returns a boolean
-
-extract()
-
-Extract capture groups in the regex pat as columns in a DataFrame and returns the captured groups
-
-findall()
-
-Find all occurrences of pattern or regular expression in the Series/Index. Equivalent to applying re.findall() on all elements
-
-match()
-
-Determine if each string matches a regular expression. Calls re.match() and returns a boolean
-
-split()
-
-Equivalent to str.split() and Accepts String or regular expression to split on
-
-rsplit()
-
-Equivalent to str.rsplit() and Splits the string in the Series/Index from the end
 
 ## **Create Dataframe**
 
