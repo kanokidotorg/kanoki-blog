@@ -1,7 +1,7 @@
 ---
 title: "How to split Numpy Arrays"
 date: "2020-06-11"
-categories: [ scikit-learn ]
+categories: [ numpy, Python ]
 tags: [ scikit-learn ]
 ---
 
