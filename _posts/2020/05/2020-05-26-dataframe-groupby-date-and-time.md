@@ -2,7 +2,7 @@
 title: "Dataframe groupby date and time"
 date: "2020-05-26"
 categories: [ Data Science, Pandas, Python, Python, Data Science ]
-tags: [ DataScience, Groupby, Pandas, Python, resample , featured]
+tags: [ DataScience, Groupby, Pandas, Python, resample ]
 ---
 
 In this post we will see how to group a timeseries dataframe by Year,Month, Weeks or days. Additionally, we will also see how to groupby time objects like hours

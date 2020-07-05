@@ -1,7 +1,7 @@
 ---
 title: "Compare two Numpy arrays for equality"
 date: "2020-06-22"
-categories: [ scikit-learn ]
+categories: [ numpy, Python ]
 tags: [ scikit-learn ]
 ---
 In this post we will compare elements of two arrays for equality. This would be really helpful when you wanted to compare if two similar arrays coming out through two different processes are equal in shape and have equal elements
