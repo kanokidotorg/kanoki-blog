@@ -6,7 +6,9 @@ comments: false
 ---
 Welcome to my blog Kanoki. It's a blog about cool tech stuffs mostly related to Python, Automation, Data Science, Statistics and Maths. I write Tech in a simple & sober way for anyone to understand. Remember the famous quote from Albert Einstein:
 
-        	If you can't explain it simply, you don't understand it well enough.
+```reStructuredText
+    	If you can't explain it simply, you don't understand it well enough.
+```
 
 The articles posted on this blog are primarily for beginners and focus on basics because I believe basics are the building blocks for anything in life and if you master the basics then learning advance things is a cake walk.
 
@@ -18,7 +20,7 @@ I’m a regular speaker at tech conferences and last year(2016) presented my wor
 <p align="center">
   <img src="/images/about/About_1.png">
 </p>
-I am a Cylist too and love riding my Keysto(Non-Gear Bike) for miles and kms. The farthest I rode so far is 120KM(80 miles) to another town from my Home. I live in Pune, IN near Mumbai and if you are around me then let's meet up for a coffee and talk tech or Maths
+I am a Cylist too and love riding my Keysto(Non-Gear Bike) for miles and kms. The farthest I rode so far is 120KM(80 miles) from my Home to another town . I live in Pune, IN near Mumbai and if you are around me then let's meet up for a coffee and talk tech or Maths
 
 <p align="center">
   <img src="/images/about/About_2.jpg">
@@ -48,9 +50,9 @@ Some cool stuffs about Maths:
 
 - Divide the distance between earth and Moon by Diameter of Moon and that gives ~108
 
-- Moon takes approximately 28 days to rotate around earth and it controls the earth axis which is tilted at 23.5 degrees.
+- Moon makes complete orbit around the earth in 28 days and it controls the earth axis which is tilted at 23.5 degrees.
 
-Now read those numbers 108, 28 and 23.5 and see if it is related to anything in your life? Yes, find it out.
+Now read those numbers 108, 28*10=280 and 23.5 and see if it is related to anything in your life? Yes it is, find it out.
 
 
 
