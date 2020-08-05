@@ -203,7 +203,7 @@ The coordinate for Mumbai is <i>(19.076,72.877)</i> i.e. Z[0]. We will use the q
 
 So it returns the distance of those three cities in an ascending order and the index of the cities in the same order of distance.
 
-This distance is the euclidean distance and not the exact Miles or KM distance between the two cities. You can use Haversine distance or read this [article](https://kanoki.org/2019/02/14/how-to-find-distance-between-two-points-based-on-latitude-and-longitude-using-python-and-sql/) to explore different ways to calculate the distance between the cities.
+This distance is the Euclidean distance and not the exact Miles or KM distance between the two cities. You can use Haversine distance or read this [article](https://kanoki.org/2019/02/14/how-to-find-distance-between-two-points-based-on-latitude-and-longitude-using-python-and-sql/) to explore different ways to calculate the distance between the cities.
 
 Let's checkout what are those 3 cities and in what order the result is displayed
 
