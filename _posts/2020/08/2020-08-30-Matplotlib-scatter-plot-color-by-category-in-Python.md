@@ -2,7 +2,7 @@
 
 
 
-title: "Matplotlib scatter plot color by category in Python"
+title: "Matplotlib Scatter Plot Color by Category in Python"
 date: "2020-08-30"
 categories: [ Python, Matplotlib]
 tags: [ Python, Matplotlib]
