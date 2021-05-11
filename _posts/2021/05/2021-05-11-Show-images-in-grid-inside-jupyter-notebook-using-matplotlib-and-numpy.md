@@ -90,7 +90,7 @@ This will display the first four images in a 2x2 grid as shown in this figure
 It's a class that creates grids of axes, we can align multiple images of different size using it, The ImageGrid() function here will take the following four arguments:
 
 1.  fig - It's the parent figure for displaying images
-2. rect - set the axes position as `(left, bottom, width, height)` tuple or as a three-digit subplot position code, it's 111 in our case
+2. rect - This will set the axes position as `(left, bottom, width, height)` tuple or as a three-digit subplot position code, it's 111 in our case
 3. nrows_ncols - number of rows and cols, the shape of the grid, it's 2x2 in our case here
 4. axes - Horizontal or Vertical padding between axes in inches
 
