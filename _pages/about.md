@@ -17,14 +17,6 @@ The articles posted on this blog are primarily for beginners and focus on basics
  My name is Vinay and  I love blogging and I'm a Data Enthusiast, Tech Evangelist and Automates things and if you have any such interest then you will feel at home on my blog. You can learn how to automate daily stuffs, Data Visualization, Data Analysis and Python cool tricks. 
 I’m a regular speaker at tech conferences and last year(2016) presented my work in Selenium India Conference in Bangalore and Python India Conference (Pycon 2016) New Delhi
 
-<p align="center">
-  <img src="/images/about/About_1.png">
-</p>
-I am a Cylist too and love riding my Keysto(Non-Gear Bike) for miles and kms. The farthest I rode so far is 120KM(80 miles) from my Home to another town . I live in Pune, IN near Mumbai and if you are around me then let's meet up for a coffee and talk tech or Maths
-
-<p align="center">
-  <img src="/images/about/About_2.jpg">
-</p>
 
 # My Blog!!
 
@@ -58,4 +50,4 @@ Now read those numbers 108, 28*10=280 and 23.5 and see if it is related to anyth
 
 # Contact Me:
 
-please reach out to me on twitter [@min2bro](https://twitter.com/min2bro) or email <vinaybabu2909@gmail.com> if you have any suggestions, feedback or ever feel like posting any Tech stuffs on my blog as a guest post. 
+please reach out to me via email at <vinaybabu2909@gmail.com> if you have any suggestions, feedback or ever feel like posting any Tech stuffs on my blog as a guest post. 
