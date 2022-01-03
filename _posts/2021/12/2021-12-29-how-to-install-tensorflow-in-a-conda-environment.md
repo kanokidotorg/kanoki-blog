@@ -25,7 +25,7 @@ Activate this environment by typing below command in your terminal
 conda activate tf-venv
 ```
 
-### Install tensorflow 2 in conda environment
+### Step2 :Install tensorflow 2 in conda environment
 In tensorflow 2, CPU and GPU are packaged as one single bundle so you don't have to install it separately. 
 
 we can use the following pip command to install the latest tensorflow version in the conda environment created above
