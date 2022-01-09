@@ -14,7 +14,7 @@ The articles posted on this blog are primarily for beginners and focus on basics
 
 # Who Am I?
 
- My name is Vinay and  I love blogging and I'm a Data Enthusiast, Tech Evangelist and Automates things and if you have any such interest then you will feel at home on my blog. You can learn how to automate daily stuffs, Data Visualization, Data Analysis and Python cool tricks. 
+ I love blogging and I'm a Data Enthusiast, Tech Evangelist and Automates things and if you have any such interest then you will feel at home on my blog. You can learn how to automate daily stuffs, Data Visualization, Data Analysis and Python cool tricks. 
 I’m a regular speaker at tech conferences and last year(2016) presented my work in Selenium India Conference in Bangalore and Python India Conference (Pycon 2016) New Delhi
 
 
@@ -50,4 +50,4 @@ Now read those numbers 108, 28*10=280 and 23.5 and see if it is related to anyth
 
 # Contact Me:
 
-please reach out to me via email at <vinaybabu2909@gmail.com> if you have any suggestions, feedback or ever feel like posting any Tech stuffs on my blog as a guest post. 
+please reach out to me via email at <kanoki.org@gmail.com> if you have any suggestions, feedback or ever feel like posting any Tech stuffs on my blog as a guest post. 
