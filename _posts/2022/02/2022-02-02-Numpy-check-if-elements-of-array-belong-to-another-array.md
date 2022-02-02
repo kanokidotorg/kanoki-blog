@@ -26,7 +26,9 @@ x = np.random.randint(0, 9, size=(4))
 x
 ```
 
+```python
 Out: array([6, 4, 2, 7])
+```
 
 
 ```python
@@ -63,11 +65,12 @@ array([[False, False,  True, False],
 
 You can also invert the test by setting invert parameter to True
 
-``python
+
+```
 np.isin(Y, X, invert=True)
 ```
 
-​```python
+```
 Out: 
 array([[ True,  True, False,  True],
        [ True, False, False,  True],
@@ -105,7 +108,7 @@ array([ True, False,  True,  True])
 
 ## Find index of the elements of 1D array X in 2D array Y
 
-we have seen so far all the functions that gives a booelan array to test if element of one array exists in another array or not. 
+we have seen so far all the functions that gives us a boolean array to test if element of one array exists in another array or not. 
 
 What next? how can you find the indices of all those elements in 1D array in the 2D array
 
