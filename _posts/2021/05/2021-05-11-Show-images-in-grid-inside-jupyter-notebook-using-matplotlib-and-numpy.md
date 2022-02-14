@@ -130,7 +130,7 @@ def image_grid(array, ncols=4):
     
     img_grid = (array.reshape(nrows, ncols, height, width, channels)
               .swapaxes(1,2)
-              .reshape(height*nrows, width*ncols, intensity))
+              .reshape(height*nrows, width*ncols))
     
     return img_grid
 
