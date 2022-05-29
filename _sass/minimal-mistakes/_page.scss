@@ -576,3 +576,27 @@ body {
     }
   }
 }
+
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
+
+a.sscroll.btn.btn-light.btn-sm.font-weight-bold {
+    padding: 0.15rem 0.7rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+    cursor: pointer;
+    color: #212529;
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+p.text-uppercase.font-weight-bold {
+    text-transform: uppercase;
+    font-weight: 700 !important;
+}
+
+a.sscroll.text-danger {
+    text-decoration: none;
+}

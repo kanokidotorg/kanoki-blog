@@ -1,0 +1,9 @@
+<!-- Tags -->
+<div class="mb-4">
+	<span class="taglist">
+		{% for tag in page.tags %}
+		<a class="sscroll btn btn-light btn-sm font-weight-bold"
+			href="{{site.baseurl}}/tag#{{ tag | slugify }}">{{ tag | downcase }}</a>
+		{% endfor %}
+	</span>
+</div>
