@@ -1,0 +1,10 @@
+# main links
+main:
+  - title: "Home"
+    url: /
+  - title: "Categories"
+    url: /categories#data-science
+  - title: "Contact"
+    url: /contact/
+  - title: "About"
+    url: /about/
