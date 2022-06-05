@@ -83,3 +83,10 @@
     }
   }
 }
+
+li.li-footer {
+    display: flex;
+    align-content: flex-end;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+}

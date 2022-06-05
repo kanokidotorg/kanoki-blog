@@ -4,6 +4,19 @@ main:
     url: /
   - title: "Categories"
     url: /categories
+    children:
+      - title: "Python"
+        url: /categories/#python/
+      - title: "Data Science"
+        url: /categories/#data-science/
+      - title: "Pandas"
+        url: /categories/#pandas/
+      - title: "numpy"
+        url: /categories/#numpy/
+      - title: "Tutorial"
+        url: /categories/#tutorial/
+      - title: "pandas"
+        url: /categories/#pandas/
   - title: "Contact"
     url: /contact/
   - title: "About"
