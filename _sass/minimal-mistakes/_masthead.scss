@@ -84,7 +84,7 @@
 .masthead__menu-item {
 	display: block;
 	list-style-type: none;
-	white-space: nowrap;
+	white-space: inherit;
 
 	&--lg {
 		padding-right: 2em;
@@ -104,6 +104,13 @@
 	background-color: inherit;
 	font-family: inherit;
 	margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+	.dropdown .dropbtn {
+	    padding: 10px 20px;
+		border-bottom: 1px solid #f2f3f3;
+	}
 }
 
 .navbar a:hover,
