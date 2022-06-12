@@ -134,7 +134,6 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-seo-tag
-  - github-pages
 
 # mimic GitHub Pages with --safe
 whitelist:
