@@ -1,70 +1,4 @@
 {% capture logo_path %}{{ site.logo }}{% endcapture %}
-<style>
-	body {
-		font-family: Arial, Helvetica, sans-serif;
-	}
-
-	.navbar {
-		overflow: hidden;
-		background-color: #333;
-	}
-
-	.navbar a {
-		float: left;
-		font-size: 16px;
-		color: white;
-		text-align: center;
-		padding: 14px 16px;
-		text-decoration: none;
-	}
-
-	.dropdown {
-		float: left;
-		overflow: hidden;
-	}
-
-	.dropdown .dropbtn {
-		font-size: 16px;
-		border: none;
-		outline: none;
-		color: white;
-		padding: 14px 16px;
-		background-color: inherit;
-		font-family: inherit;
-		margin: 0;
-	}
-
-	.navbar a:hover,
-	.dropdown:hover .dropbtn {
-		background-color: red;
-	}
-
-	.dropdown-content {
-		display: none;
-		position: absolute;
-		background-color: #f9f9f9;
-		min-width: 160px;
-		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-		z-index: 1;
-	}
-
-	.dropdown-content a {
-		float: none;
-		color: black;
-		padding: 12px 16px;
-		text-decoration: none;
-		display: block;
-		text-align: left;
-	}
-
-	.dropdown-content a:hover {
-		background-color: #ddd;
-	}
-
-	.dropdown:hover .dropdown-content {
-		display: block;
-	}
-</style>
 <div class="masthead">
 	<div class="masthead__inner-wrap">
 		<div class="masthead__menu">
@@ -82,23 +16,22 @@
 					{% for nav in site.data.navigation.main %}
 					<li class="masthead__menu-item">
 						{% if nav.url %}
-						<a href="{{ nav.url | relative_url }} {% if link.description %} title=" {{ link.description
-							}}"{% endif %}">{{ nav.title }}{% if nav.children != null %} <i
-								class="fa fa-caret-down"></i>{% endif %}</a>
-						{% else %}
-						<span class="nav__sub-title">{{ nav.title }}</span>
-						{% endif %}
-
 						{% if nav.children != null %}
 						<div class="dropdown">
-							<button class="dropbtn">Dropdown</button>
+							<button class="dropbtn">{{ nav.title }} <i class="fa fa-caret-down"></i></button>
 							<ul class="dropdown-content">
 								{% for child in nav.children %}
 								<li><a href="{{ child.url | relative_url }}" {% if child.url==page.url %} class="active"
-										{% endif %}>{{ child.title }}</a></li>
+										{% endif %}>{{ child.title | capitalize }}</a></li>
 								{% endfor %}
 							</ul>
 						</div>
+						{% else %}
+						<a href="{{ nav.url | relative_url }} {% if link.description %} title=" {{ link.description
+							}}"{% endif %}">{{ nav.title }} </a>
+						{% endif %}
+						{% else %}
+						<span class="nav__sub-title">{{ nav.title }}</span>
 						{% endif %}
 					</li>
 					{% endfor %}
