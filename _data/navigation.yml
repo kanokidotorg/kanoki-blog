@@ -15,6 +15,8 @@ main:
         url: /categories/#numpy
       - title: "Tutorial"
         url: /categories/#tutorial
+      - title: "Tensorflow"
+        url: /categories/#tensorflow
   - title: "Contact"
     url: /contact/
   - title: "About"
