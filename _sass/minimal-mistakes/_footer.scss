@@ -49,6 +49,7 @@
 .page__footer-copyright {
   font-family: $global-font-family;
   font-size: $type-size-7;
+  text-align: center;
 }
 
 .page__footer-follow {
@@ -56,6 +57,7 @@
     margin: 0;
     padding: 0;
     list-style-type: none;
+    text-align: center;
   }
 
   li {
@@ -72,9 +74,12 @@
     padding-right: 5px;
   }
 
+  p {
+	font-weight: bold;
+  }
+
   a {
     padding-right: 10px;
-    font-weight: bold;
   }
 
   .social-icons {
@@ -84,9 +89,6 @@
   }
 }
 
-li.li-footer {
-    display: flex;
-    align-content: flex-end;
-    flex-wrap: nowrap;
-    flex-direction: row-reverse;
+.pl {
+	padding-left: 10px;
 }
