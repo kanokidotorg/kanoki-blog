@@ -112,10 +112,10 @@ author:
 footer:
   links:
     - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
+      icon: "fab fa-fw fa-2x fa-twitter-square"
       url: "https://twitter.com/Kanokidotorg"
     - label: "GitHub"
-      icon: "fab fa-fw fa-github"
+      icon: "fab fa-fw fa-2x fa-github"
       url: "https://github.com/min2bro"
     # - label: "Instagram"
     #   icon: "fab fa-fw fa-instagram"
