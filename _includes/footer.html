@@ -1,6 +1,7 @@
 <div class="page__footer-follow">
-	<ul class="social-icons">		
-
+	<ul class="social-icons">
+		<li><p>Subscribe to get notification of new posts <a href="https://docs.google.com/forms/d/e/1FAIpQLSffEXH1ljXWkwmG2-tkSto30UWoAYdoECeqWbGuuMVN9vibZA/viewform?embedded=true" target="_blank" class="btn btn--large btn--inverse">Subscribe</a></p></li>		
+		<br>
 		{%- for link in site.data.navigation.main -%}
 		<li class="li-footer">
 			<a href="{{ link.url | relative_url }}" {% if link.description %} title="{{ link.description }}" {% endif
