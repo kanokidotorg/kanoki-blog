@@ -1,5 +1,5 @@
 ---
-title: "Image dataset from directory in Tensorflow"
+title: "How to build tensorflow dataset from MNIST csv dataset using Image dataset from directory  function"
 date: "2022-06-09"
 categories: [ tensorflow, python, google-colab]
 tags: [ tensorflow, python,  google-colab]
