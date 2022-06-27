@@ -1,6 +1,6 @@
 ---
 title: "Pandas sort dataframe by month name"
-date: "2022-06-26"
+date: "2022-06-27"
 categories: [ pandas, python]
 tags: [ pandas, python]
 
@@ -71,15 +71,17 @@ let's see the integer output of the month column by converting to datetime and f
 ```python
 pd.to_datetime(df.month, format='%b').dt.month
 ```
-|      |     month    |  
+
+
+|      |     month    |
 | ----------- | :-----------: |
-| 0      | 4          |  
-| 1      | 1           | 
-| 2      | 7           | 
+| 0      | 4          |
+| 1      | 1           |
+| 2      | 7           |
 | 3      | 10           |
 | 4      | 11           |
-| 5      | 9        | 
-| 6      | 12           | 
+| 5      | 9        |
+| 6      | 12           |
 
 If you will see carefully this is the integer value of month column of original dataframe in the same order
 
