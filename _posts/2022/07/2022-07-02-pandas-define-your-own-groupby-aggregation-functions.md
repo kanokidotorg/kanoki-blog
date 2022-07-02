@@ -1,5 +1,5 @@
 ---
-title: "Pandas define your own aggregation functions"
+title: "Pandas define your own groupby aggregation functions"
 date: "2022-07-02"
 categories: [ pandas, python]
 tags: [ pandas, python]
