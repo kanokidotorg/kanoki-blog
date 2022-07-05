@@ -1,6 +1,6 @@
 ---
 title: "How to change the date format and work with dates effectively in Matplotlib"
-date: "2022-07-04"
+date: "2022-07-05"
 categories: [ pandas, python]
 tags: [ pandas, python]
 
