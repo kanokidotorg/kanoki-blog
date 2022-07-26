@@ -1,5 +1,5 @@
 ---
-title: "Pandas select and slice rows and columns in MultiIndex dataframe"
+title: "Pandas select rows and columns in MultiIndex dataframe"
 date: "2022-07-25"
 categories: [ pandas, python]
 tags: [ pandas, python]
