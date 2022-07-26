@@ -927,5 +927,11 @@ appnexus.com, 2579, RESELLER
 quantum-advertising.com, 6222, RESELLER
 pubmatic.com, 161855, RESELLER, 5d62403b186f2ace
 sharethrough.com, Tsc1fZ67, DIRECT, d53b998a7bd4ecd2
+onetag.com,6c68086c0c61793,DIRECT
+conversantmedia.com,100087,DIRECT
+smartadserver.com,4295,RESELLER
+adtelligent.com,620450,DIRECT
+google.com, pub-6022628118304495, DIRECT, f08c47fec0942fa0
+Contextweb.com, 562735, DIRECT, 89ff185a4c4e857c
 
 newormedia.com, 13251, DIRECT
