@@ -5,9 +5,11 @@ categories: [ Data Science, Pandas, Python, Python, Data Science ]
 tags: [ Pandas, Python ]
 ---
 
-There are often cases where we need to find out the common rows between the two dataframes or find the rows which are in one dataframe and missing from second dataframe. In this post we will see how using pandas we can achieve this.
+There are often cases where we need to find out the common rows between the two dataframes or find the rows which are in one dataframe and missing from second dataframe. In this post we will see how using pandas we can achieve this. 
 
-Here are two dataframes which we will use to find common rows, Rows in dataframe 1 and Rows in dataframe 2
+However if you are interested to compare the column between two dataframes then check out [this ](http://127.0.0.1:4000/2022/08/01/pandas-compare-columns-in-two-dataframes/) post.
+
+Here are two dataframes which we will use to find common rows, Rows in dataframe 1 and Rows in dataframe 2. 
 
 ```
 import pandas as pd
