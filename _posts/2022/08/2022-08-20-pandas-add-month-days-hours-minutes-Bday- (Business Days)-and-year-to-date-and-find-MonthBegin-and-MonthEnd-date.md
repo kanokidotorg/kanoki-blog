@@ -1,5 +1,5 @@
 ---
-title: "Pandas Add month, days, hours, minutes, Bday (business days) and year to date and also find out MonthBegin and MonthEnd dates"
+title: "Pandas Add month, days, hours, minutes, Bday (business days) and year to date and also find out first day of Month and last day of month"
 date: "2022-08-22"
 categories: [ pandas, python]
 tags: [ pandas, python]
