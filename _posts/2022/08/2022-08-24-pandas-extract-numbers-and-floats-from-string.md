@@ -166,7 +166,7 @@ df.explode('Extract_All')
 
 Alternatively, We could also use **Pandas.Series.str.extractall()** to extract multiple numbers from string, It extract capture groups in the regex pat as columns in DataFrame.
 
-It takes the same parameters as str.findall() and returns a DataFrame  with one row for each match, and one column for each group. Its rows have a `MultiIndex` with first levels that come from the subject `Series`. The last level is named ‘match’ and indexes the matches in each item of the Series.
+It takes the same parameters as **Pandas.Series.str.findall()** and returns a DataFrame  with one row for each match, and one column for each group. Its rows have a `MultiIndex` with first levels that come from the subject `Series`. The last level is named ‘match’ and indexes the matches in each item of the Series.
 
 ```python
 df1=df['A'].str.extractall(r'(\d+(?:\.\d+)?)')
