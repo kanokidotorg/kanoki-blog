@@ -84,6 +84,8 @@ Moreover, it compiles Excel workbooks to python and executes without using the E
 
 ### pylightxl
 
+![](/images/2022/09/pylightxl.png)
+
 A light weight, zero dependency (only standard libs used), to the point (no bells and whistles) Microsoft Excel reader/writer python 2.7.18 - 3+ library
 
 [https://github.com/PydPiper/pylightxl](https://github.com/PydPiper/pylightxl)
