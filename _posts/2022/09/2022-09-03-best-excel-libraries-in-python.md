@@ -1,8 +1,8 @@
 ---
 title: "Excel Libraries in Python"
 date: "2022-09-06"
-categories: [ pandas, python]
-tags: [ pandas, python]
+categories: [ python]
+tags: [python]
 
 ---
 
