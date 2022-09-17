@@ -3,6 +3,7 @@ title: "How to Rename Columns in Pandas"
 date: "2019-03-23"
 categories: [ Data Science, Pandas, Python ]
 tags: [ DataScience, Pandas, Python ]
+last_modified_at: 2022-09-11
 ---
 
 Pandas has two ways to rename their Dataframe columns:
