@@ -21,5 +21,4 @@ group :jekyll_plugins do
     gem 'jekyll-include-cache'
     gem 'jekyll-seo-tag'
     gem 'kramdown-parser-gfm'
-    gem 'jekyll-last-modified-at'
 end
