@@ -1,5 +1,5 @@
 ---
-title: "Pandas split string into columns and split with multiple delimiters"
+title: "Pandas split string into columns and split string with multiple delimiters"
 date: "2022-09-22"
 categories: [python, pandas]
 tags: [python, pandas]
