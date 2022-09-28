@@ -1,10 +1,10 @@
 ---
-title: "Numpy generate random number between 0 and 1"
-date: "2022-09-27"
+title: "Numpy to generate random number between 0 and 1"
+date: "2022-09-28"
 categories: [python, numpy]
 tags: [python, numpt]
-last_modified_at: 2022-09-27
-permalink: numpy-generate-random-number-between-0-and-1
+last_modified_at: 2022-09-28
+permalink: numpy-to-generate-random-number-between-0-and-1
 
 ---
 
@@ -20,7 +20,7 @@ Numpy has these three functions that can be used to generate the random number a
 
 ## <span style="color:blue">1. Generate Random number between 0 and 1</span>
 
-### <span style="color:brown">a) numpy.random.uniform():</span>
+### <span style="color:brown;font-size: 95%">a) numpy.random.uniform():</span>
 
 ```python
 np.random.uniform(low, high, size)
@@ -32,7 +32,7 @@ np.random.uniform(low, high, size)
 
 **size:** Output shape or length of array
 
-<span style="color:blue">1. Generate 20 random float between 0 and 1:</span>
+<span style="color:blue;font-size: 90%">1. Generate 20 random float between 0 and 1:</span>
 
 ```python
 import numpy as np
@@ -47,7 +47,7 @@ Out:
          0.40988165, 0.43614663, 0.35560554, 0.97111713, 0.71243258])
 ```
 
-### <span style="color:brown">b) numpy.random.sample():</span>
+### <span style="color:brown;font-size: 95%">b) numpy.random.sample():</span>
 
 It returns the random floats in the half-open interval [0.0, 1.0)
 
@@ -57,7 +57,7 @@ np.random.sample(size)
 
 **size:** Output shape or length of array
 
-<span style="color:blue">1. Generate 20 random float between 0 and 1:</span>
+<span style="color:blue;font-size: 90%">1. Generate 20 random float between 0 and 1:</span>
 
 ```python
 np.random.sample(20)
@@ -77,7 +77,7 @@ array([0.83622401, 0.27656984, 0.51956385, 0.58562562, 0.81212898,
 
 ## <span style="color:blue">2. Generate random number between range</span>
 
-### <span style="color:brown">a) Random Integer between range</span>
+### <span style="color:brown;font-size: 95%">a) Random Integer between range</span>
 
 numpy.random.randint returns random integers from *low* (inclusive) to *high* (exclusive)
 
@@ -91,7 +91,7 @@ np.random.randint(low, high, size, dtype)
 
 **size:** Output shape or length of array. If the given shape is, e.g., `(m, n, k)`, then `m * n * k` samples are drawn. Default is None, in which case a single value is returned
 
-<span style="color:blue">1.  Generate 20 random integer between 0 and 10 </span>
+<span style="color:blue;font-size: 90%">1.  Generate 20 random integer between 0 and 10 </span>
 
 ```python
 np.random.randint(10, high=None, 20)
@@ -103,7 +103,7 @@ Out:
 array([7, 4, 6, 0, 7, 0, 9, 9, 3, 2, 9, 6, 8, 8, 0, 1, 1, 6, 1, 8])
 ```
 
-<span style="color:blue">2. Generate random 10 integer between 5 and 20</span>
+<span style="color:blue;font-size: 90%">2. Generate random 10 integer between 5 and 20</span>
 
 ```python
 np.random.randint(low=5, high=20, size= 10)
@@ -117,7 +117,7 @@ Out:
 array([ 5,  7, 13,  7, 19,  6, 11, 12, 17,  7])
 ```
 
-<span style="color:blue">3. Generate a 2D array between 0 and 8 of size 2x4</span>
+<span style="color:blue;font-size: 90%">3. Generate a 2D array between 0 and 8 of size 2x4</span>
 
 ```python
 np.random.randint(8, size=(2, 4))
@@ -130,7 +130,7 @@ array([[6, 7, 6, 6],
        [0, 5, 3, 0]])
 ```
 
-<span style="color:blue">4. Generate 1D array between 1 and 3 different upper bounds</span>
+<span style="color:blue;font-size: 90%">4. Generate 1D array between 1 and 3 different upper bounds</span>
 
 ```python
 np.random.randint(1, [3, 5, 10])
@@ -142,7 +142,7 @@ Out:
 array([1, 4, 6])
 ```
 
-<span style="color:blue">5. Generate 1D array between 3 lower bounds and 3  upper bounds</span>
+<span style="color:blue;font-size: 90%">5. Generate 1D array between 3 lower bounds and 3  upper bounds</span>
 
 ```python
 np.random.randint([1, 3, 4], [3, 5, 10])
@@ -154,7 +154,7 @@ Out:
 array([2, 3, 4])
 ```
 
-<span style="color:blue">6. Generate 2d array of size 2x3, where </span>
+<span style="color:blue;font-size: 90%">6. Generate 2d array of size 2x3, where </span>
 
 ```python
 np.random.randint([8,0, 8],[[10], [9]])
@@ -168,7 +168,7 @@ array([[9, 6, 9],
        [8, 1, 8]])
 ```
 
-<span style="color:blue">7. Generate another 2D array </span>
+<span style="color:blue;font-size: 90%">7. Generate another 2D array of size 3x2 </span>
 
 ```python
 np.random.randint([0,8],[[9], [20], [10]])
@@ -184,9 +184,9 @@ array([[ 3,  8],
 
 
 
-### <span style="color:brown">b) Random float/decimals between range</span>
+### <span style="color:brown;font-size: 95%">b) Random float/decimals between range</span>
 
-<span style="color:blue">1. Generate 20 float values between 0 and 10 using random.uniform </span>
+<span style="color:blue;font-size: 90%">1. Generate 20 float values between 0 and 10 using random.uniform </span>
 
 ```python
 np.random.uniform(0, 10, 20)
@@ -201,7 +201,7 @@ array([2.52003182, 7.92110332, 1.50855153, 9.90953893, 2.03089333,
        3.30952517, 9.29987975, 1.10395478, 9.94582268, 5.83766228])
 ```
 
-<span style="color:blue">2. Generate 2D 2x2 float array  </span>
+<span style="color:blue;font-size: 90%">2. Generate 2D 2x2 float array  </span>
 
 ```python
 np.random.uniform([0,8],[[9], [20]])
@@ -214,45 +214,45 @@ array([[ 2.56164838,  8.77214394],
        [ 3.93668152, 13.50095773]])
 ```
 
-<span style="color:blue">3. Generate 20 float values between 5 and 10 using random.sample</span>
+<span style="color:blue;font-size: 90%">3. Generate 20 float values between 5 and 10 using random.sample</span>
 
 Random.sample returns random floats between 0 and 1, so in order to get the values between a range, in this case it is between 5 and 10
 
 We would multiply the random values by upper bounds and add lower bound to it
 
 ```python
-low + np.random.sample(20) * high
+(high-low) * np.random.sample(size=20) + low
 ```
 
 Let's put the low and high value as 5 and 10 respectively.
 
 ```python
-5 + np.random.sample(20) * 10
+(10-5) * np.random.sample(size=20) + 5
 ```
 
 Out:
 
 ```python
-array([ 7.83381628,  7.43967633,  9.38097588,  9.60785349, 14.26307817,
-        8.50454709,  6.74339194, 10.87211256, 13.40334741,  5.16764027,
-       11.58143825,  8.51528829, 12.54341505,  5.01263475, 14.29967379,
-       11.15985744,  7.16992239, 11.43952548,  7.80632549,  6.50016561])
+array([5.30887252, 5.68872096, 8.84929092, 6.92724732, 5.45294085,
+       7.11049378, 8.53911988, 9.43878303, 7.81624595, 7.77538502,
+       6.88726948, 8.08815515, 5.81105502, 9.65732916, 7.23508785,
+       8.0566595 , 9.36133479, 8.2490744 , 5.60270196, 6.72205368])
 ```
 
 ## <span style="color:blue">3. Pandas create dataframe of random numbers</span>
 
 ```python
 import pandas as pd
-df = pd.DataFrame(np.random.randint(0,100,size=(5, 4)), columns=list('ABCD'))
+df = pd.DataFrame(np.random.uniform(0,100,size=(5, 4)), columns=list('ABCD'))
 ```
 
 Out:
 
-|      | A    | B    | C    | D    |
-| ---- | ---- | ---- | ---- | ---- |
-| 0    | 74   | 67   | 3    | 19   |
-| 1    | 39   | 93   | 16   | 27   |
-| 2    | 27   | 88   | 57   | 69   |
-| 3    | 87   | 92   | 89   | 90   |
-| 4    | 63   | 59   | 94   | 85   |
+|      |     A     |     B     |     C     |     D     |
+| :--: | :-------: | :-------: | :-------: | :-------: |
+|  0   | 10.761108 | 0.856031  | 18.205962 | 7.594729  |
+|  1   | 14.689869 | 12.605781 | 9.522636  | 0.307509  |
+|  2   | 11.682856 | 11.915566 | 2.554456  | 1.212645  |
+|  3   | 1.757673  | 10.225725 | 4.179541  | 8.477603  |
+|  4   | 0.429727  | 2.289190  | 14.142173 | 14.396024 |
 
