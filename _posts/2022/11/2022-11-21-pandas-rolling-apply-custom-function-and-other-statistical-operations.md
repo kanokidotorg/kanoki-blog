@@ -94,7 +94,7 @@ In this section, we will use the addition operation - .sum(). Because there aren
 **Note**: When window = 1 the data will show no NaN values as 1 is the minimum window size for calculation. This means [n] always exists as the window is set to 1.
 
 ### *min_periods*
-min_periods default value is equal to window size. It assigns minimum size of calculation to be done.
+min_periods default value is equal to window size. It assigns minimum size of computations to be performed.
 
 ```python
 data['Close_Sum'] = data['Close'].rolling(window = 7, min_periods = 5).sum()
