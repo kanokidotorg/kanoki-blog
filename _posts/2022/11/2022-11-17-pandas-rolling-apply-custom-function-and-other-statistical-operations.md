@@ -64,7 +64,7 @@ This is how our data looks like
 ### *window*
 Window calculation format is [n] and [n-1]. The rolling size of the data is the window size. Different approaches exist for applying window size to the data. 
 
-Use of integer value is one approach; it counts the number of integers and performs the function. Using period markers is an another method for calculating by time periods.<br>
+Use of integer value is one approach, it counts the number of integers and performs the function. Using period markers is an another method for calculating by time periods.<br>
 
 We will be applying rolling to the *'Close'* column of our data.
 
