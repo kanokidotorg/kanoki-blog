@@ -1,5 +1,5 @@
 ---
-title: "Learn Pandas rolling and how to apply custom functions and statistical operations such as rolling mean(), max(), count(), sum(), median() agg()"	
+title: "Pandas rolling apply custom functions and statistical operations such as rolling mean(), max(), count(), sum(), median() agg()"	
 date: 2022-11-21
 categories: [python, pandas]
 tags: [python, pandas]
