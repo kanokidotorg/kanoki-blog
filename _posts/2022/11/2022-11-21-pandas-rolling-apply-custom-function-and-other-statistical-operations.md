@@ -130,7 +130,7 @@ ValueError: min_periods 8 must be <= window 7
 ```
 
 ### *center*
-center default is set to False. This is set to begin the window calculation at the center of the window's size.
+center default is set to False. It is used to begin the window calculation at the center of the window's size.
 
 ```python
 data['Close_Sum'] = data['Close'].rolling(window = 10, center = True).sum()
