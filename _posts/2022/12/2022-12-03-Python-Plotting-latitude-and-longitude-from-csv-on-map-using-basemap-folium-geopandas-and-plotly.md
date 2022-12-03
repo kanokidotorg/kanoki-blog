@@ -65,7 +65,7 @@ m.scatter(lon, lat, latlon = True, s = 10, c = 'red', marker = 'o', alpha = 1)
 
 plt.show()
 ```
-**Note:** x = longitude, y = latitude. Never vice versa.
+**Note:** x = longitude, y = latitude
 
 ![](./images/2022/12/basemap.png)
 
@@ -163,7 +163,7 @@ Plot the data on map
 world = gpd.read_file(gpd.datasets.get_path('naturalearth_lowres'))
 gdf.plot(ax = world.plot(figsize = (10, 10)), color = 'red', markersize = 10)
 ```
-**Note:** x = longitude, y = latitude. Always.
+**Note:** x = longitude, y = latitude
 
 ![](./images/2022/12/geopandas_plot.png)
 
