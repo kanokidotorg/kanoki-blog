@@ -200,7 +200,7 @@ fig.update_layout(title = 'Countries', title_x = 0.5)
 ```
 
 ### Step 4
-displaying the map
+Display the map
 ```python
 # displaying the map
 fig.show()
