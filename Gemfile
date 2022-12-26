@@ -10,6 +10,7 @@ gem "webrick"
 #
 
 gem "jekyll"
+gem "jekyll-sass-converter", "~> 2.0"
 
 # If you have any plugins, put them here!
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
