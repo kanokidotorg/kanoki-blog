@@ -17,7 +17,7 @@ We will be following the below steps to implode a column in the dataframe:
 
 ## Create Dataframe
 
-Let's create a dataframe with five columns - Area, Sales_million, Month, Gallons and Rank
+Let's create a dataframe with five columns - Area, Sales_million, Month, Gallons and Rank.
 
 ```python
 df=pd.DataFrame({'Area': ['North America']*5,
