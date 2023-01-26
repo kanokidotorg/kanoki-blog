@@ -15,7 +15,7 @@ Here are the steps that we will follow in this article to append dictionary as e
 - Create a test dataframe
 - Create a dictionary of new row values
 - Build a dataframe with the dictionary row values using pandas ***from_dict()*** function
-- Append dictionary dataframe to the test dataframe pandas ***concat()***
+- Append dictionary dataframe to the test dataframe using pandas ***concat()***
 
 * Create another dictionary with the list of values in a column
 * Append dictionary as column to the test dataframe
